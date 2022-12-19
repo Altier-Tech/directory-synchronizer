@@ -6,6 +6,10 @@ import javafx.stage.Stage;
 
 import java.io.IOException;
 
+import com.dropbox.core.DbxException;
+import com.dropbox.core.v2.DbxClientV2;
+import com.dropbox.core.v2.users.FullAccount;
+
 public class Application extends javafx.application.Application {
     @Override
     public void start(Stage stage) throws IOException {
@@ -17,6 +21,12 @@ public class Application extends javafx.application.Application {
     }
 
     public static void main(String[] args) {
-        launch();
+//        launch();
+
+        String ACCESS_TOKEN = "sl.BVRg9dQvSQi5PL_8qzaas-yuHQl2bX5CWjjQ_qCZP8ssXhQIMJCPCOoSOUhwOsWqwH9FzI8Cf6Oh4iAzopZtbex12AiRzLv2601ulIUwz8QArm_QyKYWXpf33ize02ZkBK9EzcTgmp0";
+        DbxRequestConfig config = DbxRequestConfig.newBuilder("dropbox/java-tutorial").build();
+        DbxClientV2 client = new DbxClientV2(config, ACCESS_TOKEN);
+        FullAccount account = client.users().getCurrentAccount();
+        System.out.println(account.getName().getDisplayName());
     }
 }
