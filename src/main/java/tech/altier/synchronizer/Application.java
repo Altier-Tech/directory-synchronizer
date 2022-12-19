@@ -1,5 +1,6 @@
 package tech.altier.synchronizer;
 
+import com.dropbox.core.DbxRequestConfig;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Scene;
 import javafx.stage.Stage;
@@ -20,7 +21,7 @@ public class Application extends javafx.application.Application {
         stage.show();
     }
 
-    public static void main(String[] args) {
+    public static void main(String[] args) throws DbxException {
 //        launch();
 
         String ACCESS_TOKEN = "sl.BVRg9dQvSQi5PL_8qzaas-yuHQl2bX5CWjjQ_qCZP8ssXhQIMJCPCOoSOUhwOsWqwH9FzI8Cf6Oh4iAzopZtbex12AiRzLv2601ulIUwz8QArm_QyKYWXpf33ize02ZkBK9EzcTgmp0";
