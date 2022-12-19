@@ -1,10 +1,10 @@
-module tech.ultier.synchronizer {
+module tech.altier.synchronizer {
     requires javafx.controls;
     requires javafx.fxml;
 
     requires com.dlsc.formsfx;
     requires org.kordamp.bootstrapfx.core;
 
-    opens tech.ultier.synchronizer to javafx.fxml;
-    exports tech.ultier.synchronizer;
+    opens tech.altier.synchronizer to javafx.fxml;
+    exports tech.altier.synchronizer;
 }
