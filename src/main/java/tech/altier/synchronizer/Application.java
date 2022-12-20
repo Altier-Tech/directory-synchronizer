@@ -18,7 +18,7 @@ import com.dropbox.core.v2.DbxClientV2;
 import com.dropbox.core.v2.users.FullAccount;
 
 public class Application extends javafx.application.Application {
-    private static final String API_TOKEN = "sl.BVRf6mqoYi2v1W1RXL9EeXQJwKxmXZLIHHnowXQCgnC-sguZQEjFikUIaKnSFzHi_rWT2v66vFCxkqSsFK2XzLD1pjFLHTCvfucq17dhEc0-jAHzRAqnvCmurCHqQb9QmVFjyJGpi9k";
+    private static final String API_TOKEN = "sl.BVTjlQdFWXdjqTCiVxRt8h9bIePgX-qyvrLQ3v2KbiPN6e0c7refF5A7wltrxo7QYExr4Jni9xaTDBpwWTzkKtAaLtUrk4CH_kCIXstUVPWs83dDGcdFDH6PTQ4Ths77hoYsdTGk8tA";
 
     @Override
     public void start(Stage stage) throws IOException {
@@ -39,7 +39,7 @@ public class Application extends javafx.application.Application {
 
         // Upload "test.txt" to Dropbox
         try (InputStream in = new FileInputStream("test.txt")) {
-            FileMetadata metadata = client.files().uploadBuilder("/test.txt")
+            FileMetadata metadata = client.files().uploadBuilder("")
                     .uploadAndFinish(in);
         } catch (IOException e) {
             throw new RuntimeException(e);
