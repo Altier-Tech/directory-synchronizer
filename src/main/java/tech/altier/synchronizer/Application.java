@@ -18,7 +18,7 @@ import com.dropbox.core.v2.DbxClientV2;
 import com.dropbox.core.v2.users.FullAccount;
 
 public class Application extends javafx.application.Application {
-    private static final String API_TOKEN = "sl.BVTjlQdFWXdjqTCiVxRt8h9bIePgX-qyvrLQ3v2KbiPN6e0c7refF5A7wltrxo7QYExr4Jni9xaTDBpwWTzkKtAaLtUrk4CH_kCIXstUVPWs83dDGcdFDH6PTQ4Ths77hoYsdTGk8tA";
+    private static final String ACCESS_TOKEN = "sl.BVSCbz9EN5N1HpQ7CjRSIJsrvyop-mM8_d9EcgeEMwLMlh9okStZij2jBKFGVOagYcWadHBWv7cnHxu6EShTIxyUyQ3il0ULBdY7B7-YsbE0hoDgNt3AWihI8TBps4qSKhrrwj6sfFk";
 
     @Override
     public void start(Stage stage) throws IOException {
@@ -32,13 +32,12 @@ public class Application extends javafx.application.Application {
     public static void main(String[] args) throws DbxException, FileNotFoundException {
 //        launch();
 
-        String ACCESS_TOKEN = API_TOKEN;
         DbxRequestConfig config = DbxRequestConfig.newBuilder("dropbox/java-tutorial").build();
         DbxClientV2 client = new DbxClientV2(config, ACCESS_TOKEN);
         FullAccount account = client.users().getCurrentAccount();
 
         // Upload "test.txt" to Dropbox
-        try (InputStream in = new FileInputStream("test.txt")) {
+        try (InputStream in = new FileInputStream("test.txt")) { // TODO - Bug: File not found
             FileMetadata metadata = client.files().uploadBuilder("")
                     .uploadAndFinish(in);
         } catch (IOException e) {
