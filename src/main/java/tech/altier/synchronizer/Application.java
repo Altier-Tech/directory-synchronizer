@@ -18,7 +18,7 @@ import com.dropbox.core.v2.DbxClientV2;
 import com.dropbox.core.v2.users.FullAccount;
 
 public class Application extends javafx.application.Application {
-    private static final String API_TOKEN = "sl.BVSVg8Ch96tpzd6AEJJ3c6Y2WfXSMdzcfy0P20cd5DZqW0LPT8ZePPZYB3LL0ah-CvNitow2rpmebgIMQMYRHn3sI8NQXBDjwGIKHefOJGZdAXgIZZrt34F8C5-f6H8MMzcN_uUIwZ8";
+    private static final String API_TOKEN = "sl.BVRf6mqoYi2v1W1RXL9EeXQJwKxmXZLIHHnowXQCgnC-sguZQEjFikUIaKnSFzHi_rWT2v66vFCxkqSsFK2XzLD1pjFLHTCvfucq17dhEc0-jAHzRAqnvCmurCHqQb9QmVFjyJGpi9k";
 
     @Override
     public void start(Stage stage) throws IOException {
