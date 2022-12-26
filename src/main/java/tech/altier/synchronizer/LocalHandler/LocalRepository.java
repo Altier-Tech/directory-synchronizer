@@ -24,7 +24,14 @@ public class LocalRepository {
 
         log("Listening directory " + directory + " for changes...");
 
+        WatchKey watchKey = directory.register(
+                watchService,
+                StandardWatchEventKinds.ENTRY_CREATE,
+                StandardWatchEventKinds.ENTRY_MODIFY,
+                StandardWatchEventKinds.ENTRY_DELETE
+        );
 
+        
     }
 
     private void log(String message) {
