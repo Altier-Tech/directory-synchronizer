@@ -19,7 +19,7 @@ public class Main {
     private static String accountName = "ERR!";
 
     @FXML
-    private ListView<String> listView;
+    private ListView<String> listViewLocal;
 
     public void initialize() {
         repository = SetupController.repository;
@@ -38,21 +38,25 @@ public class Main {
         log("Logged in user: " + accountName);
         log("Local repository: " + repository.getPath());
 
-        populateListView();
+        populateListViews();
     }
 
-    private void populateListView() {
-        listView.getItems().clear();
+    private void populateListViews() {
+        // Local
+        listViewLocal.getItems().clear();
 
         File path = new File(repository.getPath());
         File[] files = path.listFiles();
         if (files != null) {
             for (File file : files) {
                 if (file.isFile()) {
-                    listView.getItems().add(file.getName());
+                    listViewLocal.getItems().add(file.getName());
                 }
             }
         }
+
+        // Remote
+        
     }
 
     private void log(String message) {
