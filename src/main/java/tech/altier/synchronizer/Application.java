@@ -1,21 +1,15 @@
 package tech.altier.synchronizer;
 
+import com.dropbox.core.DbxException;
 import com.dropbox.core.DbxRequestConfig;
-import com.dropbox.core.v2.files.FileMetadata;
+import com.dropbox.core.v2.DbxClientV2;
 import com.dropbox.core.v2.files.ListFolderResult;
 import com.dropbox.core.v2.files.Metadata;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Scene;
 import javafx.stage.Stage;
 
-import java.io.FileInputStream;
-import java.io.FileNotFoundException;
 import java.io.IOException;
-import java.io.InputStream;
-
-import com.dropbox.core.DbxException;
-import com.dropbox.core.v2.DbxClientV2;
-import com.dropbox.core.v2.users.FullAccount;
 
 public class Application extends javafx.application.Application {
     private static final String ACCESS_TOKEN = "sl.BVrC5-1WM3rpxusYxHbAxuvmakymmQ9XHzSRq45mntJvkQAvuZisVErDyeVk_nQSQQpSfRBBz83OSGTfagy8Ie-BpAg8hk-YsECh4cbo3xtcLzGcW0nnIeIMLCziXPmUbpLqF7MdzSs";
