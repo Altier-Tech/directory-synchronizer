@@ -7,7 +7,7 @@ import javafx.fxml.FXML;
 import javafx.scene.control.Label;
 
 public class Main {
-    private static final String ACCESS_TOKEN = "sl.BVpDTUo3E5pAV1rPIXrMtHtskRhH5KYapiK8KJ_Pkz70XeIeKNZLBUVHsid9tmqGObUZWZcshPUJ5_7yRlKeViHKnWUlI3Te-HKL-IAePb8CmCfgKfvXInpc1ToRov7qs2JaXClVcTM";
+    private static final String ACCESS_TOKEN;
 
     public static DbxClientV2 client;
     private static String accountName;
@@ -21,6 +21,8 @@ public class Main {
     }
 
     static {
+        ACCESS_TOKEN = LoginController.ACCESS_TOKEN;
+
         DbxRequestConfig config = DbxRequestConfig.newBuilder("dropbox/java-tutorial").build();
         client = new DbxClientV2(config, ACCESS_TOKEN);
 
