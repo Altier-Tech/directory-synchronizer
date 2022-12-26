@@ -11,7 +11,7 @@ public class Main {
     private static final String ACCESS_TOKEN;
 
     public static DbxClientV2 client;
-    private static final String accountName;
+    private static final String accountName = "ERR!";
 
     @FXML
     private Label welcomeText;
