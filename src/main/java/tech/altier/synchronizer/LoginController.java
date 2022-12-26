@@ -5,13 +5,18 @@ import javafx.scene.control.PasswordField;
 
 public class LoginController {
     @FXML
-    private PasswordField passwordField;
+    private PasswordField accessTokenField;
 
     public static String ACCESS_TOKEN;
 
     @FXML
     private void onLoginButtonClick() {
         System.out.println("Login button clicked!");
-        ACCESS_TOKEN = passwordField.getText();
+        ACCESS_TOKEN = accessTokenField.getText();
+
+        if (ACCESS_TOKEN == null || ACCESS_TOKEN.isEmpty()) {
+            // Need to show the login scene
+
+        }
     }
 }
