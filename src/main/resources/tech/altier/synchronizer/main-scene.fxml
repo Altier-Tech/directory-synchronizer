@@ -19,7 +19,10 @@
                 <Label text="DropBox"/>
                 <ListView fx:id="listViewRemote" />
             </VBox>
-            <ListView fx:id="listViewLocal" />
+            <VBox>
+                <Label text="Local"/>
+                <ListView fx:id="listViewLocal" />
+            </VBox>
         </HBox>
     </center>
 
