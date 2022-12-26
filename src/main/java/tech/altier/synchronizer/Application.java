@@ -9,12 +9,12 @@ import javafx.stage.Stage;
 import java.io.IOException;
 
 public class Application extends javafx.application.Application {
-    private Stage primaryStage;
+    private static Stage primaryStage;
 
     @Override
     public void start(Stage stage) throws IOException {
         this.primaryStage = stage;
-        
+
         FXMLLoader fxmlLoader = new FXMLLoader(Application.class.getResource("login-scene.fxml"));
         Scene scene = new Scene(fxmlLoader.load(), 320, 240);
         stage.setTitle("DirSync");
