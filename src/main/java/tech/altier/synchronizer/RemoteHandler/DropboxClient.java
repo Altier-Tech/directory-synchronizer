@@ -7,6 +7,7 @@ import com.dropbox.core.DbxException;
 import com.dropbox.core.v2.DbxClientV2;
 import com.dropbox.core.v2.files.FileMetadata;
 
+import java.io.File;
 import java.io.FileInputStream;
 import java.io.IOException;
 import java.io.InputStream;
@@ -19,9 +20,11 @@ public class DropboxClient {
     }
 
     public void uploadFile(String path) {
+        File absPath = new File(path);
+        String relPath = absPath.getName();
         try (InputStream in = new FileInputStream(path)) {
             log("File upload started: " + path + " on thread: " + Thread.currentThread().getName());
-            FileMetadata metadata = client.files().uploadBuilder("")
+            FileMetadata metadata = client.files().uploadBuilder("/" + relPath)
                     .uploadAndFinish(in);
             log("File upload finished: " + path + " on thread: " + Thread.currentThread().getName());
         } catch (IOException | DbxException e) {
