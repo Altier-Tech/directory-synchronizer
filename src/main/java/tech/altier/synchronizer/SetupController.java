@@ -3,9 +3,12 @@ package tech.altier.synchronizer;
 import javafx.fxml.FXML;
 import javafx.stage.DirectoryChooser;
 import tech.altier.Thread.ThreadColor;
+import tech.altier.synchronizer.LocalHandler.LocalRepository;
 
 import java.io.File;
 import java.io.IOException;
+
+import static tech.altier.synchronizer.LocalHandler.LocalRepository.setupRepositoryOnDir;
 
 public class SetupController {
     @FXML
@@ -18,7 +21,7 @@ public class SetupController {
         } else {
             log(selectedDirectory.getAbsolutePath());
 
-            setupRepositoryOnDir (selectedDirectory.getAbsolutePath());
+            LocalRepository repository = setupRepositoryOnDir (selectedDirectory.getAbsolutePath());
 
             Application.changeScene("main-scene.fxml");
         }
