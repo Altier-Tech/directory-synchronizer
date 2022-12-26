@@ -1,4 +1,4 @@
-package tech.altier.Synchronizer;
+package tech.altier.synchronizer;
 
 import javafx.fxml.FXML;
 import javafx.scene.control.Hyperlink;

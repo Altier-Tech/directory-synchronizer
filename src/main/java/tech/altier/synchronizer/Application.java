@@ -1,4 +1,4 @@
-package tech.altier.Synchronizer;
+package tech.altier.synchronizer;
 
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;

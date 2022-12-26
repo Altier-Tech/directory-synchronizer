@@ -1,4 +1,4 @@
-package tech.altier.Synchronizer;
+package tech.altier.synchronizer;
 
 import com.dropbox.core.DbxException;
 import com.dropbox.core.DbxRequestConfig;
