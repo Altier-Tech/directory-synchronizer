@@ -9,8 +9,6 @@ import com.dropbox.core.v2.DbxClientV2;
 
 import javafx.fxml.FXML;
 import javafx.scene.control.Label;
-import tech.altier.Thread.ThreadColor;
-import tech.altier.synchronizer.LocalHandler.LocalRepository;
 
 public class Main {
     public static LocalRepository repository;
