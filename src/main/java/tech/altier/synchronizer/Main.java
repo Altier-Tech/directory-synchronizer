@@ -24,7 +24,7 @@ public class Main {
     static {
         ACCESS_TOKEN = LoginController.ACCESS_TOKEN;
 
-        DbxRequestConfig config = DbxRequestConfig.newBuilder("dropbox/java-tutorial").build();
+        DbxRequestConfig config = DbxRequestConfig.newBuilder("").build();
         client = new DbxClientV2(config, ACCESS_TOKEN);
 
         try {
