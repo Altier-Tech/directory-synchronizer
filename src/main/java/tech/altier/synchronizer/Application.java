@@ -10,7 +10,7 @@ import java.io.IOException;
 import java.util.Objects;
 
 public class Application extends javafx.application.Application {
-    private Stage primaryStage;
+    private static Stage primaryStage;
 
     @Override
     public void start(Stage stage) throws IOException {
@@ -19,16 +19,16 @@ public class Application extends javafx.application.Application {
         stage.setTitle("DirSync");
         stage.setScene(scene);
         stage.show();
-        
-        this.primaryStage = stage;
+
+        primaryStage = stage;
     }
 
     public static void main(String[] args) throws DbxException, IOException {
         launch();
     }
 
-    public void loadMainStage() throws IOException {
-        Parent pane = FXMLLoader.load(Objects.requireNonNull(Main.class.getResource("main-scene.fxml")));
+    public static void  changeScene(String fxml) throws IOException {
+        Parent pane = FXMLLoader.load(Objects.requireNonNull(Application.class.getResource(fxml)));
         primaryStage.getScene().setRoot(pane);
     }
 }
