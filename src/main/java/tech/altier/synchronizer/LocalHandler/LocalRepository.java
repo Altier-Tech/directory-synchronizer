@@ -31,7 +31,35 @@ public class LocalRepository {
                 StandardWatchEventKinds.ENTRY_DELETE
         );
 
-        
+        while (true) {
+            for (WatchEvent<?> event : watchKey.pollEvents()) {
+
+                WatchEvent<Path> pathEvent = (WatchEvent<Path>) event;
+
+                Path fileName = pathEvent.context();
+
+                WatchEvent.Kind<?> kind = event.kind();
+
+                if (kind == StandardWatchEventKinds.ENTRY_CREATE) {
+                    log("A new file is created : " + fileName);
+
+                    // Handle file creation
+                    FileHandler.handleCreate (fileName);
+                }
+                if (kind == StandardWatchEventKinds.ENTRY_DELETE) {
+                    log("A file has been deleted: " + fileName);
+                }
+                if (kind == StandardWatchEventKinds.ENTRY_MODIFY) {
+                    log("A file has been modified: " + fileName);
+                }
+            }
+
+            // STEP8: Reset the watch key everytime for continuing to use it for further event polling
+            boolean valid = watchKey.reset();
+            if (!valid) {
+                break;
+            }
+        }
     }
 
     private void log(String message) {
