@@ -18,10 +18,10 @@
                 <Insets bottom="20.0" left="20.0" right="20.0" top="20.0"/>
             </padding>
 
-            <Label text="Login"/>
+            <Label text="Please paste your generated access token here."/>
             <PasswordField fx:id="accessTokenField" promptText="Access Token"/>
             <Button text="Login" onAction="#onLoginButtonClick"/>
         </VBox>
     </center>
-    
+
 </BorderPane>
