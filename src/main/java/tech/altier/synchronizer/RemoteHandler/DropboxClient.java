@@ -18,10 +18,6 @@ public class DropboxClient {
         client = Main.client;
     }
 
-    public void downloadFile(String remotePath) {
-        // TODO
-    }
-
     public void uploadFile(String path) {
         try (InputStream in = new FileInputStream(path)) {
             log("File upload started: " + path + " on thread: " + Thread.currentThread().getName());
@@ -31,6 +27,10 @@ public class DropboxClient {
         } catch (IOException | DbxException e) {
             throw new RuntimeException(e);
         }
+    }
+
+    public void downloadFile(String remotePath) {
+        // TODO
     }
 
     private void log(String message) {
