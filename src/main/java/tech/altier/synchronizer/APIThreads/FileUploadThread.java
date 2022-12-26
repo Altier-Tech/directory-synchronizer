@@ -13,6 +13,6 @@ public class FileUploadThread implements Runnable {
 
     @Override
     public void run() {
-        DropboxClient.uploadFile(path);
+        client.uploadFile(path);
     }
 }
