@@ -27,7 +27,12 @@ public class LoginController {
 
     public void initialize() {
         loginURL = "https://www.dropbox.com/oauth2/authorize?client_id=znj7h8gmdmevoz0&token_access_type=offline&response_type=code";
-        generateTokenLink.setOnAction(e -> webEngine.load(loginURL));
+        generateTokenLink.setOnAction(new EventHandler<ActionEvent>() {
+            @Override
+            public void handle(ActionEvent e) {
+                webEngine.load(loginURL);
+            }
+        });
     }
 
     @FXML
