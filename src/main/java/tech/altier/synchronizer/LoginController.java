@@ -28,7 +28,8 @@ public class LoginController {
         }
 
         // Try loading the main scene
-        Application.loadMainStage();
+        Application application = new Application();
+        application.loadMainStage();
     }
 
 }
