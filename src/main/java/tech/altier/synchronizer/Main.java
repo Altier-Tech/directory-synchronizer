@@ -52,8 +52,14 @@ public class Main {
 
     private void startupSync() {
         // Upload local files using FileUploadThread
-        for (File file : repository.getFiles()) {
-            new Thread(new FileUploadThread(file)).start();
+        File path = new File(repository.getPath());
+        File[] files = path.listFiles();
+        if (files != null) {
+            for (File file : files) {
+                if (file.isFile()) {
+                    listViewLocal.getItems().add(file.getName());
+                }
+            }
         }
     }
 
@@ -71,6 +77,7 @@ public class Main {
         }
 
         // Remote
+        listViewRemote.getItems().clear();
         ListFolderResult result = client.files().listFolder("");
         while (true) {
             for (Metadata metadata : result.getEntries()) {
@@ -83,6 +90,11 @@ public class Main {
 
             result = client.files().listFolderContinue(result.getCursor());
         }
+    }
+    
+    private File[] getLocalFiles() {
+        File path = new File(repository.getPath());
+        return path.listFiles();
     }
 
     private void log(String message) {
