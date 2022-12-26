@@ -10,7 +10,11 @@
             fx:controller="tech.altier.synchronizer.Main">
 
     <top>
-        <!-- TODO add a title here -->
+        <VBox>
+            <!-- TODO add a title here -->
+            <!-- TODO create a navigation pane here -->
+        </VBox>
+
     </top>
 
     <center>
