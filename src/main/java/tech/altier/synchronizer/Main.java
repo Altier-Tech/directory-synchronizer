@@ -21,23 +21,6 @@ public class Main {
     @FXML
     private ListView<String> listView;
 
-    /*
-        static {
-            repository = SetupController.repository;
-
-            ACCESS_TOKEN = LoginController.ACCESS_TOKEN;
-
-            DbxRequestConfig config = DbxRequestConfig.newBuilder("Altier").build();
-            client = new DbxClientV2(config, ACCESS_TOKEN);
-
-            try {
-                accountName = client.users().getCurrentAccount().getName().getDisplayName();
-            } catch (DbxException e) {
-                System.out.println(ThreadColor.ANSI_RED + "MainApp: \t" + "Error loading user data!");
-            }
-        }
-    */
-
     public void initialize() {
         repository = SetupController.repository;
 
