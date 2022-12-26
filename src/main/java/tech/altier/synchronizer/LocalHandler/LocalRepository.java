@@ -1,6 +1,7 @@
 package tech.altier.synchronizer.LocalHandler;
 
 import tech.altier.Thread.ThreadColor;
+import tech.altier.synchronizer.Main;
 
 import java.io.IOException;
 import java.nio.file.FileSystems;
