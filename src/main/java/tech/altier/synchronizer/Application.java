@@ -13,6 +13,8 @@ public class Application extends javafx.application.Application {
 
     @Override
     public void start(Stage stage) throws IOException {
+        this.primaryStage = stage;
+        
         FXMLLoader fxmlLoader = new FXMLLoader(Application.class.getResource("login-scene.fxml"));
         Scene scene = new Scene(fxmlLoader.load(), 320, 240);
         stage.setTitle("DirSync");
