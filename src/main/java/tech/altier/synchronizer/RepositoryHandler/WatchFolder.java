@@ -53,7 +53,6 @@ public class WatchFolder {
 
                         System.out.println("A file has been modified: " + fileName);
                     }
-
                 }
 
                 // STEP8: Reset the watch key everytime for continuing to use it for further event polling
