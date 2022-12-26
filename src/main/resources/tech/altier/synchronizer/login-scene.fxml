@@ -42,10 +42,6 @@
             </VBox.margin>
             </HBox>
 
-            <HBox>
-                <!-- Signup with Dropbox button -->
-                <Button fx:id="dropboxButton" onAction="#onDropboxButtonClick" text="Sign in with Dropbox">
-            </HBox>
         </VBox>
     </center>
 
