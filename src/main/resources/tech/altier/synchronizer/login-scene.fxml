@@ -3,13 +3,17 @@
 <?import javafx.geometry.*?>
 <?import javafx.scene.control.*?>
 <?import javafx.scene.layout.*?>
+<?import javafx.scene.text.*?>
 
 <BorderPane prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/17.0.2-ea" xmlns:fx="http://javafx.com/fxml/1" fx:controller="tech.altier.synchronizer.LoginController">
 
     <center>
         <VBox alignment="CENTER" spacing="20.0">
             
-            <Label fx:id="label" text="Please paste your generated access token here." />
+            <Label fx:id="label" text="Please paste your generated access token here.">
+            <font>
+               <Font size="13.0" />
+            </font></Label>
             <Label text="Don't have an access token?" />
             <Hyperlink fx:id="generateTokenLink" text="Generate one here." />
 
@@ -38,8 +42,9 @@
             </VBox.margin>
             </HBox>
 
-            <HBox >
-
+            <HBox>
+                <!-- Signup with Dropbox button -->
+                <Button fx:id="dropboxButton" onAction="#onDropboxButtonClick" text="Sign in with Dropbox">
             </HBox>
         </VBox>
     </center>
