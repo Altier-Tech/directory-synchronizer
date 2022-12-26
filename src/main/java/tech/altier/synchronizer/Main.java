@@ -99,6 +99,7 @@ public class Main {
                 Thread uploadThread = new Thread(
                         new FileUploadThread(repository.getPath() + "\\" + localFile)
                 );
+                uploadThread.start();
             }
         }
     }
