@@ -29,7 +29,6 @@ public class LoginController {
             label.setText("Please enter a valid access token!");
         }
 
-        // Try loading the main scene
         Application.changeScene("main-scene.fxml");
     }
 
