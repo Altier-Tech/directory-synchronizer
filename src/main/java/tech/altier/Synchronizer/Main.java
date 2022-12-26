@@ -18,7 +18,7 @@ public class Main {
 
     @FXML
     protected void onHelloButtonClick() {
-        System.out.println("Logged in user: " + accountName);
+        log("Logged in user: " + accountName);
         welcomeText.setText("Welcome to Altier DirSync " + accountName);
     }
 
