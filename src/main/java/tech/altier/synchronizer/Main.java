@@ -57,7 +57,7 @@ public class Main {
     }
 
     private void populateListView() {
-
+`
     }
 
     private void log(String message) {
