@@ -7,6 +7,7 @@
 <?import javafx.scene.layout.BorderPane?>
 <?import javafx.scene.layout.VBox?>
 
+<?import javafx.scene.layout.HBox?>
 <BorderPane xmlns="http://javafx.com/javafx"
             xmlns:fx="http://javafx.com/fxml"
             fx:controller="tech.altier.synchronizer.LoginController"
@@ -20,8 +21,11 @@
 
             <Label fx:id="label" text="Please paste your generated access token here."/>
             <PasswordField fx:id="accessTokenField" promptText="Access Token"/>
-            <Button text="Login" onAction="#onLoginButtonClick"/>
-            <Button text="Reset" onAction="#onResetButtonClick"/>
+
+            <HBox>
+                <Button text="Login" onAction="#onLoginButtonClick"/>
+                <Button text="Reset" onAction="#onResetButtonClick"/>
+            </HBox>
 
         </VBox>
     </center>
