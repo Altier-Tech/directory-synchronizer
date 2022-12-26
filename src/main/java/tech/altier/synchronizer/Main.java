@@ -1,5 +1,7 @@
 package tech.altier.synchronizer;
 
+import com.dropbox.core.v2.files.ListFolderResult;
+import com.dropbox.core.v2.files.Metadata;
 import javafx.scene.control.ListView;
 import tech.altier.Thread.ThreadColor;
 import tech.altier.synchronizer.LocalHandler.LocalRepository;
@@ -12,6 +14,8 @@ import javafx.scene.control.ListView;
 import javafx.fxml.FXML;
 
 import java.io.File;
+import java.util.ArrayList;
+import java.util.List;
 
 public class Main {
     public static LocalRepository repository;
@@ -41,7 +45,7 @@ public class Main {
         populateListViews();
     }
 
-    private void populateListViews() {
+    private void populateListViews() throws DbxException {
         // Local
         listViewLocal.getItems().clear();
 
@@ -56,6 +60,19 @@ public class Main {
         }
 
         // Remote
+        List<String> remoteFiles = new ArrayList<>();
+        ListFolderResult result = client.files().listFolder("");
+        while (true) {
+            for (Metadata metadata : result.getEntries()) {
+                remoteFiles.add(metadata.getName());
+            }
+
+            if (!result.getHasMore()) {
+                break;
+            }
+
+            result = client.files().listFolderContinue(result.getCursor());
+        }
         
     }
 
