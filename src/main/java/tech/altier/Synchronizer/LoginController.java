@@ -41,7 +41,7 @@ public class LoginController {
 
     @FXML
     private void onLoginButtonClick() throws IOException {
-        System.out.println("Login button clicked!");
+        log("Login button clicked!");
         ACCESS_TOKEN = accessTokenField.getText();
 
         // Check if null or empty
