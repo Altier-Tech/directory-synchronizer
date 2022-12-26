@@ -37,6 +37,11 @@ public class Main {
         }
     }
 
+    public void initialize() {
+        log("Logged in user: " + accountName);
+        log("Local repository: " + repository);
+    }
+
     private void log(String message) {
         System.out.println(ThreadColor.ANSI_BLUE + "MainApp: \t" + message);
     }
