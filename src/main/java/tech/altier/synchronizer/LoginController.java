@@ -15,6 +15,11 @@ public class LoginController {
     public static String ACCESS_TOKEN;
 
     @FXML
+    private void onResetButtonClick() {
+        accessTokenField.setText("");
+    }
+
+    @FXML
     private void onLoginButtonClick() throws IOException {
         System.out.println("Login button clicked!");
         ACCESS_TOKEN = accessTokenField.getText();
