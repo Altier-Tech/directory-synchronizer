@@ -83,6 +83,9 @@ public class Main {
 
             result = client.files().listFolderContinue(result.getCursor());
         }
+
+        // Check if each local file exists on the remote server
+        
     }
 
     private void populateListViews() throws DbxException {
