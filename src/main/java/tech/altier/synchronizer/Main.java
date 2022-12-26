@@ -10,6 +10,7 @@ import javafx.fxml.FXML;
 import javafx.scene.control.ListView;
 
 import tech.altier.Thread.ThreadColor;
+import tech.altier.synchronizer.APIThreads.FileUploadThread;
 import tech.altier.synchronizer.LocalHandler.LocalRepository;
 
 import java.io.File;
@@ -49,15 +50,16 @@ public class Main {
         repository.watch();
     }
 
-    private void sync() {
+    private void startupSync() {
         // Upload local files using FileUploadThread
-
+        for (File file : repository.getFiles()) {
+            new Thread(new FileUploadThread(file)).start();
+        }
     }
 
     private void populateListViews() throws DbxException {
         // Local
         listViewLocal.getItems().clear();
-
         File path = new File(repository.getPath());
         File[] files = path.listFiles();
         if (files != null) {
