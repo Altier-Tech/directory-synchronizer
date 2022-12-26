@@ -13,6 +13,7 @@ import tech.altier.Thread.ThreadColor;
 import tech.altier.synchronizer.LocalHandler.LocalRepository;
 
 import java.io.File;
+import java.io.IOException;
 
 public class Main {
     public static LocalRepository repository;
@@ -24,7 +25,7 @@ public class Main {
     @FXML
     private ListView<String> listViewRemote;
 
-    public void initialize() throws DbxException {
+    public void initialize() throws DbxException, IOException {
         repository = SetupController.repository;
 
         String ACCESS_TOKEN = LoginController.ACCESS_TOKEN;
@@ -42,6 +43,15 @@ public class Main {
         log("Local repository: " + repository.getPath());
 
         populateListViews();
+
+        startupSync();
+
+        repository.watch();
+    }
+
+    private void sync() {
+        // Upload local files using FileUploadThread
+
     }
 
     private void populateListViews() throws DbxException {
