@@ -9,6 +9,11 @@ import java.nio.file.WatchService;
 
 public class WatchFolder {
 
+    public static void main(String[] args) {
+        WatchFolder watch = new WatchFolder();
+        watch.watchFolder();
+    }
+
     public void watchFolder() {
 
         try {
@@ -19,7 +24,7 @@ public class WatchFolder {
             WatchService watchService = FileSystems.getDefault().newWatchService();
 
             // STEP2: Get the path of the directory which you want to monitor.
-            Path directory = Path.of("G:\\projects\\fullstackdeveloperblog\\watchapi");
+            Path directory = Path.of("D:\\Test");
 
             // STEP3: Register the directory with the watch service
             WatchKey watchKey = directory.register(watchService, StandardWatchEventKinds.ENTRY_CREATE,
