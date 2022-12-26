@@ -14,4 +14,8 @@
         <ListView fx:id="listView" />
     </center>
 
+    <bottom>
+        <!-- TODO add a status bar here -->
+    </bottom>
+
 </BorderPane>
