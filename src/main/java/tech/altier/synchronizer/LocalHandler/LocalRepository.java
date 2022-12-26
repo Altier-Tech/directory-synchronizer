@@ -13,8 +13,13 @@ import java.nio.file.WatchService;
 public class LocalRepository {
     private String path;
 
-    public LocalRepository(String path) {
+    private LocalRepository(String path) {
         this.path = path;
+    }
+
+    public static LocalRepository setupRepositoryOnDir(String path) {
+        System.out.println(ThreadColor.ANSI_GREEN + "LocalListener: \t" + "Setting up repository on directory: " + path);
+        return new LocalRepository(path);
     }
 
     public void watch() throws IOException {
