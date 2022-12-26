@@ -1,8 +1,12 @@
 package tech.altier.synchronizer;
 
+import tech.altier.Thread.ThreadColor;
+import tech.altier.synchronizer.LocalHandler.LocalRepository;
+
 import com.dropbox.core.DbxException;
 import com.dropbox.core.DbxRequestConfig;
 import com.dropbox.core.v2.DbxClientV2;
+
 import javafx.fxml.FXML;
 import javafx.scene.control.Label;
 import tech.altier.Thread.ThreadColor;
