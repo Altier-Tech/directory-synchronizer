@@ -4,6 +4,7 @@ import javafx.fxml.FXML;
 import javafx.scene.control.Hyperlink;
 import javafx.scene.control.Label;
 import javafx.scene.control.PasswordField;
+import tech.altier.Thread.ThreadColor;
 
 import java.awt.*;
 import java.io.IOException;
@@ -51,4 +52,7 @@ public class LoginController {
         Application.changeScene("main-scene.fxml");
     }
 
+    private void log(String message) {
+        System.out.println(ThreadColor.ANSI_PURPLE + "PreApp: \t" + message);
+    }
 }
