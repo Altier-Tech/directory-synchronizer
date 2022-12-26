@@ -54,7 +54,6 @@ public class LocalRepository {
                 }
             }
 
-            // STEP8: Reset the watch key everytime for continuing to use it for further event polling
             boolean valid = watchKey.reset();
             if (!valid) {
                 break;
