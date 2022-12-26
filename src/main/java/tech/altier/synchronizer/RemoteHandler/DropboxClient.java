@@ -18,6 +18,10 @@ public class DropboxClient {
         client = Main.client;
     }
 
+    public void downloadFile(String remotePath) {
+        // TODO
+    }
+
     public void uploadFile(String path) {
         try (InputStream in = new FileInputStream(path)) {
             log("File upload started: " + path + " on thread: " + Thread.currentThread().getName());
