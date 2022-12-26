@@ -85,7 +85,7 @@
                         <!-- Default configuration for running with: mvn clean javafx:run -->
                         <id>default-cli</id>
                         <configuration>
-                            <mainClass>tech.altier.synchronizer/tech.altier.Synchronizer.Application</mainClass>
+                            <mainClass>tech.altier.synchronizer/tech.altier.synchronizer.Application</mainClass>
                             <launcher>app</launcher>
                             <jlinkZipName>app</jlinkZipName>
                             <jlinkImageName>app</jlinkImageName>
