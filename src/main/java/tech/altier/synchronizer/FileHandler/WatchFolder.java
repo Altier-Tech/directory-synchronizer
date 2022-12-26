@@ -43,7 +43,6 @@ public class WatchFolder {
                     if (kind == StandardWatchEventKinds.ENTRY_CREATE) {
                         System.out.println("A new file is created : " + fileName);
                     }
-
                     if (kind == StandardWatchEventKinds.ENTRY_DELETE) {
                         System.out.println("A file has been deleted: " + fileName);
                     }
