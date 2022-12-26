@@ -22,7 +22,7 @@
             <PasswordField fx:id="accessTokenField" promptText="Access Token"/>
             <Button text="Login" onAction="#onLoginButtonClick"/>
             <Button text="Reset" onAction="#onResetButtonClick"/>
-            
+
         </VBox>
     </center>
 
