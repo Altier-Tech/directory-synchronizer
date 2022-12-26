@@ -2,6 +2,7 @@ package tech.altier.synchronizer;
 
 import javafx.fxml.FXML;
 import javafx.stage.DirectoryChooser;
+
 import tech.altier.Thread.ThreadColor;
 import tech.altier.synchronizer.LocalHandler.LocalRepository;
 
