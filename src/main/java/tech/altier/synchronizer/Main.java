@@ -85,7 +85,11 @@ public class Main {
         }
 
         // Check if each local file exists on the remote server
-        
+        for (String localFile : localFiles) {
+            if (!remoteFiles.contains(localFile)) {
+                // TODO upload it
+            }
+        }
     }
 
     private void populateListViews() throws DbxException {
