@@ -18,7 +18,7 @@ import com.dropbox.core.v2.DbxClientV2;
 import com.dropbox.core.v2.users.FullAccount;
 
 public class Application extends javafx.application.Application {
-    private static final String ACCESS_TOKEN = "sl.BVSCbz9EN5N1HpQ7CjRSIJsrvyop-mM8_d9EcgeEMwLMlh9okStZij2jBKFGVOagYcWadHBWv7cnHxu6EShTIxyUyQ3il0ULBdY7B7-YsbE0hoDgNt3AWihI8TBps4qSKhrrwj6sfFk";
+    private static final String ACCESS_TOKEN = "sl.BVpi0JVjDXpsaF4fd-1n1NdPHlguy_WxZkAiLycQf6F4tp-PUPFRb1D-D3pq_S4xMzUsNrvN6edTBnPyJLBeSLPxnM1QUVTgCvCh1osZe0wgXh24354CJazOhfBfTjvBx6IZlTHh_MQ";
 
     @Override
     public void start(Stage stage) throws IOException {
@@ -29,20 +29,34 @@ public class Application extends javafx.application.Application {
         stage.show();
     }
 
-    public static void main(String[] args) throws DbxException, FileNotFoundException {
+    public static void main(String[] args) throws DbxException, IOException {
 //        launch();
 
         DbxRequestConfig config = DbxRequestConfig.newBuilder("dropbox/java-tutorial").build();
         DbxClientV2 client = new DbxClientV2(config, ACCESS_TOKEN);
-        FullAccount account = client.users().getCurrentAccount();
+
+//        // Get current account info
+//        FullAccount account = client.users().getCurrentAccount();
+//        System.out.println(account.getName().getDisplayName());
+
+//        // Get files and folder metadata from Dropbox root directory
+//        ListFolderResult result = client.files().listFolder("");
+//        while (true) {
+//            for (Metadata metadata : result.getEntries()) {
+//                System.out.println(metadata.getPathLower());
+//            }
+//
+//            if (!result.getHasMore()) {
+//                break;
+//            }
+//
+//            result = client.files().listFolderContinue(result.getCursor());
+//        }
 
         // Upload "test.txt" to Dropbox
-        try (InputStream in = new FileInputStream("test.txt")) { // TODO - Bug: File not found
-            FileMetadata metadata = client.files().uploadBuilder("")
+        try (InputStream in = new FileInputStream("D:\\test.txt")) {
+            FileMetadata metadata = client.files().uploadBuilder("/test.txt")
                     .uploadAndFinish(in);
-        } catch (IOException e) {
-            throw new RuntimeException(e);
         }
-
     }
 }
