@@ -1,21 +1,18 @@
 package tech.altier.synchronizer;
 
-import com.dropbox.core.v2.files.ListFolderResult;
-import com.dropbox.core.v2.files.Metadata;
-import javafx.scene.control.ListView;
-import tech.altier.Thread.ThreadColor;
-import tech.altier.synchronizer.LocalHandler.LocalRepository;
-
 import com.dropbox.core.DbxException;
 import com.dropbox.core.DbxRequestConfig;
 import com.dropbox.core.v2.DbxClientV2;
+import com.dropbox.core.v2.files.ListFolderResult;
+import com.dropbox.core.v2.files.Metadata;
 
-import javafx.scene.control.ListView;
 import javafx.fxml.FXML;
+import javafx.scene.control.ListView;
+
+import tech.altier.Thread.ThreadColor;
+import tech.altier.synchronizer.LocalHandler.LocalRepository;
 
 import java.io.File;
-import java.util.ArrayList;
-import java.util.List;
 
 public class Main {
     public static LocalRepository repository;
