@@ -5,6 +5,7 @@ module tech.altier.synchronizer {
     requires com.dlsc.formsfx;
     requires org.kordamp.bootstrapfx.core;
     requires dropbox.core.sdk;
+    requires javafx.web;
 
     opens tech.altier.synchronizer to javafx.fxml;
     exports tech.altier.synchronizer;
