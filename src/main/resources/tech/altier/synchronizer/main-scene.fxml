@@ -30,7 +30,14 @@
     </center>
 
     <bottom>
-        <!-- TODO add a status bar here -->
+        <VBox>
+            <!-- Controls -->
+            <HBox>
+                
+            </HBox>
+
+            <!-- TODO add a status bar here -->
+        </VBox>
     </bottom>
 
 </BorderPane>
