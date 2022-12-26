@@ -30,15 +30,10 @@ public class Main {
 
         try {
             accountName = client.users().getCurrentAccount().getName().getDisplayName();
+            System.out.println(ThreadColor.ANSI_BLUE + "MainApp: \t" + "Logged in user: " + accountName);
         } catch (DbxException e) {
             System.out.println(ThreadColor.ANSI_RED + "MainApp: \t" + "Error loading user data!");
         }
-    }
-
-    @FXML
-    protected void onHelloButtonClick() {
-        log("Logged in user: " + accountName);
-        welcomeText.setText("Welcome to Altier DirSync " + accountName);
     }
 
     private void log(String message) {
