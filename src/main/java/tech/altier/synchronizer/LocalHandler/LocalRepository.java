@@ -66,6 +66,10 @@ public class LocalRepository {
         }
     }
 
+    public String getPath() {
+        return path;
+    }
+
     private void log(String message) {
         System.out.println(ThreadColor.ANSI_GREEN + "LocalListener: \t" + message);
     }
