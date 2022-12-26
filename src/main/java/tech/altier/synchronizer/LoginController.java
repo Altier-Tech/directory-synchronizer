@@ -41,7 +41,7 @@ public class LoginController {
 
     @FXML
     private void onLoginButtonClick() throws IOException {
-        log("Login button clicked!");
+        log("Authorization Requested: Token + Button");
         ACCESS_TOKEN = accessTokenField.getText();
 
         // Check if null or empty
