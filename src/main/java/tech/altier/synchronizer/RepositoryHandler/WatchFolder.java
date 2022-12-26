@@ -15,7 +15,6 @@ public class WatchFolder {
 
     public void watchFolder() {
         try {
-
             System.out.println("Watching directory for changes");
 
             // STEP1: Create a watch service
