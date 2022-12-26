@@ -49,12 +49,13 @@ public class Main {
 
         startupSync();
 
-//        repository.watch();
+        repository.watch();
     }
 
     @FXML
-    private void sync() {
-        // TODO
+    private void sync() throws DbxException {
+        // TODO for now
+        startupSync();
     }
 
     private void startupSync() throws DbxException {
