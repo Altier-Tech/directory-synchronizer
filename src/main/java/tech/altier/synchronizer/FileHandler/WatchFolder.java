@@ -8,8 +8,6 @@ import java.nio.file.WatchKey;
 import java.nio.file.WatchService;
 
 public class WatchFolder {
-    Path directory = Path.of("D:\\Test");
-
     public static void main(String[] args) {
         WatchFolder watch = new WatchFolder();
         watch.watchFolder();
@@ -17,13 +15,14 @@ public class WatchFolder {
 
     public void watchFolder() {
         try {
-            System.out.println("Listening directory " + directory + " for changes...");
 
             // STEP1: Create a watch service
             WatchService watchService = FileSystems.getDefault().newWatchService();
 
             // STEP2: Get the path of the directory which you want to monitor.
-            directory = Path.of("D:\\Test");
+            Path directory = Path.of("D:\\Test");
+
+            System.out.println("Listening directory " + directory + " for changes...");
 
             // STEP3: Register the directory with the watch service
             WatchKey watchKey = directory.register(watchService, StandardWatchEventKinds.ENTRY_CREATE,
