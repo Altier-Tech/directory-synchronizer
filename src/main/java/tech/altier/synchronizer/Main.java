@@ -53,7 +53,7 @@ public class Main {
     }
 
     @FXML
-    private void sync() throws DbxException {
+    public void sync() throws DbxException {
         // TODO for now
         startupSync();
     }
