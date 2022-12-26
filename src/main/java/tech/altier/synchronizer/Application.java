@@ -9,7 +9,7 @@ import javafx.stage.Stage;
 import java.io.IOException;
 
 public class Application extends javafx.application.Application {
-    private static Stage primaryStage;
+    private Stage primaryStage;
 
     @Override
     public void start(Stage stage) throws IOException {
@@ -26,9 +26,8 @@ public class Application extends javafx.application.Application {
         launch();
     }
 
-    public static void switchToMainStage() {
-        Parent pane = FXMLLoader.load(
-                getClass().getResource(fxml));
+    public void loadMainStage() throws IOException {
+        Parent pane = FXMLLoader.load(getClass().getResource("main-scene.fxml"));
 
         primaryStage.getScene().setRoot(pane);
     }
