@@ -5,10 +5,11 @@ import javafx.stage.DirectoryChooser;
 import tech.altier.Thread.ThreadColor;
 
 import java.io.File;
+import java.io.IOException;
 
 public class SetupController {
     @FXML
-    public void onChooseFolderButtonClick() {
+    public void onChooseFolderButtonClick() throws IOException {
         DirectoryChooser directoryChooser = new DirectoryChooser();
         File selectedDirectory = directoryChooser.showDialog(Application.primaryStage);
 
@@ -16,6 +17,8 @@ public class SetupController {
             //No Directory selected
         } else {
             log(selectedDirectory.getAbsolutePath());
+
+            Application.changeScene("main-scene.fxml");
         }
     }
 
