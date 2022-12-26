@@ -88,6 +88,7 @@ public class Main {
         for (String localFile : localFiles) {
             if (!remoteFiles.contains(localFile)) {
                 // TODO upload it
+                
             }
         }
     }
