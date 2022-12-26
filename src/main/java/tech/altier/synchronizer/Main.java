@@ -1,5 +1,6 @@
 package tech.altier.synchronizer;
 
+import javafx.scene.control.ListView;
 import tech.altier.Thread.ThreadColor;
 import tech.altier.synchronizer.LocalHandler.LocalRepository;
 
@@ -19,6 +20,8 @@ public class Main {
 
     @FXML
     private Label welcomeText;
+    @FXML
+    private ListView<String> listView;
 
     static {
         repository = SetupController.repository;
