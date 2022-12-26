@@ -1,4 +1,4 @@
 package tech.altier.synchronizer;
 
-public class LoginScene {
+public class LoginController {
 }
