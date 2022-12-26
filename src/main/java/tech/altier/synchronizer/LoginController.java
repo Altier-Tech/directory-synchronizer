@@ -28,8 +28,7 @@ public class LoginController {
         }
 
         // Try loading the main scene
-        Application application = new Application();
-        application.loadMainStage();
+        Application.changeScene("main-scene.fxml");
     }
 
 }
