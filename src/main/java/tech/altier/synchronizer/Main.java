@@ -52,8 +52,7 @@ public class Main {
 
     private void startupSync() {
         // Upload local files using FileUploadThread
-        File path = new File(repository.getPath());
-        File[] files = path.listFiles();
+        File[] files = getLocalFiles();
         if (files != null) {
             for (File file : files) {
                 if (file.isFile()) {
@@ -66,8 +65,7 @@ public class Main {
     private void populateListViews() throws DbxException {
         // Local
         listViewLocal.getItems().clear();
-        File path = new File(repository.getPath());
-        File[] files = path.listFiles();
+        File[] files = getLocalFiles();
         if (files != null) {
             for (File file : files) {
                 if (file.isFile()) {
@@ -91,7 +89,7 @@ public class Main {
             result = client.files().listFolderContinue(result.getCursor());
         }
     }
-    
+
     private File[] getLocalFiles() {
         File path = new File(repository.getPath());
         return path.listFiles();
