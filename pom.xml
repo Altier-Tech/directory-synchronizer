@@ -58,6 +58,11 @@
             <artifactId>dropbox-core-sdk</artifactId>
             <version>5.4.4</version>
         </dependency>
+        <dependency>
+            <groupId>org.openjfx</groupId>
+            <artifactId>javafx-web</artifactId>
+            <version>16</version>
+        </dependency>
     </dependencies>
 
     <build>
