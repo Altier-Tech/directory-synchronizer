@@ -20,7 +20,7 @@ public class DropboxClient {
 
     public static void uploadFile(String path) {
         try (InputStream in = new FileInputStream(path)) {
-            log("File upload started: " + path);
+            log("File upload started: " + path + " on thread: " + Thread.currentThread().getName());
             FileMetadata metadata = client.files().uploadBuilder(path)
                     .uploadAndFinish(in);
         } catch (IOException | DbxException e) {
