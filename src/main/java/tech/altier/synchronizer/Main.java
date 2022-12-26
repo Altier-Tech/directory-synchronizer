@@ -53,6 +53,12 @@ public class Main {
 
         log("Logged in user: " + accountName);
         log("Local repository: " + repository.getPath());
+
+        populateListView();
+    }
+
+    private void populateListView() {
+        
     }
 
     private void log(String message) {
