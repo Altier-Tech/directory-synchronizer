@@ -1,4 +1,4 @@
-package tech.altier.synchronizer.FileHandler;
+package tech.altier.synchronizer.LocalHandler;
 
 import tech.altier.Thread.ThreadColor;
 

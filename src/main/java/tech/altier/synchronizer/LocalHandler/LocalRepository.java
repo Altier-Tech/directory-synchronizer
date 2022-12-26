@@ -1,4 +1,4 @@
-package tech.altier.synchronizer.FileHandler;
+package tech.altier.synchronizer.LocalHandler;
 
 public class LocalRepository {
     private String absPath;
