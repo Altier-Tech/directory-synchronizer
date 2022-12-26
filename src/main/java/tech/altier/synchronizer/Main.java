@@ -10,7 +10,7 @@ public class Main {
     private static final String ACCESS_TOKEN;
 
     public static DbxClientV2 client;
-    private static String accountName;
+    private static final String accountName;
 
     @FXML
     private Label welcomeText;
