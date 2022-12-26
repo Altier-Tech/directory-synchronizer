@@ -5,6 +5,7 @@ import com.dropbox.core.DbxRequestConfig;
 import com.dropbox.core.v2.DbxClientV2;
 import javafx.fxml.FXML;
 import javafx.scene.control.Label;
+import tech.altier.Thread.ThreadColor;
 
 public class Main {
     private static final String ACCESS_TOKEN;
@@ -34,5 +35,7 @@ public class Main {
         }
     }
 
-
+    private void log(String message) {
+        System.out.println(ThreadColor.ANSI_RED + "MainApp: \t" + message);
+    }
 }
