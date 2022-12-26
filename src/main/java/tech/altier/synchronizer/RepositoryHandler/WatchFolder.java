@@ -8,14 +8,12 @@ import java.nio.file.WatchKey;
 import java.nio.file.WatchService;
 
 public class WatchFolder {
-
     public static void main(String[] args) {
         WatchFolder watch = new WatchFolder();
         watch.watchFolder();
     }
 
     public void watchFolder() {
-
         try {
 
             System.out.println("Watching directory for changes");
@@ -64,13 +62,9 @@ public class WatchFolder {
                 if (!valid) {
                     break;
                 }
-
             }
-
         } catch (Exception e) {
             e.printStackTrace();
         }
-
     }
-
 }
