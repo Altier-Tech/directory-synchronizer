@@ -15,7 +15,6 @@ public class WatchFolder {
 
     public void watchFolder() {
         try {
-
             // STEP1: Create a watch service
             WatchService watchService = FileSystems.getDefault().newWatchService();
 
@@ -42,16 +41,13 @@ public class WatchFolder {
 
                     // STEP7: Perform necessary action with the event
                     if (kind == StandardWatchEventKinds.ENTRY_CREATE) {
-
                         System.out.println("A new file is created : " + fileName);
                     }
 
                     if (kind == StandardWatchEventKinds.ENTRY_DELETE) {
-
                         System.out.println("A file has been deleted: " + fileName);
                     }
                     if (kind == StandardWatchEventKinds.ENTRY_MODIFY) {
-
                         System.out.println("A file has been modified: " + fileName);
                     }
                 }
