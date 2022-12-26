@@ -1,10 +1,11 @@
 package tech.altier.synchronizer.RemoteHandler;
 
+import tech.altier.Thread.ThreadColor;
+import tech.altier.synchronizer.Main;
+
 import com.dropbox.core.DbxException;
 import com.dropbox.core.v2.DbxClientV2;
 import com.dropbox.core.v2.files.FileMetadata;
-import tech.altier.Thread.ThreadColor;
-import tech.altier.synchronizer.Main;
 
 import java.io.FileInputStream;
 import java.io.IOException;
