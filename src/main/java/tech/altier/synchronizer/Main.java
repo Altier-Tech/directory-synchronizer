@@ -24,8 +24,10 @@ public class Main {
 
     @FXML
     private ListView<String> listViewLocal;
+    @FXML
+    private ListView<String> listViewRemote;
 
-    public void initialize() {
+    public void initialize() throws DbxException {
         repository = SetupController.repository;
 
         String ACCESS_TOKEN = LoginController.ACCESS_TOKEN;
@@ -60,11 +62,10 @@ public class Main {
         }
 
         // Remote
-        List<String> remoteFiles = new ArrayList<>();
         ListFolderResult result = client.files().listFolder("");
         while (true) {
             for (Metadata metadata : result.getEntries()) {
-                remoteFiles.add(metadata.getName());
+                listViewRemote.getItems().add(metadata.getName());
             }
 
             if (!result.getHasMore()) {
@@ -73,7 +74,6 @@ public class Main {
 
             result = client.files().listFolderContinue(result.getCursor());
         }
-        
     }
 
     private void log(String message) {
