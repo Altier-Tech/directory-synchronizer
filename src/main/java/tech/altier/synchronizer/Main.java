@@ -88,7 +88,9 @@ public class Main {
         for (String localFile : localFiles) {
             if (!remoteFiles.contains(localFile)) {
                 // TODO upload it
-                
+                Thread uploadThread = new Thread(
+                        new FileUploadThread(repository.getPath() + "\\" + localFile)
+                );
             }
         }
     }
