@@ -2,6 +2,7 @@ package tech.altier.synchronizer.LocalHandler;
 
 import tech.altier.Thread.ThreadColor;
 
+import java.io.IOException;
 import java.nio.file.FileSystems;
 import java.nio.file.Path;
 import java.nio.file.StandardWatchEventKinds;
@@ -14,6 +15,16 @@ public class LocalRepository {
 
     public LocalRepository(String path) {
         this.path = path;
+    }
+
+    public void watch() throws IOException {
+        WatchService watchService = FileSystems.getDefault().newWatchService();
+
+        Path directory = Path.of(path);
+
+        log("Listening directory " + directory + " for changes...");
+
+
     }
 
     private void log(String message) {
