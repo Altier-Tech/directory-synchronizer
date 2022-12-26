@@ -1,5 +1,7 @@
 package tech.altier.synchronizer.FileHandler;
 
+import tech.altier.synchronizer.Thread.ThreadColor;
+
 import java.nio.file.FileSystems;
 import java.nio.file.Path;
 import java.nio.file.StandardWatchEventKinds;
@@ -21,7 +23,7 @@ public class WatchFolder {
             // STEP2: Get the path of the directory which you want to monitor.
             Path directory = Path.of("D:\\Test");
 
-            System.out.println("Listening directory " + directory + " for changes...");
+            log("Listening directory " + directory + " for changes...");
 
             // STEP3: Register the directory with the watch service
             WatchKey watchKey = directory.register(watchService, StandardWatchEventKinds.ENTRY_CREATE,
@@ -41,13 +43,13 @@ public class WatchFolder {
 
                     // STEP7: Perform necessary action with the event
                     if (kind == StandardWatchEventKinds.ENTRY_CREATE) {
-                        System.out.println("A new file is created : " + fileName);
+                        log("A new file is created : " + fileName);
                     }
                     if (kind == StandardWatchEventKinds.ENTRY_DELETE) {
-                        System.out.println("A file has been deleted: " + fileName);
+                        log("A file has been deleted: " + fileName);
                     }
                     if (kind == StandardWatchEventKinds.ENTRY_MODIFY) {
-                        System.out.println("A file has been modified: " + fileName);
+                        log("A file has been modified: " + fileName);
                     }
                 }
 
@@ -60,5 +62,9 @@ public class WatchFolder {
         } catch (Exception e) {
             e.printStackTrace();
         }
+    }
+
+    private void log(String message) {
+        System.out.println(ThreadColor.ANSI_GREEN + "DirListener: \t" + message);
     }
 }
