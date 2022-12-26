@@ -1,4 +1,4 @@
-package tech.altier.synchronizer.Thread;
+package tech.altier.Thread;
 
 public class ThreadColor {
     public static final String ANSI_RESET = "\u001B[0m";
