@@ -3,6 +3,9 @@
 <?import javafx.scene.layout.BorderPane?>
 
 <?import javafx.scene.control.ListView?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.control.Label?>
 <BorderPane xmlns:fx="http://javafx.com/fxml"
             fx:controller="tech.altier.synchronizer.Main">
 
@@ -11,7 +14,13 @@
     </top>
 
     <center>
-        <ListView fx:id="listView" />
+        <HBox>
+            <VBox>
+                <Label text="DropBox"/>
+                <ListView fx:id="listViewRemote" />
+            </VBox>
+            <ListView fx:id="listViewLocal" />
+        </HBox>
     </center>
 
     <bottom>
