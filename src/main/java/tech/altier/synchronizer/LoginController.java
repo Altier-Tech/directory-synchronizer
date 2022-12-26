@@ -1,11 +1,14 @@
 package tech.altier.synchronizer;
 
 import javafx.fxml.FXML;
+import javafx.scene.control.Label;
 import javafx.scene.control.PasswordField;
 
 public class LoginController {
     @FXML
     private PasswordField accessTokenField;
+    @FXML
+    private Label label;
 
     public static String ACCESS_TOKEN;
 
@@ -15,8 +18,7 @@ public class LoginController {
         ACCESS_TOKEN = accessTokenField.getText();
 
         if (ACCESS_TOKEN == null || ACCESS_TOKEN.isEmpty()) {
-            // Need to show the login scene
-
+            label.setText("Please enter a valid access token!");
         }
     }
 }
