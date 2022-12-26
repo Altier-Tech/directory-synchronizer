@@ -1,4 +1,4 @@
 # Dir Sync
 
 A Repository / Directory Synchronizer  
-Made by using Dropbox API and Java.
+Made using Dropbox API and Java.
