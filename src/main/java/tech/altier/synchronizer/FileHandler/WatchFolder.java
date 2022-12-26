@@ -1,4 +1,4 @@
-package tech.altier.synchronizer.RepositoryHandler;
+package tech.altier.synchronizer.FileHandler;
 
 import java.nio.file.FileSystems;
 import java.nio.file.Path;
