@@ -7,6 +7,8 @@ import javafx.scene.Scene;
 import javafx.scene.control.Label;
 import javafx.scene.control.PasswordField;
 
+import java.io.IOException;
+
 public class LoginController {
     @FXML
     private PasswordField accessTokenField;
@@ -16,7 +18,7 @@ public class LoginController {
     public static String ACCESS_TOKEN;
 
     @FXML
-    private void onLoginButtonClick() {
+    private void onLoginButtonClick() throws IOException {
         System.out.println("Login button clicked!");
         ACCESS_TOKEN = accessTokenField.getText();
 
@@ -26,7 +28,7 @@ public class LoginController {
         }
 
         // Try loading the main scene
-        Application.switchToMainStage();
+        Application.loadMainStage();
     }
 
 }
