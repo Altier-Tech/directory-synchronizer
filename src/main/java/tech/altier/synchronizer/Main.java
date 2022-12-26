@@ -15,6 +15,8 @@ import tech.altier.synchronizer.LocalHandler.LocalRepository;
 
 import java.io.File;
 import java.io.IOException;
+import java.util.ArrayList;
+import java.util.List;
 
 public class Main {
     public static LocalRepository repository;
@@ -53,6 +55,7 @@ public class Main {
     private void startupSync() {
         // Upload local files using FileUploadThread
         File[] files = getLocalFiles();
+        List<String> localFiles = new ArrayList<>();
         if (files != null) {
             for (File file : files) {
                 if (file.isFile()) {
