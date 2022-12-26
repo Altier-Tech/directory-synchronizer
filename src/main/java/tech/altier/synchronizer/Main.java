@@ -11,6 +11,8 @@ import com.dropbox.core.v2.DbxClientV2;
 import javafx.scene.control.ListView;
 import javafx.fxml.FXML;
 
+import java.io.File;
+
 public class Main {
     public static LocalRepository repository;
     public static DbxClientV2 client;
@@ -57,7 +59,17 @@ public class Main {
     }
 
     private void populateListView() {
-`
+        listView.getItems().clear();
+
+        File path = new File(repository.getPath());
+        File[] files = path.listFiles();
+        if (files != null) {
+            for (File file : files) {
+                if (file.isFile()) {
+                    listView.getItems().add(file.getName());
+                }
+            }
+        }
     }
 
     private void log(String message) {
