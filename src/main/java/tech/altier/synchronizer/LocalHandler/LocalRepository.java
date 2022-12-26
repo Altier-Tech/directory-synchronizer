@@ -36,21 +36,21 @@ public class LocalRepository {
 
                 WatchEvent<Path> pathEvent = (WatchEvent<Path>) event;
 
-                Path fileName = pathEvent.context();
+                Path filePath = pathEvent.context();
 
                 WatchEvent.Kind<?> kind = event.kind();
 
                 if (kind == StandardWatchEventKinds.ENTRY_CREATE) {
-                    log("A new file is created : " + fileName);
+                    log("A new file is created : " + filePath);
 
                     // Handle file creation
-                    FileHandler.handleCreate (fileName);
+                    FileHandler.handleCreate (filePath);
                 }
                 if (kind == StandardWatchEventKinds.ENTRY_DELETE) {
-                    log("A file has been deleted: " + fileName);
+                    log("A file has been deleted: " + filePath);
                 }
                 if (kind == StandardWatchEventKinds.ENTRY_MODIFY) {
-                    log("A file has been modified: " + fileName);
+                    log("A file has been modified: " + filePath);
                 }
             }
 
