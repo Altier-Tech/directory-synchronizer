@@ -6,6 +6,7 @@
 <?import javafx.scene.layout.HBox?>
 <?import javafx.scene.layout.VBox?>
 <?import javafx.scene.control.Label?>
+<?import javafx.scene.control.Button?>
 <BorderPane xmlns:fx="http://javafx.com/fxml"
             fx:controller="tech.altier.synchronizer.Main">
 
@@ -33,7 +34,7 @@
         <VBox>
             <!-- Controls -->
             <HBox>
-                
+                <Button text="Sync" onAction="#sync" />
             </HBox>
 
             <!-- TODO add a status bar here -->
