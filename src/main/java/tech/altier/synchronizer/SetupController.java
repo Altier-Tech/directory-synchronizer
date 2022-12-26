@@ -11,6 +11,8 @@ import java.io.IOException;
 import static tech.altier.synchronizer.LocalHandler.LocalRepository.setupRepositoryOnDir;
 
 public class SetupController {
+    public static LocalRepository repository;
+    
     @FXML
     public void onChooseFolderButtonClick() throws IOException {
         DirectoryChooser directoryChooser = new DirectoryChooser();
@@ -21,7 +23,7 @@ public class SetupController {
         } else {
             log(selectedDirectory.getAbsolutePath());
 
-            LocalRepository repository = setupRepositoryOnDir (selectedDirectory.getAbsolutePath());
+            repository = setupRepositoryOnDir (selectedDirectory.getAbsolutePath());
 
             Application.changeScene("main-scene.fxml");
         }
