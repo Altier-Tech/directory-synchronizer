@@ -49,7 +49,7 @@ public class LoginController {
             label.setText("Please enter a valid access token!");
         }
 
-        Application.changeScene("main-scene.fxml");
+        Application.changeScene("setup-scene.fxml");
     }
 
     private void log(String message) {
