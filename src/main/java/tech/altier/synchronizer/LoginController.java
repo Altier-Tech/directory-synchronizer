@@ -26,15 +26,7 @@ public class LoginController {
         }
 
         // Try loading the main scene
-        switchToMainStage();
-    }
-
-    private void switchToMainStage() {
-        Parent pane = FXMLLoader.load(
-                getClass().getResource(fxml));
-
-        Scene scene = new Scene( pane );
-        primaryStage.setScene(scene);
+        Application.switchToMainStage();
     }
 
 }
