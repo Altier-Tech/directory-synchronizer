@@ -17,6 +17,7 @@ public class LoginController {
         System.out.println("Login button clicked!");
         ACCESS_TOKEN = accessTokenField.getText();
 
+        // Check if null or empty
         if (ACCESS_TOKEN == null || ACCESS_TOKEN.isEmpty()) {
             label.setText("Please enter a valid access token!");
         }
