@@ -8,6 +8,6 @@ module tech.altier.synchronizer {
     requires javafx.web;
     requires java.desktop;
 
-    opens tech.altier.synchronizer to javafx.fxml;
-    exports tech.altier.synchronizer;
+    opens tech.altier.Synchronizer to javafx.fxml;
+    exports tech.altier.Synchronizer;
 }
