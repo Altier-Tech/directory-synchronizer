@@ -31,7 +31,7 @@ public class Main {
         try {
             accountName = client.users().getCurrentAccount().getName().getDisplayName();
         } catch (DbxException e) {
-            throw new RuntimeException(e);
+            System.out.println(ThreadColor.ANSI_RED + "MainApp: \t" + "Error loading user data!");
         }
     }
 
