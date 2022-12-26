@@ -18,6 +18,8 @@ public class SetupController {
         } else {
             log(selectedDirectory.getAbsolutePath());
 
+            setupRepositoryOnDir (selectedDirectory.getAbsolutePath());
+
             Application.changeScene("main-scene.fxml");
         }
     }
