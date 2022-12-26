@@ -80,7 +80,7 @@ public class Main {
                 // If the current file doesn't exist
                 if (!localFiles.contains(metadata.getName())) {
                     // TODO download it
-                    log("File " + metadata.getName() + " doesn't exist locally!")
+                    log("File " + metadata.getName() + " doesn't exist locally!");
                 }
             }
 
