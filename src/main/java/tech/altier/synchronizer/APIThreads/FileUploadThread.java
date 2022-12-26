@@ -1,4 +1,4 @@
-package tech.altier.synchronizer.LocalHandler;
+package tech.altier.synchronizer.APIThreads;
 
 public class FileUploadThread implements Runnable {
     private String path;
@@ -9,6 +9,6 @@ public class FileUploadThread implements Runnable {
 
     @Override
     public void run() {
-        // TODO upload file
+
     }
 }
