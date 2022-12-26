@@ -1,6 +1,5 @@
 package tech.altier.synchronizer;
 
-import com.dropbox.core.DbxException;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
@@ -23,7 +22,7 @@ public class Application extends javafx.application.Application {
         primaryStage = stage;
     }
 
-    public static void main(String[] args) throws DbxException, IOException {
+    public static void main(String[] args) {
         launch();
     }
 
