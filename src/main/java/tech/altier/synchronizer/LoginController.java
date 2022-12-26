@@ -9,7 +9,10 @@ import javafx.scene.control.PasswordField;
 import javafx.scene.web.WebEngine;
 import javafx.scene.web.WebView;
 
+import java.awt.*;
 import java.io.IOException;
+import java.net.URI;
+import java.net.URISyntaxException;
 
 public class LoginController {
     @FXML
@@ -19,18 +22,17 @@ public class LoginController {
     @FXML
     private Label label;
 
-    final WebView browser = new WebView();
-    final WebEngine webEngine = browser.getEngine();
-
     public static String ACCESS_TOKEN;
     public static String loginURL;
 
     public void initialize() {
         loginURL = "https://www.dropbox.com/oauth2/authorize?client_id=znj7h8gmdmevoz0&token_access_type=offline&response_type=code";
-        generateTokenLink.setOnAction(new EventHandler<ActionEvent>() {
-            @Override
-            public void handle(ActionEvent e) {
-                webEngine.load(loginURL);
+        generateTokenLink.setOnAction(e -> {
+            Desktop desk = Desktop.getDesktop();
+            try {
+                desk.browse(new URI(loginURL));
+            } catch (IOException | URISyntaxException ex) {
+                throw new RuntimeException(ex);
             }
         });
     }
