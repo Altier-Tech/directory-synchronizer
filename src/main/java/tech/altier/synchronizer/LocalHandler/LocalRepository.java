@@ -42,15 +42,15 @@ public class LocalRepository {
 
                 if (kind == StandardWatchEventKinds.ENTRY_CREATE) {
                     log("A new file is created : " + filePath);
-
-                    // Handle file creation
-                    FileHandler.handleCreate (filePath);
+                    FileHandler.handleLocalCreate (filePath);
                 }
                 if (kind == StandardWatchEventKinds.ENTRY_DELETE) {
                     log("A file has been deleted: " + filePath);
+                    FileHandler.handleLocalDelete (filePath);
                 }
                 if (kind == StandardWatchEventKinds.ENTRY_MODIFY) {
                     log("A file has been modified: " + filePath);
+                    FileHandler.handleLocalModify (filePath);
                 }
             }
 
