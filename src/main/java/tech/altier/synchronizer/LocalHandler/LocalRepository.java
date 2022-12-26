@@ -1,7 +1,5 @@
 package tech.altier.synchronizer.LocalHandler;
 
-import java.io.File;
-
 public class LocalRepository {
     private String path;
 
