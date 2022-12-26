@@ -20,7 +20,7 @@ public class SetupController {
         File selectedDirectory = directoryChooser.showDialog(Application.primaryStage);
 
         if (selectedDirectory == null) {
-            //No Directory selected
+            throw new IOException("No directory selected!");
         } else {
             log(selectedDirectory.getAbsolutePath());
 
