@@ -9,7 +9,7 @@ import javafx.stage.Stage;
 
 import java.io.IOException;
 
-public class LoginController extends javafx.application.Application {
+public class LoginController {
     @FXML
     private PasswordField accessTokenField;
     @FXML
@@ -28,15 +28,11 @@ public class LoginController extends javafx.application.Application {
         }
 
         // Try loading the main scene
-        launch();
+        switchToMainStage();
     }
 
-    @Override
-    public void start(Stage stage) throws IOException {
-        FXMLLoader fxmlLoader = new FXMLLoader(Application.class.getResource("main-scene.fxml"));
-        Scene scene = new Scene(fxmlLoader.load(), 320, 240);
-        stage.setTitle("DirSync");
-        stage.setScene(scene);
-        stage.show();
+    private void switchToMainStage() {
+        
     }
+
 }
