@@ -19,8 +19,6 @@ public class Main {
     private static String accountName = "ERR!";
 
     @FXML
-    private Label welcomeText;
-    @FXML
     private ListView<String> listView;
 
     static {
