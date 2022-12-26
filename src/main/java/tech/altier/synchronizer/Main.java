@@ -36,6 +36,6 @@ public class Main {
     }
 
     private void log(String message) {
-        System.out.println(ThreadColor.ANSI_RED + "MainApp: \t" + message);
+        System.out.println(ThreadColor.ANSI_BLUE + "MainApp: \t" + message);
     }
 }
