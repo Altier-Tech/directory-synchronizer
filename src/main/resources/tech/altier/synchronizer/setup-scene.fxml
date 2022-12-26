@@ -1,18 +1,21 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
-<?import javafx.scene.layout.BorderPane?>
-<?import javafx.scene.layout.VBox?>
-<?import javafx.scene.control.Label?>
-<?import javafx.scene.control.Button?>
-<BorderPane xmlns="http://javafx.com/javafx"
-            xmlns:fx="http://javafx.com/fxml"
-            fx:controller="tech.altier.synchronizer.SetupController"
-            prefHeight="400.0" prefWidth="600.0">
+<?import javafx.geometry.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<BorderPane prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/17.0.2-ea" xmlns:fx="http://javafx.com/fxml/1" fx:controller="tech.altier.synchronizer.SetupController">
 
     <center>
-            <VBox>
-                <Label text="Select the folder you want to sync." />
-                <Button text="Choose Folder" onAction="#onChooseFolderButtonClick" />
+            <VBox alignment="CENTER">
+                <Label text="Select the folder you want to sync.">
+            <opaqueInsets>
+               <Insets />
+            </opaqueInsets>
+            <padding>
+               <Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
+            </padding></Label>
+                <Button onAction="#onChooseFolderButtonClick" text="Choose Folder" />
             </VBox>
     </center>
 
