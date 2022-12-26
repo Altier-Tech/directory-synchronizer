@@ -9,7 +9,7 @@ import java.io.IOException;
 import java.util.Objects;
 
 public class Application extends javafx.application.Application {
-    private static Stage primaryStage;
+    public static Stage primaryStage;
 
     @Override
     public void start(Stage stage) throws IOException {
