@@ -14,11 +14,11 @@ import java.io.InputStream;
 public class DropboxClient {
     public static DbxClientV2 client;
 
-    static {
+    public DropboxClient() {
         client = Main.client;
     }
 
-    public static void uploadFile(String path) {
+    public void uploadFile(String path) {
         try (InputStream in = new FileInputStream(path)) {
             log("File upload started: " + path + " on thread: " + Thread.currentThread().getName());
             FileMetadata metadata = client.files().uploadBuilder(path)
@@ -28,7 +28,7 @@ public class DropboxClient {
         }
     }
 
-    private static void log(String message) {
+    private void log(String message) {
         System.out.println(ThreadColor.ANSI_CYAN + "DBClient: \t" + message);
     }
 }
