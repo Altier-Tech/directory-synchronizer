@@ -1,6 +1,6 @@
 package tech.altier.synchronizer.FileHandler;
 
-import tech.altier.synchronizer.Thread.ThreadColor;
+import tech.altier.Thread.ThreadColor;
 
 import java.nio.file.FileSystems;
 import java.nio.file.Path;
