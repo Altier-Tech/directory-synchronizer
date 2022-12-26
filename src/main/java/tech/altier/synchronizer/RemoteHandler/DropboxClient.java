@@ -6,7 +6,11 @@ import tech.altier.synchronizer.Main;
 public class DropboxClient {
     public static DbxClientV2 client;
 
-    public DropboxClient () {
+    static {
         client = Main.client;
+    }
+
+    public static void uploadFile(String path) {
+        
     }
 }
