@@ -68,7 +68,7 @@ public class Main {
                 }
             }
         }
-        log("Listing local files.... Done!")
+        log("Listing local files.... Done!");
 
         // Check if each remote file exists locally
         List<String> remoteFiles = new ArrayList<>();
