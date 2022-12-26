@@ -52,16 +52,36 @@ public class Main {
         repository.watch();
     }
 
-    private void startupSync() {
-        // Upload local files using FileUploadThread
+    private void startupSync() throws DbxException {
+        // List local files
         File[] files = getLocalFiles();
         List<String> localFiles = new ArrayList<>();
         if (files != null) {
             for (File file : files) {
                 if (file.isFile()) {
-                    listViewLocal.getItems().add(file.getName());
+                    localFiles.add(file.getName());
                 }
             }
+        }
+
+        // Check if each remote file exists locally
+        List<String> remoteFiles = new ArrayList<>();
+        ListFolderResult result = client.files().listFolder("");
+        while (true) {
+            for (Metadata metadata : result.getEntries()) {
+                remoteFiles.add(metadata.getName());
+
+                // If the current file doesn't exist
+                if (!localFiles.contains(metadata.getName())) {
+                    // TODO download it
+                }
+            }
+
+            if (!result.getHasMore()) {
+                break;
+            }
+
+            result = client.files().listFolderContinue(result.getCursor());
         }
     }
 
