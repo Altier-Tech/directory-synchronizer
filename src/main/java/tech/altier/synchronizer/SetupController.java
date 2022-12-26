@@ -12,7 +12,7 @@ import static tech.altier.synchronizer.LocalHandler.LocalRepository.setupReposit
 
 public class SetupController {
     public static LocalRepository repository;
-    
+
     @FXML
     public void onChooseFolderButtonClick() throws IOException {
         DirectoryChooser directoryChooser = new DirectoryChooser();
