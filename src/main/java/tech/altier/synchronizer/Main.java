@@ -8,12 +8,11 @@ import com.dropbox.core.DbxException;
 import com.dropbox.core.DbxRequestConfig;
 import com.dropbox.core.v2.DbxClientV2;
 
+import javafx.scene.control.ListView;
 import javafx.fxml.FXML;
 
 public class Main {
     public static LocalRepository repository;
-    private static String ACCESS_TOKEN;
-
     public static DbxClientV2 client;
     private static String accountName = "ERR!";
 
@@ -21,26 +20,26 @@ public class Main {
     private ListView<String> listView;
 
     /*
-    static {
-        repository = SetupController.repository;
+        static {
+            repository = SetupController.repository;
 
-        ACCESS_TOKEN = LoginController.ACCESS_TOKEN;
+            ACCESS_TOKEN = LoginController.ACCESS_TOKEN;
 
-        DbxRequestConfig config = DbxRequestConfig.newBuilder("Altier").build();
-        client = new DbxClientV2(config, ACCESS_TOKEN);
+            DbxRequestConfig config = DbxRequestConfig.newBuilder("Altier").build();
+            client = new DbxClientV2(config, ACCESS_TOKEN);
 
-        try {
-            accountName = client.users().getCurrentAccount().getName().getDisplayName();
-        } catch (DbxException e) {
-            System.out.println(ThreadColor.ANSI_RED + "MainApp: \t" + "Error loading user data!");
+            try {
+                accountName = client.users().getCurrentAccount().getName().getDisplayName();
+            } catch (DbxException e) {
+                System.out.println(ThreadColor.ANSI_RED + "MainApp: \t" + "Error loading user data!");
+            }
         }
-    }
     */
 
     public void initialize() {
         repository = SetupController.repository;
 
-        ACCESS_TOKEN = LoginController.ACCESS_TOKEN;
+        String ACCESS_TOKEN = LoginController.ACCESS_TOKEN;
 
         DbxRequestConfig config = DbxRequestConfig.newBuilder("Altier").build();
         client = new DbxClientV2(config, ACCESS_TOKEN);
@@ -58,7 +57,7 @@ public class Main {
     }
 
     private void populateListView() {
-        
+
     }
 
     private void log(String message) {
