@@ -49,7 +49,12 @@ public class Main {
 
         startupSync();
 
-        repository.watch();
+//        repository.watch();
+    }
+
+    @FXML
+    private void sync() {
+        // TODO
     }
 
     private void startupSync() throws DbxException {
@@ -63,6 +68,7 @@ public class Main {
                 }
             }
         }
+        log("Listing local files.... Done!")
 
         // Check if each remote file exists locally
         List<String> remoteFiles = new ArrayList<>();
@@ -74,6 +80,7 @@ public class Main {
                 // If the current file doesn't exist
                 if (!localFiles.contains(metadata.getName())) {
                     // TODO download it
+                    log("File " + metadata.getName() + " doesn't exist locally!")
                 }
             }
 
