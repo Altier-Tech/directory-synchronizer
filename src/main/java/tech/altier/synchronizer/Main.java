@@ -94,6 +94,7 @@ public class Main {
         // Check if each local file exists on the remote server
         for (String localFile : localFiles) {
             if (!remoteFiles.contains(localFile)) {
+                log("File " + localFile + " doesn't exist remotely! Uploading...");
                 // TODO upload it
                 Thread uploadThread = new Thread(
                         new FileUploadThread(repository.getPath() + "\\" + localFile)
