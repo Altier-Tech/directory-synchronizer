@@ -12,9 +12,12 @@ public class RemoteListener implements Runnable {
     private ListFolderResult remoteFileListResult;
     DbxClientV2 client;
 
+    static {
+        remoteFilesInstance = RemoteFiles.getInstance();
+    }
+
     public RemoteListener() {
         client = Main.client;
-        remoteFilesInstance = RemoteFiles.getInstance();
     }
 
     @Override
