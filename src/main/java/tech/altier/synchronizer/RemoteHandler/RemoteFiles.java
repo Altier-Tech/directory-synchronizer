@@ -54,6 +54,12 @@ public class RemoteFiles {
         }
     }
 
+    /**
+     * Returns a ListFolderResult object that contains the detailed information
+     * of the files in the remote repository.
+     * @return ListFolderResult object that contains the detailed information
+     * @throws DbxException If an error occurs while communicating with Dropbox
+     */
     public ListFolderResult getDetailedRemoteFileInfo() throws DbxException {
         return client.files()
                 .listFolderBuilder("")
