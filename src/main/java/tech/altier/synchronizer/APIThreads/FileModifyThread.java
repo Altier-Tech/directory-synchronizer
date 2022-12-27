@@ -3,6 +3,7 @@ package tech.altier.synchronizer.APIThreads;
 import com.dropbox.core.DbxException;
 
 import tech.altier.Thread.ThreadColor;
+import tech.altier.synchronizer.Main;
 import tech.altier.synchronizer.RemoteHandler.DropboxClient;
 
 public class FileModifyThread implements Runnable {
@@ -29,7 +30,7 @@ public class FileModifyThread implements Runnable {
         try {
             // Step 2 - Upload the local file
             log("Uploading local file " + path);
-            client.uploadFile(path);
+            client.uploadFile(Main.repository.getPath() + "\\" + path);
             log("Local file uploaded " + path);
         } catch (DbxException e) {
             throw new RuntimeException(e);
