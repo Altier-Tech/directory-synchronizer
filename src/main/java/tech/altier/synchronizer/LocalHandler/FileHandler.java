@@ -31,13 +31,12 @@ public class FileHandler {
         alert.getButtonTypes().setAll(okButton, noButton, cancelButton);
         alert.showAndWait().ifPresent(type -> {
             if (type == ButtonType.OK) {
+                // If yes, delete the file from the remote repository
+                // TODO
             } else if (type == ButtonType.NO) {
             } else {
             }
         });
-
-        // If yes, delete the file from the remote repository
-
     }
 
     public void handleLocalModify(Path filePath) { // TODO
