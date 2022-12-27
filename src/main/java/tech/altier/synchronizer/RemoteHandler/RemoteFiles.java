@@ -30,7 +30,7 @@ public class RemoteFiles {
     /**
      * Populates the local database that contains the paths and the hashes
      * of the files in the remote repository.
-     * @throws DbxException if an error occurs while communicating with Dropbox
+     * @throws DbxException If an error occurs while communicating with Dropbox
      */
     private void populateRemoteFilesInfo() throws DbxException {
         ListFolderResult result = client.files()
