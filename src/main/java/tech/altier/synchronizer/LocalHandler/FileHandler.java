@@ -28,6 +28,11 @@ public class FileHandler {
     }
 
     private void log(String message) {
-        System.out.println(ThreadColor.ANSI_CYAN + "FileHandler: \t" + message);
+        System.out.println(
+                ThreadColor.ANSI_CYAN +
+                Thread.currentThread().getName() +
+                "FileHandler: \t" +
+                message
+        );
     }
 }
