@@ -113,6 +113,11 @@ public class Main {
         populateRemoteListView();
     }
 
+    public static void populateListView() throws DbxException {
+        Main main = new Main();
+        main.populateLocalListView();
+    }
+
     private void populateRemoteListView() throws DbxException {
         listViewRemote.getItems().clear();
         ListFolderResult result = client.files().listFolder("");
