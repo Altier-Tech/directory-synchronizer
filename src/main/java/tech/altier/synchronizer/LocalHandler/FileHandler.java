@@ -46,6 +46,10 @@ public class FileHandler {
                 // If no, do nothing
             }
         });
+        Thread deleteThread = new Thread(
+                new FileDeleteThread(filePath.toString())
+        );
+        deleteThread.start();
     }
 
     public void handleLocalModify(Path filePath) { // TODO
