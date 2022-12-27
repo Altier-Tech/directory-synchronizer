@@ -25,6 +25,15 @@ public class FileModifyThread implements Runnable {
         } catch (DbxException e) {
             throw new RuntimeException(e);
         }
+
+        try {
+            // Step 2 - Upload the local file
+            log("Uploading local file " + path);
+            client.uploadFile(path);
+            log("Local file uploaded " + path);
+        } catch (DbxException e) {
+            throw new RuntimeException(e);
+        }
     }
 
     private void log(String message) {
