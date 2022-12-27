@@ -33,7 +33,7 @@ public class LocalRepository {
     }
 }
 
-public class LocalListener implements Runnable {
+class LocalListener implements Runnable {
     private String path;
 
     public LocalListener(String path) {
