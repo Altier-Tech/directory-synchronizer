@@ -15,7 +15,7 @@ public class RemoteListener implements Runnable {
     static RemoteFileInfo remoteFileInfo;
     private ListFolderResult remoteFileListResult;
     private HashMap<String, String> tempRemoteFileInfo;
-    
+
     DbxClientV2 client;
 
     static {
@@ -51,7 +51,7 @@ public class RemoteListener implements Runnable {
 
                 assert fileMetadata != null;
 
-                // Case 1 : File is new
+                // Case 1: File is new
                 if (!remoteFileInfo.containsKey(metadata.getPathLower())) {
                     // TODO Doesn't exist, so need to download the remote file
 
@@ -64,8 +64,10 @@ public class RemoteListener implements Runnable {
                     // TODO Step 2: Download the remote file
                 }
 
-                // Add the metadata to a temporary map for stage 2 tests
+                // Add the metadata to a temporary map for test Case 3
+                tempRemoteFileInfo.put(metadata.getPathLower(), fileMetadata.getContentHash());
 
+                // Case 3: Check if any files have been deleted
             }
 
             if (!remoteFileListResult.getHasMore()) {
