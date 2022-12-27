@@ -9,8 +9,6 @@ import static tech.altier.synchronizer.Main.repository;
 
 public class FileHandler {
     public void handleLocalCreate(Path filePath) {
-        // TODO recall listview population function
-
         log("Upload thread started for new created file...");
         Thread uploadThread = new Thread(
                 new FileUploadThread(repository.getPath() + "\\" + filePath)
