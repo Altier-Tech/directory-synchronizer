@@ -57,7 +57,7 @@ public class Main {
 
         repository.startListening();
 
-        
+
     }
 
     @FXML
@@ -162,7 +162,6 @@ public class Main {
                 @Override
                 protected Void call(){
                     Platform.runLater(() -> {
-                        /* Modify you GUI properties... */
                         try {
                             populateRemoteListView();
                         } catch (DbxException e) {
