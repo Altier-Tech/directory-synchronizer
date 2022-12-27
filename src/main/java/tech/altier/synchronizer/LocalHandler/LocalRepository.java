@@ -35,9 +35,11 @@ public class LocalRepository {
 
 class LocalListener implements Runnable {
     private String path;
+    private FileHandler fileHandler;
 
     public LocalListener(String path) {
         this.path = path;
+        fileHandler = new FileHandler();
     }
 
     public void watch() throws IOException {
