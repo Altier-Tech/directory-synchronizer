@@ -12,7 +12,7 @@ public class FileDownloadThread implements Runnable {
     private final DropboxClient client;
 
     public FileDownloadThread(String path) {
-        log("Upload thread initialized for file " + path);
+        log("Download thread initialized for file " + path);
         this.path = path;
         client = new DropboxClient();
     }
