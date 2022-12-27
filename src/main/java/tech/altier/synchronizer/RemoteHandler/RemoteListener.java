@@ -47,12 +47,16 @@ public class RemoteListener implements Runnable {
 
                 assert fileMetadata != null;
 
-                // IsModified - Check if both hashes are the same
-                if () {
-
+                // Case 1 : File is new
+                if (!remoteFileInfo.containsKey(metadata.getPathLower())) {
+                    // Doesn't exist, so need to download the remote file
                 } else if (!remoteFileInfo.get(metadata.getPathLower()).equals(fileMetadata.getContentHash())) {
-                    // Not the same, so need to download the remote file
-                    // TODO: Download the remote file
+                    // Case 2: IsModified - Check if both hashes are the same
+                    // Not the same, so need to..
+
+                    // TODO Step 1: Delete the local file
+
+                    // TODO Step 2: Download the remote file
                 }
             }
 
