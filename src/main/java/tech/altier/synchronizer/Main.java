@@ -147,7 +147,9 @@ public class Main {
     }
 
     public boolean promptConfirmation(String message) {
-        return false;
+        Platform.runLater(
+                
+        );
     }
 
     private void log(String message) {
