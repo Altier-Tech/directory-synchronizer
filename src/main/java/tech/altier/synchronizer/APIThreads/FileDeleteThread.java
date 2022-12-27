@@ -2,9 +2,6 @@ package tech.altier.synchronizer.APIThreads;
 
 import com.dropbox.core.DbxException;
 
-import javafx.scene.control.Alert;
-import javafx.scene.control.ButtonBar;
-import javafx.scene.control.ButtonType;
 import tech.altier.Thread.ThreadColor;
 import tech.altier.synchronizer.RemoteHandler.DropboxClient;
 
