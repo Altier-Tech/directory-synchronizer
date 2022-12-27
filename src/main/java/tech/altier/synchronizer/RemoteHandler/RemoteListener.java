@@ -1,5 +1,7 @@
 package tech.altier.synchronizer.RemoteHandler;
 
+import com.dropbox.core.v2.files.ListFolderResult;
+
 public class RemoteListener implements Runnable {
     @Override
     public void run() {
@@ -10,6 +12,6 @@ public class RemoteListener implements Runnable {
             throw new RuntimeException(e);
         }
 
-
+        ListFolderResult result = RemoteFiles.getDetailedRemoteFileInfo();
     }
 }
