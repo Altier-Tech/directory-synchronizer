@@ -37,15 +37,12 @@ public class FileHandler {
         alert.showAndWait().ifPresent(type -> {
             if (type == ButtonType.OK) {
                 log("User confirmed deletion of file " + filePath);
-                log("Deleting file " + filePath);
 
                 // If yes, delete the file from the remote repository
                 Thread deleteThread = new Thread(
                         new FileDeleteThread(filePath.toString())
                 );
                 deleteThread.start();
-
-                log("Deletion of file " + filePath + " was successful!");
             } else if (type == ButtonType.NO) {
                 log("User denied deletion of file " + filePath);
                 // If no, do nothing
