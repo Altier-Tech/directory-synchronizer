@@ -14,6 +14,7 @@ import javafx.scene.control.ListView;
 
 import javafx.util.Duration;
 import tech.altier.Thread.ThreadColor;
+import tech.altier.synchronizer.APIThreads.FileDownloadThread;
 import tech.altier.synchronizer.APIThreads.FileUploadThread;
 import tech.altier.synchronizer.LocalHandler.LocalRepository;
 
@@ -91,9 +92,10 @@ public class Main {
 
                 // If the current file doesn't exist
                 if (!localFiles.contains(metadata.getName())) {
-                    // Download the file
-                    Thread
                     log("File " + metadata.getName() + " doesn't exist locally!");
+                    // Download the file
+                    Thread downloadThread = new Thread(new FileDownloadThread(metadata.getName()));
+                    downloadThread.start();
                 }
             }
 
