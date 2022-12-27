@@ -14,8 +14,8 @@ import javafx.scene.control.ListView;
 import javafx.util.Duration;
 
 import tech.altier.Thread.ThreadColor;
-import tech.altier.synchronizer.APIThreads.FileDownloadThread;
-import tech.altier.synchronizer.APIThreads.FileUploadThread;
+import tech.altier.synchronizer.API.Threads.FileDownloadThread;
+import tech.altier.synchronizer.API.Threads.FileUploadThread;
 import tech.altier.synchronizer.LocalHandler.LocalRepository;
 
 import java.io.File;

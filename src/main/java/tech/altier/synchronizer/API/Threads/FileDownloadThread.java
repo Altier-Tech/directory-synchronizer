@@ -1,16 +1,18 @@
-package tech.altier.synchronizer.APIThreads.Threads;
+package tech.altier.synchronizer.API.Threads;
 
 import com.dropbox.core.DbxException;
 
 import tech.altier.Thread.ThreadColor;
 import tech.altier.synchronizer.RemoteHandler.DropboxClient;
 
-public class FileDeleteThread implements Runnable {
+import java.io.IOException;
+
+public class FileDownloadThread implements Runnable {
     private final String path;
     private final DropboxClient client;
 
-    public FileDeleteThread(String path) {
-        log("Deletion thread initialized for file " + path);
+    public FileDownloadThread(String path) {
+        log("Download thread initialized for file " + path);
         this.path = path;
         client = new DropboxClient();
     }
@@ -18,8 +20,8 @@ public class FileDeleteThread implements Runnable {
     @Override
     public void run() {
         try {
-            client.deleteFile(path);
-        } catch (DbxException e) {
+            client.downloadFile(path);
+        } catch (DbxException | IOException e) {
             throw new RuntimeException(e);
         }
     }
@@ -27,9 +29,9 @@ public class FileDeleteThread implements Runnable {
     private void log(String message) {
         System.out.println(
                 ThreadColor.ANSI_BLUE +
-                Thread.currentThread().getName() +
-                "\tDBClient: \t" +
-                message
+                        Thread.currentThread().getName() +
+                        "\tDBClient: \t" +
+                        message
         );
     }
 }

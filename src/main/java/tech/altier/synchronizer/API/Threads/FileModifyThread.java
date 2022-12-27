@@ -1,4 +1,4 @@
-package tech.altier.synchronizer.APIThreads.Threads;
+package tech.altier.synchronizer.API.Threads;
 
 import com.dropbox.core.DbxException;
 
