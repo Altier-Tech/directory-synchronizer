@@ -27,7 +27,10 @@ public class FileHandler {
 
     public void handleLocalModify(Path filePath) { // TODO
         // Step 1 - Delete the remote file
-
+        log("Deletion thread started to handle modification for the file " + filePath);
+        Thread deleteThread = new Thread(
+                new FileDeleteThread(filePath.toString())
+        );
         // Step 2 - Upload the new local file
 
     }
