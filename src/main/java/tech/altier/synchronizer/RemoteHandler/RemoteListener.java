@@ -1,4 +1,10 @@
 package tech.altier.synchronizer.RemoteHandler;
 
-public class RemoteListener {
+public class RemoteListener implements Runnable {
+    
+
+    @Override
+    public void run() {
+
+    }
 }
