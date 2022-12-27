@@ -5,21 +5,20 @@ import com.dropbox.core.DbxRequestConfig;
 import com.dropbox.core.v2.DbxClientV2;
 import com.dropbox.core.v2.files.ListFolderResult;
 import com.dropbox.core.v2.files.Metadata;
-
+ 
 import javafx.application.Platform;
 import javafx.concurrent.ScheduledService;
 import javafx.concurrent.Task;
 import javafx.fxml.FXML;
 import javafx.scene.control.ListView;
-
 import javafx.util.Duration;
+
 import tech.altier.Thread.ThreadColor;
 import tech.altier.synchronizer.APIThreads.FileDownloadThread;
 import tech.altier.synchronizer.APIThreads.FileUploadThread;
 import tech.altier.synchronizer.LocalHandler.LocalRepository;
 
 import java.io.File;
-import java.io.IOException;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -33,7 +32,7 @@ public class Main {
     @FXML
     public ListView<String> listViewRemote;
 
-    public void initialize() throws DbxException, IOException {
+    public void initialize() throws DbxException {
         repository = SetupController.repository;
 
         String ACCESS_TOKEN = LoginController.ACCESS_TOKEN;
