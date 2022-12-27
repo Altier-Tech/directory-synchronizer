@@ -4,6 +4,7 @@ import javafx.fxml.FXML;
 import javafx.scene.control.Hyperlink;
 import javafx.scene.control.Label;
 import javafx.scene.control.PasswordField;
+
 import tech.altier.Thread.ThreadColor;
 
 import java.awt.*;
