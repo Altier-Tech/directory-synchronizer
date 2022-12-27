@@ -158,9 +158,9 @@ public class Main {
     class ListViewRefreshService extends ScheduledService<Void> {
         @Override
         protected Task<Void> createTask(){
-            return new Task<Void>(){
+            return new Task<>() {
                 @Override
-                protected Void call(){
+                protected Void call() {
                     Platform.runLater(() -> {
                         try {
                             populateRemoteListView();
