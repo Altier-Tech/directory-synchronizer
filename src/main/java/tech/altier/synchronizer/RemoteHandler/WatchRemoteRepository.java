@@ -5,7 +5,7 @@ import tech.altier.synchronizer.Main;
 
 public class WatchRemoteRepository {
     public WatchRemoteRepository() {
-        
+
     }
 
     public void start() {
