@@ -1,5 +1,6 @@
 package tech.altier.synchronizer.LocalHandler;
 
+import com.dropbox.core.DbxException;
 import javafx.scene.control.Alert;
 import javafx.scene.control.ButtonBar;
 import javafx.scene.control.ButtonType;
@@ -9,6 +10,7 @@ import tech.altier.synchronizer.APIThreads.FileUploadThread;
 
 import java.nio.file.Path;
 
+import static tech.altier.synchronizer.Main.client;
 import static tech.altier.synchronizer.Main.repository;
 
 public class FileHandler {
@@ -23,6 +25,7 @@ public class FileHandler {
     public void handleLocalDelete(Path filePath) { // TODO
         // Step 1 - Prompt if the deletion should be permanent
         Alert alert = new Alert(Alert.AlertType.CONFIRMATION);
+        log("Prompting user for deletion confirmation of file " + filePath);
         alert.setTitle("Do you wish to make the deletion permanent?");
         alert.setContentText("Are you sure?");
         ButtonType okButton = new ButtonType("Yes", ButtonBar.ButtonData.YES);
@@ -31,8 +34,15 @@ public class FileHandler {
         alert.getButtonTypes().setAll(okButton, noButton, cancelButton);
         alert.showAndWait().ifPresent(type -> {
             if (type == ButtonType.OK) {
+                log("User confirmed deletion of file " + filePath);
+                log("Deleting file " + filePath);
                 // If yes, delete the file from the remote repository
-                // TODO
+                try {
+                    client.files().deleteV2("/" + filePath);
+                } catch (DbxException e) {
+                    throw new RuntimeException(e);
+                }
+                log("Deletion of file " + filePath + " was successful!");
             } else if (type == ButtonType.NO) {
             } else {
             }
