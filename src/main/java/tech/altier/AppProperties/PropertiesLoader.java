@@ -24,14 +24,14 @@ public class PropertiesLoader {
         }
     }
 
-    public static synchronized PropertiesLoader getInstance() {
+    protected static synchronized PropertiesLoader getInstance() {
         if (instance == null) {
             instance = new PropertiesLoader();
         }
         return instance;
     }
 
-    public String getProperty(String key) {
+    protected String getProperty(String key) {
         return (String) configuration.getProperty(key);
     }
 }
