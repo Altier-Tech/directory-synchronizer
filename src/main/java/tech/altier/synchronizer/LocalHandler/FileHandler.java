@@ -6,6 +6,7 @@ import javafx.scene.control.ButtonBar;
 import javafx.scene.control.ButtonType;
 
 import tech.altier.Thread.ThreadColor;
+import tech.altier.synchronizer.APIThreads.FileDeleteThread;
 import tech.altier.synchronizer.APIThreads.FileUploadThread;
 
 import java.nio.file.Path;
@@ -39,7 +40,11 @@ public class FileHandler {
                 log("Deleting file " + filePath);
 
                 // If yes, delete the file from the remote repository
-                
+                Thread deleteThread = new Thread(
+                        new FileDeleteThread(
+                                repository.getPath() + "\\" + filePath
+                        )
+                );
 
                 log("Deletion of file " + filePath + " was successful!");
             } else if (type == ButtonType.NO) {
