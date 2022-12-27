@@ -29,7 +29,7 @@ public class LoginController {
     public static String ACCESS_TOKEN;
     public static String loginURL;
 
-    public void initialize() throws ConfigurationException, IOException {
+    public void initialize() throws IOException {
         loginURL = PropertiesLoader.get("loginURL");
 
         generateTokenLink.setOnAction(e -> {
