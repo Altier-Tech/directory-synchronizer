@@ -78,9 +78,6 @@ class LocalListener implements Runnable {
                 if (kind == StandardWatchEventKinds.ENTRY_DELETE) {
                     log("A file has been deleted: " + filePath);
 
-                    Main main = new Main();
-                    boolean ans = main.promptConfirmation(filePath.toString());
-
                     fileHandler.handleLocalDelete (filePath);
                 }
                 if (kind == StandardWatchEventKinds.ENTRY_MODIFY) {
