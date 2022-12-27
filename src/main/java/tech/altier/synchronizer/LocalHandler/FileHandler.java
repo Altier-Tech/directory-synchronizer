@@ -31,7 +31,7 @@ public class FileHandler {
         System.out.println(
                 ThreadColor.ANSI_CYAN +
                 Thread.currentThread().getName() +
-                "FileHandler: \t" +
+                "\tFileHandler: \t" +
                 message
         );
     }
