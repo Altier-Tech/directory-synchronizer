@@ -37,6 +37,10 @@ public class RemoteFileInfo extends HashMap<String, String> {
         }
     }
 
+    public static RemoteFileInfo getInstance() {
+        return new RemoteFileInfo();
+    }
+
     private static String get(String key) {
         return conf.getProperty(key);
     }
