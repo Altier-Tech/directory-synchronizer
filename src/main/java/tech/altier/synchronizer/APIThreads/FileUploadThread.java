@@ -4,8 +4,8 @@ import tech.altier.Thread.ThreadColor;
 import tech.altier.synchronizer.RemoteHandler.DropboxClient;
 
 public class FileUploadThread implements Runnable {
-    private String path;
-    private DropboxClient client;
+    private final String path;
+    private final DropboxClient client;
 
     public FileUploadThread(String path) {
         log("Upload thread initialized for file " + path);
