@@ -49,7 +49,7 @@ public class Main {
 
         startupSync();
 
-        repository.watch();
+        repository.startListening();
     }
 
     @FXML
