@@ -87,7 +87,11 @@ class LocalListener implements Runnable {
     }
 
     private void log(String message) {
-        System.out.println(ThreadColor.ANSI_GREEN + "LocalListener: \t" + message);
+        System.out.println(
+                ThreadColor.ANSI_GREEN +
+                Thread.currentThread().getName() +
+                "LocalListener: \t" + message
+        );
     }
 
     @Override
