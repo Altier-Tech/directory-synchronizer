@@ -5,7 +5,7 @@ import com.dropbox.core.DbxException;
 import tech.altier.Thread.ThreadColor;
 import tech.altier.synchronizer.RemoteHandler.DropboxClient;
 
-public class FileDownloadThread {
+public class FileDownloadThread implements Runnable {
     private final String path;
     private final DropboxClient client;
 
@@ -15,7 +15,7 @@ public class FileDownloadThread {
         client = new DropboxClient();
     }
 
-
+    
 
     private void log(String message) {
         System.out.println(
