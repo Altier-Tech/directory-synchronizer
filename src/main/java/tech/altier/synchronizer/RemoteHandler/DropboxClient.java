@@ -29,7 +29,7 @@ public class DropboxClient {
         }
     }
 
-    public void downloadFile(String remotePath) throws DbxException, IOException {
+    public void downloadFile(String remotePath) throws IOException, DbxException {
         OutputStream downloadFile = new FileOutputStream(Main.repository.getPath() + remotePath);
         client.files().downloadBuilder(remotePath).download(downloadFile);
     }
