@@ -1,6 +1,5 @@
 package tech.altier.synchronizer.APIThreads;
 
-import tech.altier.synchronizer.RemoteHandler.DropboxClient;
 import com.dropbox.core.DbxException;
 import tech.altier.Thread.ThreadColor;
 import tech.altier.synchronizer.RemoteHandler.DropboxClient;
