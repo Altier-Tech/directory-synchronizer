@@ -1,9 +1,5 @@
 package tech.altier.synchronizer.LocalHandler;
 
-import javafx.scene.control.Alert;
-import javafx.scene.control.ButtonBar;
-import javafx.scene.control.ButtonType;
-
 import tech.altier.Thread.ThreadColor;
 import tech.altier.synchronizer.APIThreads.FileDeleteThread;
 import tech.altier.synchronizer.APIThreads.FileUploadThread;
