@@ -146,6 +146,10 @@ public class Main {
         return path.listFiles();
     }
 
+    public boolean promptConfirmation(String message) {
+        return false;
+    }
+
     private void log(String message) {
         System.out.println(
                 ThreadColor.ANSI_BLUE +
