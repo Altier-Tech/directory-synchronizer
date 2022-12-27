@@ -67,15 +67,15 @@ class LocalListener implements Runnable {
 
                 if (kind == StandardWatchEventKinds.ENTRY_CREATE) {
                     log("A new file is created : " + filePath);
-                    FileHandler.handleLocalCreate (filePath);
+                    fileHandler.handleLocalCreate (filePath);
                 }
                 if (kind == StandardWatchEventKinds.ENTRY_DELETE) {
                     log("A file has been deleted: " + filePath);
-                    FileHandler.handleLocalDelete (filePath);
+                    fileHandler.handleLocalDelete (filePath);
                 }
                 if (kind == StandardWatchEventKinds.ENTRY_MODIFY) {
                     log("A file has been modified: " + filePath);
-                    FileHandler.handleLocalModify (filePath);
+                    fileHandler.handleLocalModify (filePath);
                 }
             }
 
