@@ -10,13 +10,12 @@ import tech.altier.AppProperties.RemoteFileInfo;
 import tech.altier.synchronizer.Main;
 
 public class RemoteFiles {
-    private DbxClientV2 client;
-    private RemoteFileInfo remoteFileInfo;
-    private static RemoteFiles instance;
+    private final DbxClientV2 client;
+    private final RemoteFileInfo remoteFileInfo;
 
     static {
         try {
-            instance = new RemoteFiles();
+            RemoteFiles instance = new RemoteFiles();
         } catch (DbxException e) {
             throw new RuntimeException(e);
         }
@@ -30,6 +29,7 @@ public class RemoteFiles {
     /**
      * Populates the local database that contains the paths and the hashes
      * of the files in the remote repository.
+     * Do not call this if the database is already populated.
      * @throws DbxException If an error occurs while communicating with Dropbox
      */
     private void populateRemoteFilesInfo() throws DbxException {
