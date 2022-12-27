@@ -1,10 +1,9 @@
 package tech.altier.synchronizer.APIThreads;
 
 import com.dropbox.core.DbxException;
+
 import tech.altier.Thread.ThreadColor;
 import tech.altier.synchronizer.RemoteHandler.DropboxClient;
-
-import java.io.IOException;
 
 public class FileDeleteThread implements Runnable {
     private final String path;
