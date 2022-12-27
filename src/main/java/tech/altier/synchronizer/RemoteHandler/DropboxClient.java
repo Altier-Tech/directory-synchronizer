@@ -32,7 +32,7 @@ public class DropboxClient {
         }
 
         // TODO recall listview population function for remote
-        Main.populateRemListView();
+        
     }
 
     public void downloadFile(String remotePath) {
