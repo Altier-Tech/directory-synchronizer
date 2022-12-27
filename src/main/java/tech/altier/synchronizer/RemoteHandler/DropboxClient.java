@@ -7,10 +7,7 @@ import com.dropbox.core.DbxException;
 import com.dropbox.core.v2.DbxClientV2;
 import com.dropbox.core.v2.files.FileMetadata;
 
-import java.io.File;
-import java.io.FileInputStream;
-import java.io.IOException;
-import java.io.InputStream;
+import java.io.*;
 
 public class DropboxClient {
     public static DbxClientV2 client;
@@ -32,8 +29,9 @@ public class DropboxClient {
         }
     }
 
-    public void downloadFile(String remotePath) {
-        // TODO
+    public void downloadFile(String remotePath) throws DbxException {
+        OutputStream downloadFile = new FileOutputStream();
+        client.files().downloadBuilder(remotePath).download();
     }
 
     private void log(String message) {
