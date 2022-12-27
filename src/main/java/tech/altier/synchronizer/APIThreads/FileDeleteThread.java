@@ -11,7 +11,7 @@ public class FileDeleteThread implements Runnable {
     private final DropboxClient client;
 
     public FileDeleteThread(String path) {
-        log("Upload thread initialized for file " + path);
+        log("Deletion thread initialized for file " + path);
         this.path = path;
         client = new DropboxClient();
     }
