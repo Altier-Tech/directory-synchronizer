@@ -18,7 +18,12 @@ public class LocalRepository {
     }
 
     public static LocalRepository setupRepositoryOnDir(String path) {
-        System.out.println(ThreadColor.ANSI_GREEN + "LocalListener: \t" + "Setting up repository on directory: " + path);
+        System.out.println(
+                ThreadColor.ANSI_GREEN +
+                "LocalListener: \t" +
+                "Setting up repository on directory: " +
+                path
+        );
         return new LocalRepository(path);
     }
 
