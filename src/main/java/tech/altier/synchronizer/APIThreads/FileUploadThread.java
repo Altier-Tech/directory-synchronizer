@@ -19,6 +19,11 @@ public class FileUploadThread implements Runnable {
     }
 
     private void log(String message) {
-        System.out.println(ThreadColor.ANSI_BLUE + "DBClient: \t" + message);
+        System.out.println(
+                ThreadColor.ANSI_BLUE +
+                Thread.currentThread().getName() +
+                "\tDBClient: \t" +
+                message
+        );
     }
 }
