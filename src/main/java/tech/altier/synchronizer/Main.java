@@ -24,6 +24,7 @@ import tech.altier.synchronizer.LocalHandler.LocalRepository;
 import java.io.File;
 import java.util.ArrayList;
 import java.util.List;
+import java.util.concurrent.atomic.AtomicBoolean;
 
 public class Main {
     public static LocalRepository repository;
@@ -160,25 +161,25 @@ public class Main {
         ButtonType cancelButton = new ButtonType("Yes", ButtonBar.ButtonData.CANCEL_CLOSE);
         alert.getButtonTypes().setAll(okButton, noButton, cancelButton);
 
-        boolean answer = false;
+        AtomicBoolean answer = new AtomicBoolean(false);
         Platform.runLater(
                 () -> {
                     alert.showAndWait().ifPresent(type -> {
                         if (type == okButton) {
                             log("User confirmed deletion of file " + filePath);
-                            answer = true;
+                            answer.set(true);
                         } else if (type == noButton) {
                             log("User chose to delete file " + filePath + " locally only");
-                            answer = false;
+                            answer.set(false);
                         } else {
                             log("User cancelled deletion of file " + filePath);
-                            answer = false;
+                            answer.set(false);
                         }
                     });
                 }
         );
 
-        return answer;
+        return answer.get();
     }
 
     private void log(String message) {
