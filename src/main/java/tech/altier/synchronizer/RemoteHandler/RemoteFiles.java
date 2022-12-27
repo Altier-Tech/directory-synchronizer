@@ -17,13 +17,17 @@ public class RemoteFiles {
         client = Main.client;
         remoteFileInfo = RemoteFileInfo.getInstance();
 
+        populateRemoteFilesInfo();
+    }
+
+    private void populateRemoteFilesInfo() {
         ListFolderResult result = client.files()
                 .listFolderBuilder("")
                 .withIncludeDeleted(false)
                 .withRecursive(true)
                 .withIncludeMediaInfo(true)
                 .start();
-        
+
         while (true) {
             for (Metadata metadata : result.getEntries()) {
                 FileMetadata fileMetadata = null;
