@@ -11,6 +11,7 @@ public class RemoteWatcher {
         client = Main.client;
     }
 
+    // Start monitoring the remote directory for any file changes
     public void start() throws DbxException {
 
     }

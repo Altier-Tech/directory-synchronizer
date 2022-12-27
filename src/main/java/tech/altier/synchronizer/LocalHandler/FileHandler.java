@@ -1,9 +1,9 @@
 package tech.altier.synchronizer.LocalHandler;
 
 import tech.altier.Thread.ThreadColor;
-import tech.altier.synchronizer.APIThreads.FileDeleteThread;
-import tech.altier.synchronizer.APIThreads.FileModifyThread;
-import tech.altier.synchronizer.APIThreads.FileUploadThread;
+import tech.altier.synchronizer.APIThreads.Threads.FileDeleteThread;
+import tech.altier.synchronizer.APIThreads.Threads.FileModifyThread;
+import tech.altier.synchronizer.APIThreads.Threads.FileUploadThread;
 
 import java.nio.file.Path;
 
