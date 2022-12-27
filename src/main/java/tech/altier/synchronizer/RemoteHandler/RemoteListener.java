@@ -5,15 +5,18 @@ import com.dropbox.core.v2.DbxClientV2;
 import com.dropbox.core.v2.files.FileMetadata;
 import com.dropbox.core.v2.files.ListFolderResult;
 import com.dropbox.core.v2.files.Metadata;
+import tech.altier.AppProperties.RemoteFileInfo;
 import tech.altier.synchronizer.Main;
 
 public class RemoteListener implements Runnable {
     static RemoteFiles remoteFilesInstance;
+    static RemoteFileInfo remoteFileInfo;
     private ListFolderResult remoteFileListResult;
     DbxClientV2 client;
 
     static {
         remoteFilesInstance = RemoteFiles.getInstance();
+        remoteFileInfo = RemoteFileInfo.getInstance();
     }
 
     public RemoteListener() {
@@ -43,15 +46,22 @@ public class RemoteListener implements Runnable {
                 }
 
                 assert fileMetadata != null;
-
-                // TODO
+                // Check if both hashes are the same
+                if (remoteFileInfo.get(metadata.getPathLower()) != fileMetadata.getContentHash()) {
+                    // If they are not the same, update the local database
+                    remoteFileInfo.put(metadata.getPathLower(), fileMetadata.getContentHash());
+                }
             }
 
             if (!remoteFileListResult.getHasMore()) {
                 break;
             }
 
-            result = client.files().listFolderContinue(remoteFileListResult.getCursor());
+            try {
+                remoteFileListResult = client.files().listFolderContinue(remoteFileListResult.getCursor());
+            } catch (DbxException e) {
+                throw new RuntimeException(e);
+            }
         }
     }
 }
