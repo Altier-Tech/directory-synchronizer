@@ -23,8 +23,8 @@ public class FileHandler {
     public void handleLocalDelete(Path filePath) { // TODO
         // Step 1 - Prompt if the deletion should be permanent
         Alert alert = new Alert(Alert.AlertType.CONFIRMATION);
-        alert.setTitle("Current project is modified");
-        alert.setContentText("Save?");
+        alert.setTitle("Do you wish to make the deletion permanent?");
+        alert.setContentText("Are you sure?");
         ButtonType okButton = new ButtonType("Yes", ButtonBar.ButtonData.YES);
         ButtonType noButton = new ButtonType("Yes", ButtonBar.ButtonData.NO);
         ButtonType cancelButton = new ButtonType("Yes", ButtonBar.ButtonData.CANCEL_CLOSE);
