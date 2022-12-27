@@ -4,8 +4,9 @@ import java.io.IOException;
 import java.io.InputStream;
 import java.util.HashMap;
 import java.util.Properties;
+import java.util.Set;
 
-public class RemoteFileInfo implements HashMap<String, String> {
+public class RemoteFileInfo extends HashMap<String, String> {
     static Properties conf;
     public static HashMap<String, String> remoteFiles;
 
@@ -16,6 +17,41 @@ public class RemoteFileInfo implements HashMap<String, String> {
         } catch (IOException e) {
             throw new RuntimeException(e);
         }
+    }
+
+    @Override
+    public int size() {
+        return remoteFiles.size();
+    }
+
+    @Override
+    public boolean isEmpty() {
+        return super.isEmpty();
+    }
+
+    @Override
+    public String get(Object key) {
+        return super.get(key);
+    }
+
+    @Override
+    public boolean containsKey(Object key) {
+        return super.containsKey(key);
+    }
+
+    @Override
+    public String put(String key, String value) {
+        return super.put(key, value);
+    }
+
+    @Override
+    public String remove(Object key) {
+        return super.remove(key);
+    }
+
+    @Override
+    public Set<String> keySet() {
+        return super.keySet();
     }
 
     private static Properties loadProperties() throws IOException {
