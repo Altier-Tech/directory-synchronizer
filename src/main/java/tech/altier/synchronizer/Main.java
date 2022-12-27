@@ -129,7 +129,7 @@ public class Main {
         }
     }
 
-    public void populateLocalListView() {
+    private void populateLocalListView() {
         listViewLocal.getItems().clear();
         File[] files = getLocalFiles();
         if (files != null) {
