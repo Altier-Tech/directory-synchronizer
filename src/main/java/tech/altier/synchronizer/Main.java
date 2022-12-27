@@ -114,7 +114,7 @@ public class Main {
         }
     }
 
-    private void startupSync() throws DbxException {
+    /* private void startupSync() throws DbxException {
         // List local files
         File[] files = getLocalFiles();
         List<String> localFiles = new ArrayList<>();
@@ -161,7 +161,7 @@ public class Main {
                 uploadThread.start();
             }
         }
-    }
+    } */
 
     private void populateRemoteListView() throws DbxException {
         listViewRemote.getItems().clear();
