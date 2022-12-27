@@ -75,10 +75,13 @@ class LocalListener implements Runnable {
 
                 WatchEvent.Kind<?> kind = event.kind();
 
+                // File Create event
                 if (kind == StandardWatchEventKinds.ENTRY_CREATE) {
                     log("A new file is created : " + filePath);
                     fileHandler.handleLocalCreate (filePath);
                 }
+
+                // File Delete event
                 if (kind == StandardWatchEventKinds.ENTRY_DELETE) {
                     log("A file has been deleted: " + filePath);
 
@@ -98,7 +101,7 @@ class LocalListener implements Runnable {
                                 log("User confirmed deletion of file " + filePath);
 
                                 // If yes, delete the file from the remote repository
-                                System.out.println("WORKING...................!!!!!");
+
                             } else if (type == ButtonType.NO) {
                                 log("User denied deletion of file " + filePath);
                                 // If no, do nothing
@@ -108,6 +111,8 @@ class LocalListener implements Runnable {
 
                     fileHandler.handleLocalDelete (filePath);
                 }
+
+                // File Modify event
                 if (kind == StandardWatchEventKinds.ENTRY_MODIFY) {
                     log("A file has been modified: " + filePath);
                     fileHandler.handleLocalModify (filePath);
