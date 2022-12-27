@@ -115,7 +115,7 @@ public class Main {
 
     public static void populateListView() throws DbxException {
         Main main = new Main();
-        main.populateLocalListView();
+        main.populateRemoteListView();
     }
 
     private void populateRemoteListView() throws DbxException {
