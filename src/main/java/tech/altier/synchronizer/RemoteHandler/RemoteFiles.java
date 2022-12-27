@@ -31,7 +31,7 @@ public class RemoteFiles {
      * Returns the singleton instance of this class.
      * @return The singleton instance of RemoteFiles class
      */
-    public RemoteFiles getInstance() {
+    public static RemoteFiles getInstance() {
         return instance;
     }
 
