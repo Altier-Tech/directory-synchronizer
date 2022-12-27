@@ -21,7 +21,7 @@ public class FileHandler {
         uploadThread.start();
     }
 
-    public void handleLocalDelete(Path filePath) { // TODO
+    public void handleLocalDelete(Path filePath) {
         Thread deleteThread = new Thread(
                 new FileDeleteThread(filePath.toString())
         );
