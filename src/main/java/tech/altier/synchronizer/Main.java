@@ -26,7 +26,7 @@ public class Main {
     @FXML
     private ListView<String> listViewLocal;
     @FXML
-    private ListView<String> listViewRemote;
+    public ListView<String> listViewRemote;
 
     public void initialize() throws DbxException, IOException {
         repository = SetupController.repository;
