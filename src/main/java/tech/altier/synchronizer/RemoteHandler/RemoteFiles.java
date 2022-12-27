@@ -23,12 +23,15 @@ public class RemoteFiles {
                 .withRecursive(true)
                 .withIncludeMediaInfo(true)
                 .start();
+        
         while (true) {
             for (Metadata metadata : result.getEntries()) {
                 FileMetadata fileMetadata = null;
                 if (metadata instanceof FileMetadata) {
                     fileMetadata = (FileMetadata) metadata;
                 }
+
+                assert fileMetadata != null;
                 remoteFileInfo.put(metadata.getPathLower(), fileMetadata.getContentHash());
             }
 
