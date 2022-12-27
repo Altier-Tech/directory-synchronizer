@@ -1,5 +1,9 @@
 package tech.altier.synchronizer.LocalHandler;
 
+import javafx.application.Platform;
+import javafx.scene.control.Alert;
+import javafx.scene.control.ButtonBar;
+import javafx.scene.control.ButtonType;
 import tech.altier.Thread.ThreadColor;
 import tech.altier.synchronizer.Main;
 
@@ -77,6 +81,33 @@ class LocalListener implements Runnable {
                 }
                 if (kind == StandardWatchEventKinds.ENTRY_DELETE) {
                     log("A file has been deleted: " + filePath);
+
+                    Platform.runLater(new Runnable() {
+                        @Override
+                        public void run() {
+                            // Prompt if the deletion should be permanent
+                            Alert alert = new Alert(Alert.AlertType.CONFIRMATION);
+                            log("Prompting user for deletion confirmation of file " + filePath);
+                            alert.setTitle("Do you wish to make the deletion permanent?");
+                            alert.setContentText("Are you sure?");
+                            ButtonType okButton = new ButtonType("Yes", ButtonBar.ButtonData.YES);
+                            ButtonType noButton = new ButtonType("Yes", ButtonBar.ButtonData.NO);
+                            ButtonType cancelButton = new ButtonType("Yes", ButtonBar.ButtonData.CANCEL_CLOSE);
+                            alert.getButtonTypes().setAll(okButton, noButton, cancelButton);
+
+                            alert.showAndWait().ifPresent(type -> {
+                                if (type == ButtonType.OK) {
+                                    log("User confirmed deletion of file " + filePath);
+
+                                    // If yes, delete the file from the remote repository
+                                    System.out.println("WORKING...................!!!!!");
+                                } else if (type == ButtonType.NO) {
+                                    log("User denied deletion of file " + filePath);
+                                    // If no, do nothing
+                                }
+                            });
+                        }
+                    });
 
                     fileHandler.handleLocalDelete (filePath);
                 }
