@@ -58,4 +58,13 @@ public class RemoteFiles {
             result = client.files().listFolderContinue(result.getCursor());
         }
     }
+
+    public ListFolderResult getDetailedRemoteFileInfo() throws DbxException {
+        return client.files()
+                .listFolderBuilder("")
+                .withIncludeDeleted(false)
+                .withRecursive(true)
+                .withIncludeMediaInfo(true)
+                .start();
+    }
 }
