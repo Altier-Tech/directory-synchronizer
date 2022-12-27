@@ -150,38 +150,6 @@ public class Main {
         return path.listFiles();
     }
 
-    public boolean promptConfirmation(String filePath) {
-        Alert alert = new Alert(Alert.AlertType.CONFIRMATION);
-        // Prompt if the deletion should be permanent
-        log("Prompting user for deletion confirmation of file " + filePath);
-        alert.setTitle("Do you wish to make the deletion permanent?");
-        alert.setContentText("Are you sure?");
-        ButtonType okButton = new ButtonType("Yes", ButtonBar.ButtonData.YES);
-        ButtonType noButton = new ButtonType("Yes", ButtonBar.ButtonData.NO);
-        ButtonType cancelButton = new ButtonType("Yes", ButtonBar.ButtonData.CANCEL_CLOSE);
-        alert.getButtonTypes().setAll(okButton, noButton, cancelButton);
-
-        AtomicBoolean answer = new AtomicBoolean(false);
-        Platform.runLater(
-                () -> {
-                    alert.showAndWait().ifPresent(type -> {
-                        if (type == okButton) {
-                            log("User confirmed deletion of file " + filePath);
-                            answer.set(true);
-                        } else if (type == noButton) {
-                            log("User chose to delete file " + filePath + " locally only");
-                            answer.set(false);
-                        } else {
-                            log("User cancelled deletion of file " + filePath);
-                            answer.set(false);
-                        }
-                    });
-                }
-        );
-
-        return answer.get();
-    }
-
     private void log(String message) {
         System.out.println(
                 ThreadColor.ANSI_BLUE +
