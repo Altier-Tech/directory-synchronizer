@@ -23,7 +23,7 @@ public class FileHandler {
     }
 
     public void handleLocalDelete(Path filePath) { // TODO
-        // Step 1 - Prompt if the deletion should be permanent
+        // Prompt if the deletion should be permanent
         Alert alert = new Alert(Alert.AlertType.CONFIRMATION);
         log("Prompting user for deletion confirmation of file " + filePath);
         alert.setTitle("Do you wish to make the deletion permanent?");
