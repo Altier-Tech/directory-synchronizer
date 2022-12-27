@@ -1,4 +1,7 @@
 package tech.altier.synchronizer.GUIClient;
 
-public class ListViewRefreshService {
+import javafx.concurrent.ScheduledService;
+
+public class ListViewRefreshService extends ScheduledService<Void> {
+    
 }
