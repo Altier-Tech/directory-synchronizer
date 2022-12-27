@@ -1,6 +1,5 @@
 package tech.altier.synchronizer.LocalHandler;
 
-import com.dropbox.core.DbxException;
 import javafx.scene.control.Alert;
 import javafx.scene.control.ButtonBar;
 import javafx.scene.control.ButtonType;
@@ -11,7 +10,6 @@ import tech.altier.synchronizer.APIThreads.FileUploadThread;
 
 import java.nio.file.Path;
 
-import static tech.altier.synchronizer.Main.client;
 import static tech.altier.synchronizer.Main.repository;
 
 public class FileHandler {
