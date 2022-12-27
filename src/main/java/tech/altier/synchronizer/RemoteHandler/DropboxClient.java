@@ -36,7 +36,11 @@ public class DropboxClient {
         log("File download finished: " + remotePath);
     }
 
-    p
+    public void deleteFile(String path) throws DbxException {
+        log("File deletion started: " + path);
+        client.files().deleteV2("/" + path);
+        log("File deletion finished: " + path);
+    }
 
     private void log(String message) {
         System.out.println(
