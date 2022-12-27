@@ -6,7 +6,7 @@ import tech.altier.synchronizer.RemoteHandler.DropboxClient;
 
 import java.io.IOException;
 
-public class FileDeleteThread {
+public class FileDeleteThread implements Runnable {
     private final String path;
     private final DropboxClient client;
 
