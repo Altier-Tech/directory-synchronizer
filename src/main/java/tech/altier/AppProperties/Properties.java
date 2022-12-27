@@ -6,4 +6,8 @@ public class Properties {
     static {
         instance = PropertiesLoader.getInstance();
     }
+
+    public static String get(String key) {
+        return instance.getProperty(key);
+    }
 }
