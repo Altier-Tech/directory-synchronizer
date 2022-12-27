@@ -1,8 +1,6 @@
 package tech.altier.synchronizer.RemoteHandler;
 
-import com.dropbox.core.DbxException;
 import com.dropbox.core.v2.DbxClientV2;
-import tech.altier.synchronizer.LocalHandler.LocalListener;
 import tech.altier.synchronizer.Main;
 
 public class WatchRemoteRepository {
