@@ -10,6 +10,7 @@ import org.apache.commons.configuration2.PropertiesConfiguration;
 import org.apache.commons.configuration2.builder.fluent.Configurations;
 import org.apache.commons.configuration2.ex.ConfigurationException;
 import org.apache.commons.configuration2.io.FileLocator;
+import tech.altier.AppProperties.PropertiesLoader;
 import tech.altier.Thread.ThreadColor;
 
 import java.awt.*;
@@ -28,8 +29,8 @@ public class LoginController {
     public static String ACCESS_TOKEN;
     public static String loginURL;
 
-    public void initialize() throws ConfigurationException {
-
+    public void initialize() throws ConfigurationException, IOException {
+        loginURL = PropertiesLoader.get("loginURL");
 
         generateTokenLink.setOnAction(e -> {
             Desktop desk = Desktop.getDesktop();
