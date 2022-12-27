@@ -9,8 +9,8 @@ public class FileModifyThread implements Runnable {
     private final String path;
     private final DropboxClient client;
 
-    public FileDeleteThread(String path) {
-        log("Deletion thread initialized for file " + path);
+    public FileModifyThread(String path) {
+        log("Modification thread initialized for file " + path);
         this.path = path;
         client = new DropboxClient();
     }
