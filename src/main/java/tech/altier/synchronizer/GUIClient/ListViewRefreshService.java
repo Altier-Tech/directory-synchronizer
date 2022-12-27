@@ -12,7 +12,7 @@ public class ListViewRefreshService extends ScheduledService<Void> {
             protected Void call(){
                 Platform.runLater(() -> {
                     /* Modify you GUI properties... */
-
+                    
                 });
                 return null;
             }
