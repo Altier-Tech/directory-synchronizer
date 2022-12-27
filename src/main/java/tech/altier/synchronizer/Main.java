@@ -10,9 +10,6 @@ import javafx.application.Platform;
 import javafx.concurrent.ScheduledService;
 import javafx.concurrent.Task;
 import javafx.fxml.FXML;
-import javafx.scene.control.Alert;
-import javafx.scene.control.ButtonBar;
-import javafx.scene.control.ButtonType;
 import javafx.scene.control.ListView;
 import javafx.util.Duration;
 
@@ -24,7 +21,6 @@ import tech.altier.synchronizer.LocalHandler.LocalRepository;
 import java.io.File;
 import java.util.ArrayList;
 import java.util.List;
-import java.util.concurrent.atomic.AtomicBoolean;
 
 public class Main {
     public static LocalRepository repository;
