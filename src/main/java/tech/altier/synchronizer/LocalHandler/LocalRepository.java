@@ -29,7 +29,12 @@ public class LocalRepository {
     }
 
     private void log(String message) {
-        System.out.println(ThreadColor.ANSI_GREEN + "LocalListner: \t" + message);
+        System.out.println(
+                ThreadColor.ANSI_GREEN +
+                Thread.currentThread().getName() +
+                "\tLocalListner: \t" +
+                message
+        );
     }
 }
 
