@@ -56,6 +56,8 @@ public class Main {
         startupSync();
 
         repository.startListening();
+
+        
     }
 
     @FXML
