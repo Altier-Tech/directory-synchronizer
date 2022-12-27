@@ -5,13 +5,14 @@ import java.io.InputStream;
 import java.util.HashMap;
 import java.util.Properties;
 
-public class RemoteFileInfo {
+public class RemoteFileInfo implements HashMap<String, String> {
     static Properties conf;
     public static HashMap<String, String> remoteFiles;
 
     static {
         try {
             conf = loadProperties();
+            loadRemoteFiles();
         } catch (IOException e) {
             throw new RuntimeException(e);
         }
@@ -21,14 +22,21 @@ public class RemoteFileInfo {
         Properties configuration = new Properties();
         InputStream inputStream = PropertiesLoader.class
                 .getClassLoader()
-                .getResourceAsStream("application.properties");
+                .getResourceAsStream("remote.properties");
         configuration.load(inputStream);
         assert inputStream != null;
         inputStream.close();
         return configuration;
     }
 
-    public static String get(String key) {
+    private static void loadRemoteFiles() {
+        remoteFiles = new HashMap<>();
+        for (String key : conf.stringPropertyNames()) {
+            remoteFiles.put(key, conf.getProperty(key));
+        }
+    }
+
+    private static String get(String key) {
         return conf.getProperty(key);
     }
 }
