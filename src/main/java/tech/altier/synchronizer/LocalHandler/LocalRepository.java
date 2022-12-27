@@ -32,7 +32,7 @@ public class LocalRepository {
         System.out.println(
                 ThreadColor.ANSI_GREEN +
                 Thread.currentThread().getName() +
-                "\tLocalListner: \t" +
+                "\tLocalListener: \t" +
                 message
         );
     }
