@@ -53,6 +53,11 @@ public class LoginController {
     }
 
     private void log(String message) {
-        System.out.println(ThreadColor.ANSI_PURPLE + "PreApp: \t" + message);
+        System.out.println(
+                ThreadColor.ANSI_PURPLE +
+                Thread.currentThread().getName() +
+                "PreApp: \t" +
+                message
+        );
     }
 }
