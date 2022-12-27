@@ -5,7 +5,6 @@ import javafx.scene.control.Alert;
 import javafx.scene.control.ButtonBar;
 import javafx.scene.control.ButtonType;
 import tech.altier.Thread.ThreadColor;
-import tech.altier.synchronizer.Main;
 
 import java.io.IOException;
 import java.nio.file.*;
@@ -49,8 +48,8 @@ public class LocalRepository {
 }
 
 class LocalListener implements Runnable {
-    private String path;
-    private FileHandler fileHandler;
+    private final String path;
+    private final FileHandler fileHandler;
 
     public LocalListener(String path) {
         this.path = path;
