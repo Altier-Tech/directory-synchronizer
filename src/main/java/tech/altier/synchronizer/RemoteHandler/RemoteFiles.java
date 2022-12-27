@@ -20,7 +20,7 @@ public class RemoteFiles {
         populateRemoteFilesInfo();
     }
 
-    private void populateRemoteFilesInfo() {
+    private void populateRemoteFilesInfo() throws DbxException {
         ListFolderResult result = client.files()
                 .listFolderBuilder("")
                 .withIncludeDeleted(false)
