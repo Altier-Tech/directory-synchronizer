@@ -31,7 +31,9 @@ public class DropboxClient {
 
     public void downloadFile(String remotePath) throws IOException, DbxException {
         OutputStream downloadFile = new FileOutputStream(Main.repository.getPath() + remotePath);
+        log("File download started: " + remotePath);
         client.files().downloadBuilder(remotePath).download(downloadFile);
+        log("File download finished: " + remotePath);
     }
 
     private void log(String message) {
