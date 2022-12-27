@@ -97,13 +97,13 @@ class LocalListener implements Runnable {
                         alert.getButtonTypes().setAll(okButton, noButton, cancelButton);
 
                         alert.showAndWait().ifPresent(type -> {
-                            System.out.println("Pressed " + type.getText());
-                            if (type == ButtonType.OK) {
+                            log("Pressed " + type.getText());
+                            if (type.getText().equalsIgnoreCase("Yes")) {
                                 log("User confirmed deletion of file " + filePath);
 
                                 // If yes, delete the file from the remote repository
                                 fileHandler.handleLocalDelete (filePath);
-                            } else if (type == ButtonType.NO) {
+                            } else if (type.getText().equalsIgnoreCase("No")) {
                                 log("User denied deletion of file " + filePath);
                                 // If no, do nothing
                             }
