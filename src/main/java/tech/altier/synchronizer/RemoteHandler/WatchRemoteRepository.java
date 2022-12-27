@@ -4,10 +4,8 @@ import com.dropbox.core.v2.DbxClientV2;
 import tech.altier.synchronizer.Main;
 
 public class WatchRemoteRepository {
-    public static DbxClientV2 client;
-
     public WatchRemoteRepository() {
-        client = Main.client;
+        
     }
 
     public void start() {
