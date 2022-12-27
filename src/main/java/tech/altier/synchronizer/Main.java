@@ -5,7 +5,7 @@ import com.dropbox.core.DbxRequestConfig;
 import com.dropbox.core.v2.DbxClientV2;
 import com.dropbox.core.v2.files.ListFolderResult;
 import com.dropbox.core.v2.files.Metadata;
- 
+
 import javafx.application.Platform;
 import javafx.concurrent.ScheduledService;
 import javafx.concurrent.Task;
