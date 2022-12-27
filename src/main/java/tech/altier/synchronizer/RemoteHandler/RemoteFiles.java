@@ -27,6 +27,11 @@ public class RemoteFiles {
         remoteFileInfo = RemoteFileInfo.getInstance();
     }
 
+    /**
+     * Populates the local database that contains the paths and the hashes
+     * of the files in the remote repository.
+     * @throws DbxException
+     */
     private void populateRemoteFilesInfo() throws DbxException {
         ListFolderResult result = client.files()
                 .listFolderBuilder("")
