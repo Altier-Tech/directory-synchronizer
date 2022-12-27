@@ -32,6 +32,7 @@ public class PropertiesLoader {
     }
 
     protected String getProperty(String key) {
+        System.out.println("PropertiesLoader: " + key);
         return (String) configuration.getProperty(key);
     }
 }
