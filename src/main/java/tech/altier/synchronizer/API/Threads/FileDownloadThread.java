@@ -3,7 +3,7 @@ package tech.altier.synchronizer.API.Threads;
 import com.dropbox.core.DbxException;
 
 import tech.altier.Thread.ThreadColor;
-import tech.altier.synchronizer.RemoteHandler.DropboxClient;
+import tech.altier.synchronizer.API.DropboxClient;
 
 import java.io.IOException;
 

@@ -1,4 +1,4 @@
-package tech.altier.synchronizer.RemoteHandler;
+package tech.altier.synchronizer.API;
 
 import com.dropbox.core.DbxException;
 import com.dropbox.core.v2.DbxClientV2;
