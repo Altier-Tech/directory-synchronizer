@@ -101,15 +101,13 @@ class LocalListener implements Runnable {
                                 log("User confirmed deletion of file " + filePath);
 
                                 // If yes, delete the file from the remote repository
-
+                                fileHandler.handleLocalDelete (filePath);
                             } else if (type == ButtonType.NO) {
                                 log("User denied deletion of file " + filePath);
                                 // If no, do nothing
                             }
                         });
                     });
-
-                    fileHandler.handleLocalDelete (filePath);
                 }
 
                 // File Modify event
