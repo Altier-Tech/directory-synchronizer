@@ -65,6 +65,10 @@ public class WatchFolder {
     }
 
     private void log(String message) {
-        System.out.println(ThreadColor.ANSI_GREEN + "DirListener: \t" + message);
+        System.out.println(
+                ThreadColor.ANSI_GREEN +
+                        "\tDirListener: \t" +
+                        message
+        );
     }
 }
