@@ -12,6 +12,7 @@ import javafx.concurrent.Task;
 import javafx.fxml.FXML;
 import javafx.scene.control.ListView;
 
+import javafx.util.Duration;
 import tech.altier.Thread.ThreadColor;
 import tech.altier.synchronizer.APIThreads.FileUploadThread;
 import tech.altier.synchronizer.LocalHandler.LocalRepository;
@@ -57,7 +58,9 @@ public class Main {
 
         repository.startListening();
 
-
+        ScheduledService<Void> service = new ListViewRefreshService();
+        service.setPeriod(Duration.seconds(15));
+        service.start();
     }
 
     @FXML
@@ -170,7 +173,7 @@ public class Main {
                     });
                     return null;
                 }
-            }
+            };
         }
     }
 }
