@@ -55,7 +55,7 @@ public class Main {
         // Remote
         populateRemoteListView();
 
-        startupSync();
+        sync();
 
         repository.startListening();
 
@@ -113,55 +113,6 @@ public class Main {
             }
         }
     }
-
-    /* private void startupSync() throws DbxException {
-        // List local files
-        File[] files = getLocalFiles();
-        List<String> localFiles = new ArrayList<>();
-        if (files != null) {
-            for (File file : files) {
-                if (file.isFile()) {
-                    localFiles.add(file.getName());
-                }
-            }
-        }
-        log("Listing local files.... Done!");
-
-        // Check if each remote file exists locally
-        List<String> remoteFiles = new ArrayList<>();
-        ListFolderResult result = client.files().listFolder("");
-        while (true) {
-            for (Metadata metadata : result.getEntries()) {
-                remoteFiles.add(metadata.getName());
-
-                // If the current file doesn't exist
-                if (!localFiles.contains(metadata.getName())) {
-                    log("File " + metadata.getName() + " doesn't exist locally!");
-                    // Download the file
-                    Thread downloadThread = new Thread(new FileDownloadThread(metadata.getName()));
-                    downloadThread.start();
-                }
-            }
-
-            if (!result.getHasMore()) {
-                break;
-            }
-
-            result = client.files().listFolderContinue(result.getCursor());
-        }
-
-        // Check if each local file exists on the remote server
-        for (String localFile : localFiles) {
-            if (!remoteFiles.contains(localFile)) {
-                log("File " + localFile + " doesn't exist remotely! Uploading...");
-                // TODO upload it
-                Thread uploadThread = new Thread(
-                        new FileUploadThread(repository.getPath() + "\\" + localFile)
-                );
-                uploadThread.start();
-            }
-        }
-    } */
 
     private void populateRemoteListView() throws DbxException {
         listViewRemote.getItems().clear();
