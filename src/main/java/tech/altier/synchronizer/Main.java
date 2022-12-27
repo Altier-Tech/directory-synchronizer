@@ -58,9 +58,9 @@ public class Main {
 
         repository.startListening();
 
-        ScheduledService<Void> service = new ListViewRefreshService();
-        service.setPeriod(Duration.seconds(15));
-        service.start();
+        ScheduledService<Void> listViewsRefreshService = new ListViewRefreshService();
+        listViewsRefreshService.setPeriod(Duration.seconds(15));
+        listViewsRefreshService.start();
     }
 
     @FXML
@@ -167,6 +167,7 @@ public class Main {
                     Platform.runLater(() -> {
                         try {
                             populateRemoteListView();
+                            populateLocalListView();
                         } catch (DbxException e) {
                             throw new RuntimeException(e);
                         }
