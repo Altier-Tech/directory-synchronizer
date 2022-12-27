@@ -24,6 +24,7 @@ public class FileHandler {
         // Step 1 - Delete the remote file
 
         // Step 2 - Upload the new local file
+        
     }
 
     private void log(String message) {
