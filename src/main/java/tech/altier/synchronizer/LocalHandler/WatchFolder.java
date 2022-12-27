@@ -67,8 +67,9 @@ public class WatchFolder {
     private void log(String message) {
         System.out.println(
                 ThreadColor.ANSI_GREEN +
-                        "\tDirListener: \t" +
-                        message
+                Thread.currentThread().getName() +
+                "\tDirListener: \t" +
+                message
         );
     }
 }
