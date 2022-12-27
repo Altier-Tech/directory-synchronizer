@@ -37,12 +37,10 @@ public class FileHandler {
             if (type == ButtonType.OK) {
                 log("User confirmed deletion of file " + filePath);
                 log("Deleting file " + filePath);
+
                 // If yes, delete the file from the remote repository
-                try {
-                    client.files().deleteV2("/" + filePath);
-                } catch (DbxException e) {
-                    throw new RuntimeException(e);
-                }
+                
+
                 log("Deletion of file " + filePath + " was successful!");
             } else if (type == ButtonType.NO) {
                 log("User denied deletion of file " + filePath);
