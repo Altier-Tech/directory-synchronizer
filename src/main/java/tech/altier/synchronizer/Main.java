@@ -161,7 +161,11 @@ public class Main {
                 protected Void call(){
                     Platform.runLater(() -> {
                         /* Modify you GUI properties... */
-
+                        try {
+                            populateRemoteListView();
+                        } catch (DbxException e) {
+                            throw new RuntimeException(e);
+                        }
                     });
                     return null;
                 }
