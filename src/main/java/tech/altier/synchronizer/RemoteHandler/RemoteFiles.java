@@ -2,6 +2,7 @@ package tech.altier.synchronizer.RemoteHandler;
 
 import com.dropbox.core.DbxException;
 import com.dropbox.core.v2.DbxClientV2;
+import com.dropbox.core.v2.files.FileMetadata;
 import com.dropbox.core.v2.files.ListFolderResult;
 import com.dropbox.core.v2.files.Metadata;
 
@@ -16,10 +17,19 @@ public class RemoteFiles {
         client = Main.client;
         remoteFileInfo = RemoteFileInfo.getInstance();
 
-        ListFolderResult result = client.files().listFolder("");
+        ListFolderResult result = client.files()
+                .listFolderBuilder("")
+                .withIncludeDeleted(false)
+                .withRecursive(true)
+                .withIncludeMediaInfo(true)
+                .start();
         while (true) {
             for (Metadata metadata : result.getEntries()) {
-
+                FileMetadata fileMetadata = null;
+                if (metadata instanceof FileMetadata) {
+                    fileMetadata = (FileMetadata) metadata;
+                }
+                remoteFileInfo.put(metadata.getPathLower(), fileMetadata.getContentHash());
             }
 
             if (!result.getHasMore()) {
