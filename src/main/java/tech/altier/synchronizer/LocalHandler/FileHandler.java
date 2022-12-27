@@ -32,6 +32,7 @@ public class FileHandler {
         ButtonType noButton = new ButtonType("Yes", ButtonBar.ButtonData.NO);
         ButtonType cancelButton = new ButtonType("Yes", ButtonBar.ButtonData.CANCEL_CLOSE);
         alert.getButtonTypes().setAll(okButton, noButton, cancelButton);
+
         alert.showAndWait().ifPresent(type -> {
             if (type == ButtonType.OK) {
                 log("User confirmed deletion of file " + filePath);
@@ -44,7 +45,8 @@ public class FileHandler {
                 }
                 log("Deletion of file " + filePath + " was successful!");
             } else if (type == ButtonType.NO) {
-            } else {
+                log("User denied deletion of file " + filePath);
+                // If no, do nothing
             }
         });
     }
