@@ -8,10 +8,14 @@ import com.dropbox.core.v2.files.Metadata;
 import tech.altier.AppProperties.RemoteFileInfo;
 import tech.altier.synchronizer.Main;
 
+import java.util.HashMap;
+
 public class RemoteListener implements Runnable {
     static RemoteFiles remoteFilesInstance;
     static RemoteFileInfo remoteFileInfo;
     private ListFolderResult remoteFileListResult;
+    private HashMap<String, String> tempRemoteFileInfo;
+    
     DbxClientV2 client;
 
     static {
@@ -59,6 +63,9 @@ public class RemoteListener implements Runnable {
 
                     // TODO Step 2: Download the remote file
                 }
+
+                // Add the metadata to a temporary map for stage 2 tests
+
             }
 
             if (!remoteFileListResult.getHasMore()) {
