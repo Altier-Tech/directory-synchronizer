@@ -151,16 +151,16 @@ public class Main {
 
     public boolean promptConfirmation(String filePath) {
         Alert alert = new Alert(Alert.AlertType.CONFIRMATION);
-        Platform.runLater(
-            // Prompt if the deletion should be permanent
-            log("Prompting user for deletion confirmation of file " + filePath);
-            alert.setTitle("Do you wish to make the deletion permanent?");
-            alert.setContentText("Are you sure?");
-            ButtonType okButton = new ButtonType("Yes", ButtonBar.ButtonData.YES);
-            ButtonType noButton = new ButtonType("Yes", ButtonBar.ButtonData.NO);
-            ButtonType cancelButton = new ButtonType("Yes", ButtonBar.ButtonData.CANCEL_CLOSE);
-            alert.getButtonTypes().setAll(okButton, noButton, cancelButton);
+        // Prompt if the deletion should be permanent
+        log("Prompting user for deletion confirmation of file " + filePath);
+        alert.setTitle("Do you wish to make the deletion permanent?");
+        alert.setContentText("Are you sure?");
+        ButtonType okButton = new ButtonType("Yes", ButtonBar.ButtonData.YES);
+        ButtonType noButton = new ButtonType("Yes", ButtonBar.ButtonData.NO);
+        ButtonType cancelButton = new ButtonType("Yes", ButtonBar.ButtonData.CANCEL_CLOSE);
+        alert.getButtonTypes().setAll(okButton, noButton, cancelButton);
 
+        Platform.runLater(
             alert.showAndWait().ifPresent(type -> {
                 if (type == ButtonType.OK) {
                     log("User confirmed deletion of file " + filePath);
