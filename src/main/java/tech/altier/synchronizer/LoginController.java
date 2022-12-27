@@ -5,10 +5,16 @@ import javafx.scene.control.Hyperlink;
 import javafx.scene.control.Label;
 import javafx.scene.control.PasswordField;
 
+import org.apache.commons.configuration2.Configuration;
+import org.apache.commons.configuration2.PropertiesConfiguration;
+import org.apache.commons.configuration2.builder.fluent.Configurations;
+import org.apache.commons.configuration2.ex.ConfigurationException;
+import org.apache.commons.configuration2.io.FileLocator;
 import tech.altier.AppProperties.Properties;
 import tech.altier.Thread.ThreadColor;
 
 import java.awt.*;
+import java.io.File;
 import java.io.IOException;
 import java.net.URI;
 import java.net.URISyntaxException;
@@ -24,8 +30,11 @@ public class LoginController {
     public static String ACCESS_TOKEN;
     public static String loginURL;
 
-    public void initialize() {
-        loginURL = Properties.get("loginURL");
+    public void initialize() throws ConfigurationException {
+        Configurations configs = new Configurations();
+        Configuration config = configs.properties(new File("application.properties"));
+        loginURL = config.getString("loginURL");
+
         generateTokenLink.setOnAction(e -> {
             Desktop desk = Desktop.getDesktop();
             try {
