@@ -14,4 +14,15 @@ public class FileDownloadThread {
         this.path = path;
         client = new DropboxClient();
     }
+
+
+
+    private void log(String message) {
+        System.out.println(
+                ThreadColor.ANSI_BLUE +
+                        Thread.currentThread().getName() +
+                        "\tDBClient: \t" +
+                        message
+        );
+    }
 }
