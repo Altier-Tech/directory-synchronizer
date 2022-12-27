@@ -31,6 +31,11 @@ public class SetupController {
     }
 
     private void log(String message) {
-        System.out.println(ThreadColor.ANSI_PURPLE + "SetupView: \t" + message);
+        System.out.println(
+                ThreadColor.ANSI_PURPLE +
+                Thread.currentThread().getName() +
+                "SetupView: \t" +
+                message
+        );
     }
 }
