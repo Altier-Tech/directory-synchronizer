@@ -7,6 +7,7 @@ module tech.altier.synchronizer {
     requires dropbox.core.sdk;
     requires javafx.web;
     requires java.desktop;
+    requires org.apache.commons.configuration2;
 
     opens tech.altier.synchronizer to javafx.fxml;
     exports tech.altier.synchronizer;
