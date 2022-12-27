@@ -1,9 +1,9 @@
 package tech.altier.AppProperties;
 
 public class Properties {
-    PropertiesLoader instance = PropertiesLoader.getInstance();
-    
-    static {
+    private static PropertiesLoader instance;
 
+    static {
+        instance = PropertiesLoader.getInstance();
     }
 }
