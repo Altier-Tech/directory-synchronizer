@@ -62,12 +62,19 @@ public class RemoteListener implements Runnable {
                     // TODO Step 1: Delete the local file
 
                     // TODO Step 2: Download the remote file
+
                 }
 
                 // Add the metadata to a temporary map for test Case 3
                 tempRemoteFileInfo.put(metadata.getPathLower(), fileMetadata.getContentHash());
 
                 // Case 3: Check if any files have been deleted
+                for (String path : remoteFileInfo.keySet()) {
+                    if (!tempRemoteFileInfo.containsKey(path)) {
+                        // TODO File has been deleted, so need to delete the local file
+                        
+                    }
+                }
             }
 
             if (!remoteFileListResult.getHasMore()) {
