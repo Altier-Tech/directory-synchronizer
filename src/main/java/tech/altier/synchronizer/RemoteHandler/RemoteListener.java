@@ -7,6 +7,7 @@ import com.dropbox.core.v2.files.ListFolderResult;
 import com.dropbox.core.v2.files.Metadata;
 
 import tech.altier.AppProperties.RemoteFileInfo;
+import tech.altier.Thread.ThreadColor;
 import tech.altier.synchronizer.Main;
 
 import java.util.HashMap;
@@ -89,5 +90,14 @@ public class RemoteListener implements Runnable {
                 throw new RuntimeException(e);
             }
         }
+    }
+
+    private void log(String message) {
+        System.out.println(
+                ThreadColor.ANSI_PURPLE +
+                        Thread.currentThread().getName() +
+                        "\tRemoteListener: \t" +
+                        message
+        );
     }
 }
