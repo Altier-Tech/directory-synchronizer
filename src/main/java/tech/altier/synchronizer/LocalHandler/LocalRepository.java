@@ -18,7 +18,10 @@ public class LocalRepository {
     }
 
     public void startListening() {
-        
+        Thread watcher = new Thread(
+                new LocalListener()
+        );
+        watcher.start();
     }
 
     public String getPath() {
@@ -31,6 +34,12 @@ public class LocalRepository {
 }
 
 public class LocalListener implements Runnable {
+    private String path;
+    
+    public LocalListener(String path) {
+        this.path = path;
+    }
+
     public void watch() throws IOException {
         WatchService watchService = FileSystems.getDefault().newWatchService();
 
