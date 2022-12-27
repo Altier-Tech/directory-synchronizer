@@ -19,41 +19,6 @@ public class RemoteFileInfo extends HashMap<String, String> {
         }
     }
 
-    @Override
-    public int size() {
-        return remoteFiles.size();
-    }
-
-    @Override
-    public boolean isEmpty() {
-        return super.isEmpty();
-    }
-
-    @Override
-    public String get(Object key) {
-        return super.get(key);
-    }
-
-    @Override
-    public boolean containsKey(Object key) {
-        return super.containsKey(key);
-    }
-
-    @Override
-    public String put(String key, String value) {
-        return super.put(key, value);
-    }
-
-    @Override
-    public String remove(Object key) {
-        return super.remove(key);
-    }
-
-    @Override
-    public Set<String> keySet() {
-        return super.keySet();
-    }
-
     private static Properties loadProperties() throws IOException {
         Properties configuration = new Properties();
         InputStream inputStream = PropertiesLoader.class
@@ -74,5 +39,40 @@ public class RemoteFileInfo extends HashMap<String, String> {
 
     private static String get(String key) {
         return conf.getProperty(key);
+    }
+
+    @Override
+    public int size() {
+        return remoteFiles.size();
+    }
+
+    @Override
+    public boolean isEmpty() {
+        return remoteFiles.isEmpty();
+    }
+
+    @Override
+    public String get(Object key) {
+        return remoteFiles.get(key);
+    }
+
+    @Override
+    public boolean containsKey(Object key) {
+        return remoteFiles.containsKey(key);
+    }
+
+    @Override
+    public String put(String key, String value) {
+        return remoteFiles.put(key, value);
+    }
+
+    @Override
+    public String remove(Object key) {
+        return remoteFiles.remove(key);
+    }
+
+    @Override
+    public Set<String> keySet() {
+        return remoteFiles.keySet();
     }
 }
