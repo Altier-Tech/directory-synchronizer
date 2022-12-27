@@ -1,38 +1,32 @@
 package tech.altier.AppProperties;
 
-import org.apache.commons.configuration2.FileBasedConfiguration;
-import org.apache.commons.configuration2.PropertiesConfiguration;
-import org.apache.commons.configuration2.builder.FileBasedConfigurationBuilder;
-import org.apache.commons.configuration2.builder.fluent.Parameters;
-import org.apache.commons.configuration2.ex.ConfigurationException;
+import java.io.IOException;
+import java.io.InputStream;
+import java.util.Properties;
 
 public class PropertiesLoader {
+    Properties conf;
 
-    private static PropertiesLoader instance;
-    private FileBasedConfiguration configuration;
-
-    private PropertiesLoader() {
-        Parameters params = new Parameters();
-        FileBasedConfigurationBuilder<FileBasedConfiguration> builder =
-                new FileBasedConfigurationBuilder<FileBasedConfiguration>(PropertiesConfiguration.class)
-                        .configure(params.properties()
-                                .setFileName("application.properties"));
+    static {
         try {
-            configuration = builder.getConfiguration();
-        } catch (ConfigurationException e) {
-            e.printStackTrace();
+            conf = loadProperties();
+        } catch (IOException e) {
+            throw new RuntimeException(e);
         }
     }
 
-    protected static synchronized PropertiesLoader getInstance() {
-        if (instance == null) {
-            instance = new PropertiesLoader();
-        }
-        return instance;
+    private static Properties loadProperties() throws IOException {
+        Properties configuration = new Properties();
+        InputStream inputStream = PropertiesLoader.class
+                .getClassLoader()
+                .getResourceAsStream("application.properties");
+        configuration.load(inputStream);
+        assert inputStream != null;
+        inputStream.close();
+        return configuration;
     }
 
-    protected String getProperty(String key) {
-        System.out.println("PropertiesLoader: " + key);
-        return (String) configuration.getProperty(key);
+    public static String get(String key) throws IOException {
+
     }
 }
