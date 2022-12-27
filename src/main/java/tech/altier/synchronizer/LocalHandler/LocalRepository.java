@@ -97,6 +97,7 @@ class LocalListener implements Runnable {
                         alert.getButtonTypes().setAll(okButton, noButton, cancelButton);
 
                         alert.showAndWait().ifPresent(type -> {
+                            System.out.println("Pressed " + type.getText());
                             if (type == ButtonType.OK) {
                                 log("User confirmed deletion of file " + filePath);
 
