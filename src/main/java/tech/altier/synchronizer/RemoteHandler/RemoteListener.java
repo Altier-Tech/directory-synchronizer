@@ -5,6 +5,7 @@ import com.dropbox.core.v2.files.ListFolderResult;
 
 public class RemoteListener implements Runnable {
     static RemoteFiles remoteFilesInstance;
+    private ListFolderResult remoteFileListResult;
 
     static {
         remoteFilesInstance = RemoteFiles.getInstance();
@@ -25,6 +26,6 @@ public class RemoteListener implements Runnable {
             throw new RuntimeException(e);
         }
 
-        
+        for (String key : result)
     }
 }
