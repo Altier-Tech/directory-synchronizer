@@ -1,9 +1,8 @@
 package tech.altier.synchronizer.API;
 
 import com.dropbox.core.DbxException;
-import tech.altier.synchronizer.Main;
 
-import java.io.*;
+import java.io.IOException;
 
 public interface ClientAPI {
     public void uploadFile(String path) throws DbxException;
