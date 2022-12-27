@@ -49,7 +49,8 @@ public class RemoteListener implements Runnable {
 
                 // Case 1 : File is new
                 if (!remoteFileInfo.containsKey(metadata.getPathLower())) {
-                    // Doesn't exist, so need to download the remote file
+                    // TODO Doesn't exist, so need to download the remote file
+
                 } else if (!remoteFileInfo.get(metadata.getPathLower()).equals(fileMetadata.getContentHash())) {
                     // Case 2: IsModified - Check if both hashes are the same
                     // Not the same, so need to..
