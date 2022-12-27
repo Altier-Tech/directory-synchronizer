@@ -107,15 +107,7 @@ public class Main {
 
     private void populateListViews() throws DbxException {
         // Local
-        listViewLocal.getItems().clear();
-        File[] files = getLocalFiles();
-        if (files != null) {
-            for (File file : files) {
-                if (file.isFile()) {
-                    listViewLocal.getItems().add(file.getName());
-                }
-            }
-        }
+        populateLocalListView();
 
         // Remote
         listViewRemote.getItems().clear();
@@ -130,6 +122,18 @@ public class Main {
             }
 
             result = client.files().listFolderContinue(result.getCursor());
+        }
+    }
+
+    public void populateLocalListView() {
+        listViewLocal.getItems().clear();
+        File[] files = getLocalFiles();
+        if (files != null) {
+            for (File file : files) {
+                if (file.isFile()) {
+                    listViewLocal.getItems().add(file.getName());
+                }
+            }
         }
     }
 
