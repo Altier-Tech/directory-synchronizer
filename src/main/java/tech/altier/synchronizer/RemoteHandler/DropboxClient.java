@@ -40,7 +40,7 @@ public class DropboxClient {
         System.out.println(
                 ThreadColor.ANSI_CYAN +
                 Thread.currentThread().getName() +
-                "DBClient: \t" +
+                "\tDBClient: \t" +
                 message
         );
     }
