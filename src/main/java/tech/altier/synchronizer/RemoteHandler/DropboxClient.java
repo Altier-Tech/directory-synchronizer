@@ -36,6 +36,8 @@ public class DropboxClient {
         log("File download finished: " + remotePath);
     }
 
+    p
+
     private void log(String message) {
         System.out.println(
                 ThreadColor.ANSI_CYAN +
