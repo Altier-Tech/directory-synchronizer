@@ -63,7 +63,7 @@ public class Main {
         repository.startListening();
 
         ScheduledService<Void> listViewsRefreshService = new ListViewRefreshService();
-        listViewsRefreshService.setPeriod(Duration.seconds(15));
+        listViewsRefreshService.setPeriod(Duration.seconds(4));
         listViewsRefreshService.start();
     }
 
