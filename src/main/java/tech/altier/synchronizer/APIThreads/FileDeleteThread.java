@@ -27,9 +27,9 @@ public class FileDeleteThread implements Runnable {
     private void log(String message) {
         System.out.println(
                 ThreadColor.ANSI_BLUE +
-                        Thread.currentThread().getName() +
-                        "\tDBClient: \t" +
-                        message
+                Thread.currentThread().getName() +
+                "\tDBClient: \t" +
+                message
         );
     }
 }
