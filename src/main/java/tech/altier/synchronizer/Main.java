@@ -149,10 +149,11 @@ public class Main {
         return path.listFiles();
     }
 
-    public boolean promptConfirmation(String message) {
+    public boolean promptConfirmation(String message, String filePath) {
+        Alert alert = new Alert(Alert.AlertType.CONFIRMATION);
         Platform.runLater(
             // Prompt if the deletion should be permanent
-            Alert alert = new Alert(Alert.AlertType.CONFIRMATION);
+            
             log("Prompting user for deletion confirmation of file " + filePath);
             alert.setTitle("Do you wish to make the deletion permanent?");
             alert.setContentText("Are you sure?");
