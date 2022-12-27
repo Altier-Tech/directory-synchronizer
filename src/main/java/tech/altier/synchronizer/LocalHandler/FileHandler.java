@@ -26,7 +26,7 @@ public class FileHandler {
         deleteThread.start();
     }
 
-    public void handleLocalModify(Path filePath) { // TODO
+    public void handleLocalModify(Path filePath) {
         log("Modification thread started for the file " + filePath);
         Thread modifyThread = new Thread(
                 new FileModifyThread(filePath.toString())
