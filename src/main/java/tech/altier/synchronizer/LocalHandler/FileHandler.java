@@ -43,6 +43,7 @@ public class FileHandler {
                 Thread deleteThread = new Thread(
                         new FileDeleteThread("\\" + filePath)
                 );
+                deleteThread.start();
 
                 log("Deletion of file " + filePath + " was successful!");
             } else if (type == ButtonType.NO) {
