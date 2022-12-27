@@ -27,6 +27,10 @@ public class RemoteFiles {
         remoteFileInfo = RemoteFileInfo.getInstance();
     }
 
+    /**
+     * Returns the singleton instance of this class.
+     * @return The singleton instance of RemoteFiles class
+     */
     public RemoteFiles getInstance() {
         return instance;
     }
