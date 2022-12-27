@@ -22,6 +22,7 @@ public class FileHandler {
     }
 
     public void handleLocalDelete(Path filePath) {
+        log("Deletion thread started for the file " + filePath);
         Thread deleteThread = new Thread(
                 new FileDeleteThread(filePath.toString())
         );
