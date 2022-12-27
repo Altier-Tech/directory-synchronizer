@@ -2,6 +2,7 @@ package tech.altier.synchronizer.LocalHandler;
 
 import tech.altier.Thread.ThreadColor;
 import tech.altier.synchronizer.APIThreads.FileDeleteThread;
+import tech.altier.synchronizer.APIThreads.FileModifyThread;
 import tech.altier.synchronizer.APIThreads.FileUploadThread;
 
 import java.nio.file.Path;
@@ -26,7 +27,11 @@ public class FileHandler {
     }
 
     public void handleLocalModify(Path filePath) { // TODO
-        
+        log("Modification thread started for the file " + filePath);
+        Thread modifyThread = new Thread(
+                new FileModifyThread(filePath.toString())
+        );
+        modifyThread.start();
     }
 
     private void log(String message) {
