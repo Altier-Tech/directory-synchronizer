@@ -19,7 +19,7 @@ public class LocalRepository {
 
     public void startListening() {
         Thread watcher = new Thread(
-                new LocalListener()
+                new LocalListener(path)
         );
         watcher.start();
     }
@@ -35,7 +35,7 @@ public class LocalRepository {
 
 public class LocalListener implements Runnable {
     private String path;
-    
+
     public LocalListener(String path) {
         this.path = path;
     }
