@@ -5,6 +5,7 @@ import javafx.scene.control.Hyperlink;
 import javafx.scene.control.Label;
 import javafx.scene.control.PasswordField;
 
+import tech.altier.AppProperties.Properties;
 import tech.altier.Thread.ThreadColor;
 
 import java.awt.*;
@@ -24,7 +25,7 @@ public class LoginController {
     public static String loginURL;
 
     public void initialize() {
-        loginURL = "https://www.dropbox.com/oauth2/authorize?client_id=znj7h8gmdmevoz0&token_access_type=offline&response_type=code";
+        loginURL = Properties.get("loginURL");
         generateTokenLink.setOnAction(e -> {
             Desktop desk = Desktop.getDesktop();
             try {
