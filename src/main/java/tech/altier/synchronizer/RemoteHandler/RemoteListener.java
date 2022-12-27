@@ -27,6 +27,7 @@ public class RemoteListener implements Runnable {
 
     public RemoteListener() {
         client = Main.client;
+        tempRemoteFileInfo = new HashMap<>();
     }
 
     @Override
