@@ -142,7 +142,7 @@ public class Main {
         System.out.println(
                 ThreadColor.ANSI_BLUE +
                 Thread.currentThread().getName() +
-                "MainApp: \t" +
+                "\tMainApp: \t" +
                 message
         );
     }
