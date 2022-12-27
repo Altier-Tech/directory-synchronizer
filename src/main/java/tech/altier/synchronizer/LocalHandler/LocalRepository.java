@@ -17,7 +17,9 @@ public class LocalRepository {
         return new LocalRepository(path);
     }
 
-
+    public void startListening() {
+        
+    }
 
     public String getPath() {
         return path;
