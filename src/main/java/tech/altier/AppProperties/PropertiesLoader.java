@@ -27,6 +27,6 @@ public class PropertiesLoader {
     }
 
     public static String get(String key) throws IOException {
-
+        return conf.getProperty(key);
     }
 }
