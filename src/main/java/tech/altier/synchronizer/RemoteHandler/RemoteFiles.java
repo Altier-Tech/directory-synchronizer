@@ -5,13 +5,16 @@ import com.dropbox.core.v2.DbxClientV2;
 import com.dropbox.core.v2.files.ListFolderResult;
 import com.dropbox.core.v2.files.Metadata;
 
+import tech.altier.AppProperties.RemoteFileInfo;
 import tech.altier.synchronizer.Main;
 
 public class RemoteFiles {
     private DbxClientV2 client;
+    RemoteFileInfo remoteFileInfo;
 
     public RemoteFiles() throws DbxException {
         client = Main.client;
+        remoteFileInfo = RemoteFileInfo.getInstance();
 
         ListFolderResult result = client.files().listFolder("");
         while (true) {
