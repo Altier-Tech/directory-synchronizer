@@ -5,6 +5,7 @@ import com.dropbox.core.v2.DbxClientV2;
 import com.dropbox.core.v2.files.FileMetadata;
 import com.dropbox.core.v2.files.ListFolderResult;
 import com.dropbox.core.v2.files.Metadata;
+
 import tech.altier.AppProperties.RemoteFileInfo;
 import tech.altier.synchronizer.Main;
 
@@ -72,7 +73,7 @@ public class RemoteListener implements Runnable {
                 for (String path : remoteFileInfo.keySet()) {
                     if (!tempRemoteFileInfo.containsKey(path)) {
                         // TODO File has been deleted, so need to delete the local file
-                        
+
                     }
                 }
             }
