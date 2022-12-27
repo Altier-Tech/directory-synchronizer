@@ -6,6 +6,9 @@ import com.dropbox.core.v2.DbxClientV2;
 import com.dropbox.core.v2.files.ListFolderResult;
 import com.dropbox.core.v2.files.Metadata;
 
+import javafx.application.Platform;
+import javafx.concurrent.ScheduledService;
+import javafx.concurrent.Task;
 import javafx.fxml.FXML;
 import javafx.scene.control.ListView;
 
@@ -148,5 +151,21 @@ public class Main {
                 "\tMainApp: \t" +
                 message
         );
+    }
+
+    class ListViewRefreshService extends ScheduledService<Void> {
+        @Override
+        protected Task<Void> createTask(){
+            return new Task<Void>(){
+                @Override
+                protected Void call(){
+                    Platform.runLater(() -> {
+                        /* Modify you GUI properties... */
+
+                    });
+                    return null;
+                }
+            }
+        }
     }
 }
