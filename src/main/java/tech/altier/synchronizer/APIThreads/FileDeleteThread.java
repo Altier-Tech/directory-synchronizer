@@ -10,7 +10,7 @@ public class FileDeleteThread {
     private final String path;
     private final DropboxClient client;
 
-    public FileDownloadThread(String path) {
+    public FileDeleteThread(String path) {
         log("Upload thread initialized for file " + path);
         this.path = path;
         client = new DropboxClient();
