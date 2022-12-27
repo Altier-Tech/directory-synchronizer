@@ -160,19 +160,25 @@ public class Main {
         ButtonType cancelButton = new ButtonType("Yes", ButtonBar.ButtonData.CANCEL_CLOSE);
         alert.getButtonTypes().setAll(okButton, noButton, cancelButton);
 
+        boolean answer = false;
         Platform.runLater(
-            alert.showAndWait().ifPresent(type -> {
-                if (type == ButtonType.OK) {
-                    log("User confirmed deletion of file " + filePath);
-
-                    // If yes, delete the file from the remote repository
-                    // TODO
-                } else if (type == ButtonType.NO) {
-                    log("User denied deletion of file " + filePath);
-                    // If no, do nothing
+                () -> {
+                    alert.showAndWait().ifPresent(type -> {
+                        if (type == okButton) {
+                            log("User confirmed deletion of file " + filePath);
+                            answer = true;
+                        } else if (type == noButton) {
+                            log("User chose to delete file " + filePath + " locally only");
+                            answer = false;
+                        } else {
+                            log("User cancelled deletion of file " + filePath);
+                            answer = false;
+                        }
+                    });
                 }
-            });
         );
+
+        return answer;
     }
 
     private void log(String message) {
