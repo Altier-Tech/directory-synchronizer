@@ -19,7 +19,7 @@ public class DropboxClient {
         client = Main.client;
     }
 
-    public void uploadFile(String path) {
+    public void uploadFile(String path) throws DbxException {
         File absPath = new File(path);
         String relPath = absPath.getName();
         try (InputStream in = new FileInputStream(path)) {
@@ -32,7 +32,7 @@ public class DropboxClient {
         }
 
         // TODO recall listview population function for remote
-
+        Main.populateRemListView();
     }
 
     public void downloadFile(String remotePath) {
