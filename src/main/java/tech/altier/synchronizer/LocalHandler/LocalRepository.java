@@ -11,19 +11,14 @@ import java.io.IOException;
 import java.nio.file.*;
 
 public class LocalRepository {
-    private String path;
+    private final String path;
 
     private LocalRepository(String path) {
         this.path = path;
     }
 
     public static LocalRepository setupRepositoryOnDir(String path) {
-        System.out.println(
-                ThreadColor.ANSI_GREEN +
-                "LocalListener: \t" +
-                "Setting up repository on directory: " +
-                path
-        );
+        log("Setting up repository on directory: " + path);
         return new LocalRepository(path);
     }
 
@@ -38,7 +33,7 @@ public class LocalRepository {
         return path;
     }
 
-    private void log(String message) {
+    private static void log(String message) {
         System.out.println(
                 ThreadColor.ANSI_GREEN +
                 Thread.currentThread().getName() +
