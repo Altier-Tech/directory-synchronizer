@@ -33,12 +33,7 @@ public class RemoteFiles {
      * @throws DbxException If an error occurs while communicating with Dropbox
      */
     private void populateRemoteFilesInfo() throws DbxException {
-        ListFolderResult result = client.files()
-                .listFolderBuilder("")
-                .withIncludeDeleted(false)
-                .withRecursive(true)
-                .withIncludeMediaInfo(true)
-                .start();
+        ListFolderResult result = getDetailedRemoteFileInfo();
 
         while (true) {
             for (Metadata metadata : result.getEntries()) {
