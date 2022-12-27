@@ -90,7 +90,7 @@ class LocalListener implements Runnable {
         System.out.println(
                 ThreadColor.ANSI_GREEN +
                 Thread.currentThread().getName() +
-                "LocalListener: \t" + message
+                "\tLocalListener: \t" + message
         );
     }
 
