@@ -17,10 +17,10 @@ public class FileHandler {
         uploadThread.start();
     }
 
-    public static void handleLocalDelete(Path filePath) { // TODO
+    public void handleLocalDelete(Path filePath) { // TODO
     }
 
-    public static void handleLocalModify(Path filePath) { // TODO
+    public void handleLocalModify(Path filePath) { // TODO
     }
 
     private void log(String message) {
