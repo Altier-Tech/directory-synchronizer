@@ -45,7 +45,10 @@ public class Main {
         log("Logged in user: " + accountName);
         log("Local repository: " + repository.getPath());
 
-        populateListViews();
+        // Local
+        populateLocalListView();
+        // Remote
+        populateRemoteListView();
 
         startupSync();
 
@@ -103,14 +106,6 @@ public class Main {
                 uploadThread.start();
             }
         }
-    }
-
-    private void populateListViews() throws DbxException {
-        // Local
-        populateLocalListView();
-
-        // Remote
-        populateRemoteListView();
     }
 
     public static void populateListView() throws DbxException {
