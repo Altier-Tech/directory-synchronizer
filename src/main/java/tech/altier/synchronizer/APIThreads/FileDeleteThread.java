@@ -19,8 +19,8 @@ public class FileDeleteThread implements Runnable {
     @Override
     public void run() {
         try {
-            client.downloadFile(path);
-        } catch (DbxException | IOException e) {
+            client.deleteFile(path);
+        } catch (DbxException e) {
             throw new RuntimeException(e);
         }
     }
