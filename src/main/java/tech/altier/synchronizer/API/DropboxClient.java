@@ -8,7 +8,7 @@ import tech.altier.synchronizer.Main;
 
 import java.io.*;
 
-public class DropboxClient {
+public class DropboxClient implements ClientAPI {
     public static DbxClientV2 client;
 
     public DropboxClient() {
