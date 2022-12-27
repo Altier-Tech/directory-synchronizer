@@ -1,6 +1,7 @@
 package tech.altier.synchronizer.LocalHandler;
 
 import tech.altier.Thread.ThreadColor;
+import tech.altier.synchronizer.Main;
 
 import java.io.IOException;
 import java.nio.file.*;
@@ -77,7 +78,8 @@ class LocalListener implements Runnable {
                 if (kind == StandardWatchEventKinds.ENTRY_DELETE) {
                     log("A file has been deleted: " + filePath);
 
-                    System.out.println(Thread.currentThread().getName());
+                    Main main = new Main();
+                    boolean ans = main.promptConfirmation(filePath.toString());
 
                     fileHandler.handleLocalDelete (filePath);
                 }
