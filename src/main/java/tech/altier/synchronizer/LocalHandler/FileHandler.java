@@ -19,6 +19,10 @@ public class FileHandler {
     }
 
     public void handleLocalDelete(Path filePath) { // TODO
+        // Step 1 - Prompt if the deletion should be permanent
+
+        // If yes, delete the file from the remote repository
+        
     }
 
     public void handleLocalModify(Path filePath) { // TODO
