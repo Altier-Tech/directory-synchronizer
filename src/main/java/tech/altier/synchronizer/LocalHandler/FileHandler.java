@@ -41,7 +41,7 @@ public class FileHandler {
 
                 // If yes, delete the file from the remote repository
                 Thread deleteThread = new Thread(
-                        new FileDeleteThread("\\" + filePath)
+                        new FileDeleteThread(filePath.toString())
                 );
                 deleteThread.start();
 
