@@ -48,8 +48,8 @@ public class RemoteListener implements Runnable {
                 assert fileMetadata != null;
                 // Check if both hashes are the same
                 if (!remoteFileInfo.get(metadata.getPathLower()).equals(fileMetadata.getContentHash())) {
-                    // If they are not the same, update the local database
-                    remoteFileInfo.put(metadata.getPathLower(), fileMetadata.getContentHash());
+                    // Not the same, so need to download the remote file
+                    // TODO: Download the remote file
                 }
             }
 
