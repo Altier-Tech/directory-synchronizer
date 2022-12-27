@@ -17,6 +17,18 @@ public class LocalRepository {
         return new LocalRepository(path);
     }
 
+
+
+    public String getPath() {
+        return path;
+    }
+
+    private void log(String message) {
+        System.out.println(ThreadColor.ANSI_GREEN + "LocalListner: \t" + message);
+    }
+}
+
+public class LocalListener implements Runnable {
     public void watch() throws IOException {
         WatchService watchService = FileSystems.getDefault().newWatchService();
 
@@ -61,11 +73,7 @@ public class LocalRepository {
         }
     }
 
-    public String getPath() {
-        return path;
-    }
-
     private void log(String message) {
-        System.out.println(ThreadColor.ANSI_GREEN + "LocalListner: \t" + message);
+        System.out.println(ThreadColor.ANSI_GREEN + "LocalListener: \t" + message);
     }
 }
