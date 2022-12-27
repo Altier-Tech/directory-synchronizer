@@ -18,7 +18,10 @@ public class FileModifyThread implements Runnable {
     @Override
     public void run() {
         try {
+            // Step 1 - Delete the remote file
+            log("Deleting remote file " + path);
             client.deleteFile(path);
+            log("Remote file deleted " + path);
         } catch (DbxException e) {
             throw new RuntimeException(e);
         }
