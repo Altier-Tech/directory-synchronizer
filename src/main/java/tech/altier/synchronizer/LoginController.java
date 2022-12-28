@@ -32,6 +32,9 @@ public class LoginController {
         appLogo.setImage(new javafx.scene.image.Image("icon.png"));
         appLogo.setCache(true);
 
+        dropboxIcon.setImage(new javafx.scene.image.Image("dropbox.png"));
+        dropboxIcon.setCache(true);
+
         generateTokenLink.setOnAction(e -> {
             Desktop desk = Desktop.getDesktop();
             try {
