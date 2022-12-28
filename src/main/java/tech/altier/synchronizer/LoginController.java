@@ -62,9 +62,14 @@ public class LoginController {
         log("Authorization Requested with Access Token");
 
         // Check if null or empty
-        if (ACCESS_TOKEN == null || ACCESS_TOKEN.isEmpty()) {
-            label.setText("Please enter a valid access token!");
+        while (true) {
+            if (ACCESS_TOKEN == null || ACCESS_TOKEN.isEmpty()) {
+                label.setText("Please enter a valid access token!");
+            } else {
+                break;
+            }
         }
+
 
         authenticate(accessTokenField.getText());
     }
