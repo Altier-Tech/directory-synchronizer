@@ -48,7 +48,7 @@ public class Main {
         repository = SetupController.repository;
 
         DbxRequestConfig config = DbxRequestConfig.newBuilder("Altier").build();
-        client = new DbxClientV2(config, LoginController.ACCESS_TOKEN;);
+        client = new DbxClientV2(config, LoginController.ACCESS_TOKEN);
 
         try {
             accountName = client.users().getCurrentAccount().getName().getDisplayName();
