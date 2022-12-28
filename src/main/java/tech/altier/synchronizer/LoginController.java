@@ -24,7 +24,7 @@ public class LoginController {
 
     public static String ACCESS_TOKEN;
 
-    public void initialize() throws IOException {
+    public void initialize() {
         generateTokenLink.setOnAction(e -> {
             Desktop desk = Desktop.getDesktop();
             try {
