@@ -89,8 +89,8 @@ class LocalListener implements Runnable {
                         // Prompt if the deletion should be permanent
                         Alert alert = new Alert(Alert.AlertType.CONFIRMATION);
                         log("Prompting user for deletion confirmation of file " + filePath);
-                        alert.setTitle("Do you wish to make the deletion permanent?");
-                        alert.setContentText("Are you sure?");
+                        alert.setTitle("Are you sure?");
+                        alert.setContentText("Do you wish to make the deletion permanent?");
                         ButtonType okButton = new ButtonType("Yes", ButtonBar.ButtonData.YES);
                         ButtonType noButton = new ButtonType("No", ButtonBar.ButtonData.NO);
                         ButtonType cancelButton = new ButtonType("Cancel", ButtonBar.ButtonData.CANCEL_CLOSE);
