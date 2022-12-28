@@ -84,6 +84,8 @@ public class Main {
 
     @FXML
     public void sync() throws DbxException {
+        log("Syncing...");
+        
         // List local files
         File[] files = getLocalFiles();
         List<String> localFiles = new ArrayList<>();
