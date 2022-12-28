@@ -6,6 +6,10 @@ import com.dropbox.core.v2.files.FileMetadata;
 import com.dropbox.core.v2.files.ListFolderResult;
 import com.dropbox.core.v2.files.Metadata;
 
+import javafx.application.Platform;
+import javafx.scene.control.Alert;
+import javafx.scene.control.ButtonBar;
+import javafx.scene.control.ButtonType;
 import tech.altier.AppProperties.RemoteFileInfo;
 import tech.altier.Thread.ThreadColor;
 import tech.altier.synchronizer.Main;
@@ -83,7 +87,31 @@ public class RemoteListener implements Runnable {
                     if (!tempRemoteFileInfo.containsKey(path)) {
                         // TODO File has been deleted, so need to delete the local file
                         // Alert the user to check if the deletion should be permanent
+                        Platform.runLater(() -> {
+                            // Prompt if the deletion should be permanent
+                            Alert alert = new Alert(Alert.AlertType.CONFIRMATION);
+                            log("Prompting user for deletion confirmation of file " + filePath);
+                            alert.setTitle("Do you wish to make the deletion permanent?");
+                            alert.setContentText("Are you sure?");
+                            ButtonType okButton = new ButtonType("Yes", ButtonBar.ButtonData.YES);
+                            ButtonType noButton = new ButtonType("No", ButtonBar.ButtonData.NO);
+                            ButtonType cancelButton = new ButtonType("Cancel", ButtonBar.ButtonData.CANCEL_CLOSE);
+                            alert.getButtonTypes().setAll(okButton, noButton, cancelButton);
 
+                            alert.showAndWait().ifPresent(type -> {
+                                log("Pressed " + type.getText());
+                                if (type.getText().equalsIgnoreCase("Yes")) {
+                                    log("User confirmed deletion of file " + filePath);
+
+                                    // If yes, delete the file from the remote repository
+                                    fileHandler.handleLocalDelete (filePath);
+                                } else if (type.getText().equalsIgnoreCase("No")) {
+                                    log("User denied deletion of file " + filePath);
+                                    // If no, do nothing
+                                }
+                            });
+                        });
+                        
                         // If yes, delete the local file
 
                         // If no, upload the file back to the remote repository
