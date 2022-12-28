@@ -13,6 +13,7 @@ import javafx.fxml.FXML;
 import javafx.scene.control.ListView;
 import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
+import javafx.scene.input.MouseEvent;
 import javafx.util.Duration;
 
 import tech.altier.Thread.ThreadColor;
@@ -49,6 +50,7 @@ public class Main {
         try {
             accountName = client.users().getCurrentAccount().getName().getDisplayName();
         } catch (DbxException e) {
+            // TODO Authentication failure handler
             System.out.println(ThreadColor.ANSI_RED + "MainApp: \t" + "Error loading user data!");
         }
 
@@ -165,6 +167,18 @@ public class Main {
                 "\tMainApp: \t" +
                 message
         );
+    }
+
+    @FXML
+    public void handleExit(MouseEvent mouseEvent) {
+    }
+
+    @FXML
+    public void handleAboutClick(MouseEvent mouseEvent) {
+    }
+
+    @FXML
+    public void handleSettings(MouseEvent mouseEvent) {
     }
 
     class ListViewRefreshService extends ScheduledService<Void> {
