@@ -35,17 +35,7 @@ public class LoginController {
     public static DbxClientV2 client;
 
     public void initialize() throws IOException {
-        Auth auth = new Auth();
 
-        // Try auto authentication first
-        if (auth.autoAuthenticate()) {
-            // Last used access key is valid
-            log("Automatic authentication was successful with the last used access key!");
-            return;
-        } else {
-            // Need to request a new access key
-            log("Automatic authentication failed! Need to authenticate again.");
-        }
 
         appLogo.setImage(new javafx.scene.image.Image("icon.png"));
         appLogo.setCache(true);
@@ -63,8 +53,6 @@ public class LoginController {
             }
         });
     }
-
-
 
     @FXML
     private void onResetButtonClick() {
