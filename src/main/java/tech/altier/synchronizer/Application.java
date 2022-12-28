@@ -1,11 +1,13 @@
 package tech.altier.synchronizer;
 
 import com.dropbox.core.v2.DbxClientV2;
+
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.image.Image;
 import javafx.stage.Stage;
+
 import tech.altier.Thread.ThreadColor;
 
 import java.io.IOException;
