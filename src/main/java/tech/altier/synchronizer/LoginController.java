@@ -32,8 +32,6 @@ public class LoginController {
     public static DbxClientV2 client;
 
     public void initialize() {
-        Application.launchedFlag = true;
-        
         appLogo.setImage(new javafx.scene.image.Image("icon.png"));
         appLogo.setCache(true);
 
