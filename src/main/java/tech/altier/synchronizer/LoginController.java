@@ -30,6 +30,7 @@ public class LoginController {
             try {
                 desk.browse(new URI(PropertiesLoader.get("loginURL")));
             } catch (IOException | URISyntaxException ex) {
+                log(ex.getMessage());
                 throw new RuntimeException(ex);
             }
         });
