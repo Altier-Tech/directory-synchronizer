@@ -24,16 +24,14 @@ public class LoginController {
 
     private static final String ABOUT_URL = "http://about.altier.tech/";
     public static String ACCESS_TOKEN;
-    public static String loginURL;
 
     public void initialize() throws IOException {
-        loginURL = PropertiesLoader.get("loginURL");
         // TODO get about url from properties
 
         generateTokenLink.setOnAction(e -> {
             Desktop desk = Desktop.getDesktop();
             try {
-                desk.browse(new URI(loginURL));
+                desk.browse(new URI(PropertiesLoader.get("loginURL")));
             } catch (IOException | URISyntaxException ex) {
                 throw new RuntimeException(ex);
             }
