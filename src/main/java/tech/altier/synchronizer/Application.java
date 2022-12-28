@@ -59,6 +59,8 @@ public class Application extends javafx.application.Application {
     }
 
     private static void setupLocalRepository() {
+        // Need to wait till authentication is successful
+        
         log("Local repository setup called...");
         String repositoryPath = "";
         // Try last used path for local repository
