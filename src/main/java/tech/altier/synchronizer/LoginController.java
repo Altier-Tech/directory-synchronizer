@@ -39,6 +39,7 @@ public class LoginController {
         if (autoAuthenticate()) {
             // Last used access key is valid
             log("Automatic authentication was successful with the last used access key!");
+            
         } else {
             // Need to request a new access key
             log("Automatic authentication failed! Need to authenticate again.");
@@ -69,7 +70,7 @@ public class LoginController {
         DbxRequestConfig config = DbxRequestConfig.newBuilder("Altier").build();
         client = new DbxClientV2(config, accessToken);
         String accountName = "ERR!";
-        
+
         try {
             accountName = client.users().getCurrentAccount().getName().getDisplayName();
         } catch (DbxException e) {
