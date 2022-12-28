@@ -72,7 +72,7 @@ public class Main {
         listViewsRefreshService.start();
     }
 
-    private boolean authenticate() {
+    private boolean authenticate(String accessToken) {
         DbxRequestConfig config = DbxRequestConfig.newBuilder("Altier").build();
         client = new DbxClientV2(config, LoginController.ACCESS_TOKEN);
 
