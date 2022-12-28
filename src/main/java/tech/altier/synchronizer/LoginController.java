@@ -60,6 +60,10 @@ public class LoginController {
         });
     }
 
+    private boolean autoAuthenticate() {
+        return authenticate(PropertiesLoader.get("accessToken"));
+    }
+
     private boolean authenticate(String accessToken) {
         DbxRequestConfig config = DbxRequestConfig.newBuilder("Altier").build();
         client = new DbxClientV2(config, accessToken);
