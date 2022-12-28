@@ -5,6 +5,7 @@ import javafx.scene.control.Hyperlink;
 import javafx.scene.control.Label;
 import javafx.scene.control.PasswordField;
 
+import javafx.scene.image.Image;
 import javafx.scene.input.MouseEvent;
 import tech.altier.AppProperties.PropertiesLoader;
 import tech.altier.Thread.ThreadColor;
@@ -25,6 +26,12 @@ public class LoginController {
     public static String ACCESS_TOKEN;
 
     public void initialize() {
+        appLogo.setImage(new javafx.scene.image.Image("icon.png"));
+        appLogo.setCache(true);
+
+        syncIcon.setImage(new Image("synchronize.png"));
+        syncIcon.setCache(true);
+        
         generateTokenLink.setOnAction(e -> {
             Desktop desk = Desktop.getDesktop();
             try {
