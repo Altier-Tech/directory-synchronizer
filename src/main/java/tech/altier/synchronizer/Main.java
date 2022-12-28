@@ -53,6 +53,8 @@ public class Main {
             log("Automatic authentication was successful with the last used access key!");
         } else {
             // Need to request a new access key
+            log("Automatic authentication failed! Need to authenticate again.");
+            
         }
 
         log("Logged in user: " + accountName);
