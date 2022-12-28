@@ -22,7 +22,6 @@ public class LoginController {
     @FXML
     private Label label;
 
-    private static final String ABOUT_URL = "http://about.altier.tech/";
     public static String ACCESS_TOKEN;
 
     public void initialize() throws IOException {
