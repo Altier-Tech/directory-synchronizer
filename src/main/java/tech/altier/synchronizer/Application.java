@@ -35,4 +35,9 @@ public class Application extends javafx.application.Application {
         Parent pane = FXMLLoader.load(Objects.requireNonNull(Application.class.getResource(fxml)));
         primaryStage.getScene().setRoot(pane);
     }
+
+    public static void exit() {
+        // TODO Stop jobs
+        primaryStage.close();
+    }
 }
