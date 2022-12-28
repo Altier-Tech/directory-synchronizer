@@ -24,10 +24,10 @@ public class RemoteFileInfo extends HashMap<String, String> {
     private static void writeProperties() {
         try (FileOutputStream outputStream = new FileOutputStream("repository.properties")) {
             conf.store(outputStream, "Repository Properties");
+            
         } catch (IOException e) {
             throw new RuntimeException(e);
         }
-
     }
 
     private static Properties loadProperties() throws IOException {
