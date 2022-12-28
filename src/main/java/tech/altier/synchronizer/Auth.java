@@ -12,7 +12,7 @@ public class Auth {
     public static DbxClientV2 client;
     public static String ACCESS_TOKEN;
 
-    private boolean autoAuthenticate() throws IOException {
+    boolean autoAuthenticate() throws IOException {
         return authenticate(PropertiesLoader.get("accessToken"));
     }
 
