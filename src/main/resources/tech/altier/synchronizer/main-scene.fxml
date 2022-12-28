@@ -11,7 +11,7 @@
     <left>
         <VBox>
             <!-- TODO add a title and icon here -->
-            <ImageView fitHeight="100" fitWidth="100" pickOnBounds="true" preserveRatio="true" />
+            <ImageView fx:id="appLogo" fitHeight="100" fitWidth="100" pickOnBounds="true" preserveRatio="true" />
 
             <!-- TODO create a navigation pane here -->
         </VBox>
