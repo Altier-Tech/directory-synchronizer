@@ -74,12 +74,10 @@
         <HBox prefWidth="421.0">
             <VBox alignment="CENTER" prefHeight="400.0" prefWidth="220.0" spacing="10.0">
 
-                <Label fx:id="label" text="Paset an access token">
+                <Label fx:id="label" text="Paste an access token">
                     <font>
                         <Font size="14.0" />
                     </font></Label>
-                <Label text="Don't have an access token?" />
-                <Hyperlink fx:id="generateTokenLink" text="Generate one here." />
 
                 <PasswordField fx:id="accessTokenField" minWidth="-Infinity" promptText="Access Token">
                     <opaqueInsets>
@@ -117,6 +115,8 @@
                         <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
                     </VBox.margin>
                 </HBox>
+                <Label text="Don't have an access token?" />
+                <Hyperlink fx:id="generateTokenLink" text="Generate one here." />
             <opaqueInsets>
                <Insets />
             </opaqueInsets>
@@ -135,8 +135,10 @@
                       <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
                    </padding>
                 </Label>
-                <ImageView fitHeight="80" fitWidth="80" fx:id="dropboxIcon" onMouseClicked="#handleDropboxLogin"
-                           pickOnBounds="true" preserveRatio="true" />
+                <ImageView fx:id="dropboxIcon" fitHeight="62.0" fitWidth="62.0" onMouseClicked="#handleDropboxLogin" pickOnBounds="true" preserveRatio="true">
+               <VBox.margin>
+                  <Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
+               </VBox.margin></ImageView>
             <HBox.margin>
                <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
             </HBox.margin>
