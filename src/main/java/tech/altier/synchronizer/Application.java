@@ -53,7 +53,6 @@ public class Application extends javafx.application.Application {
             changeScene("main-scene.fxml");
         }
 
-
         // Stage 5: TODO Save the database
     }
 
