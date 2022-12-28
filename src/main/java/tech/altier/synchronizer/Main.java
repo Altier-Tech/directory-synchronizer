@@ -171,6 +171,7 @@ public class Main {
 
     @FXML
     public void handleExit(MouseEvent mouseEvent) {
+        // TODO stop other threads
         Application.exit();
     }
 
