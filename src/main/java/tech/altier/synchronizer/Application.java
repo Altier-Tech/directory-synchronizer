@@ -3,6 +3,7 @@ package tech.altier.synchronizer;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
+import javafx.scene.image.Image;
 import javafx.stage.Stage;
 
 import java.io.IOException;
@@ -15,6 +16,7 @@ public class Application extends javafx.application.Application {
     public void start(Stage stage) throws IOException {
         FXMLLoader fxmlLoader = new FXMLLoader(Application.class.getResource("login-scene.fxml"));
         Scene scene = new Scene(fxmlLoader.load(), 320, 240);
+        stage.getIcons().add(new Image("icon.png"));
         stage.setTitle("DirSync");
         stage.setScene(scene);
         stage.show();
