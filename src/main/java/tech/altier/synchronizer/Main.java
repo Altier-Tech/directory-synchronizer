@@ -48,16 +48,6 @@ public class Main {
         client = Auth.client;
         repository = Application.repository;
 
-//        // Trying automatic authenticate to set up the client
-//        if (autoAuthenticate()) {
-//            // Last used access key is valid
-//            log("Automatic authentication was successful with the last used access key!");
-//        } else {
-//            // Need to request a new access key
-//            log("Automatic authentication failed! Need to authenticate again.");
-//            authenticate(LoginController.ACCESS_TOKEN);
-//        }
-
         appLogo.setImage(new Image("icon.png"));
         appLogo.setCache(true);
 
@@ -81,25 +71,6 @@ public class Main {
         listViewsRefreshService.setPeriod(Duration.seconds(4));
         listViewsRefreshService.start();
     }
-
-//    private boolean autoAuthenticate() {
-//        return authenticate(PropertiesLoader.get("accessToken"));
-//    }
-
-//    private boolean authenticate(String accessToken) {
-//        DbxRequestConfig config = DbxRequestConfig.newBuilder("Altier").build();
-//        client = new DbxClientV2(config, accessToken);
-//
-//        try {
-//            accountName = client.users().getCurrentAccount().getName().getDisplayName();
-//        } catch (DbxException e) {
-//            // TODO Authentication failure handler
-//            System.out.println(ThreadColor.ANSI_RED + "MainApp: \t" + "Error loading user data!");
-//            return false;
-//        }
-//
-//        return true;
-//    }
 
     @FXML
     public void sync() throws DbxException {
