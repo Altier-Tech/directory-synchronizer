@@ -62,7 +62,7 @@ public class Application extends javafx.application.Application {
     private static void setupLocalRepository() {
         log("Local repository setup called...");
         String repositoryPath = "";
-        
+
         // Try last used path for local repository
         if (PropertiesLoader.get("repositoryPath") != null && !PropertiesLoader.get("repositoryPath").equalsIgnoreCase("")) {
             repositoryPath = PropertiesLoader.get("repositoryPath");
@@ -75,7 +75,7 @@ public class Application extends javafx.application.Application {
                 return;
             } else {
                 // Path is invalid
-                log("Last used local repository path is invalid! Need to set up a new one.");
+                log("Last used local repository path is invalid! Need to set up a new one. Launching setup scene...");
             }
         } else {
             // Path not found in application properties
