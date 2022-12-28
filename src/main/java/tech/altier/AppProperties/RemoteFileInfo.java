@@ -21,6 +21,8 @@ public class RemoteFileInfo extends HashMap<String, String> {
     }
 
     private static void writeProperties() {
+        writeRemoteFiles();
+        
         try (FileOutputStream outputStream = new FileOutputStream("repository.properties")) {
             conf.store(outputStream, "Repository Properties");
         } catch (IOException e) {
