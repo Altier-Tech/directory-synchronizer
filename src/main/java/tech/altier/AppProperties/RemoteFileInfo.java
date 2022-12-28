@@ -1,5 +1,6 @@
 package tech.altier.AppProperties;
 
+import java.io.FileOutputStream;
 import java.io.IOException;
 import java.io.InputStream;
 import java.util.HashMap;
@@ -7,7 +8,7 @@ import java.util.Properties;
 import java.util.Set;
 
 public class RemoteFileInfo extends HashMap<String, String> {
-    private static final Properties conf;
+    private static Properties conf;
     public static HashMap<String, String> remoteFiles;
 
     static {
@@ -17,6 +18,14 @@ public class RemoteFileInfo extends HashMap<String, String> {
         } catch (IOException e) {
             throw new RuntimeException(e);
         }
+    }
+
+    private static void writeProperties() throws IOException {
+        FileOutputStream outputStream = new FileOutputStream("repository.properties");
+        conf.store(outputStream, "Repository Properties");
+
+        outputStream.close();
+        System.out.println("After saving properties: " + p);
     }
 
     private static Properties loadProperties() throws IOException {
