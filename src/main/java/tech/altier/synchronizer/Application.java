@@ -5,6 +5,7 @@ import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.image.Image;
 import javafx.stage.Stage;
+import tech.altier.Thread.ThreadColor;
 
 import java.io.IOException;
 import java.util.Objects;
@@ -24,7 +25,20 @@ public class Application extends javafx.application.Application {
         primaryStage = stage;
     }
 
-    public static void main(String[] args) {
+    public static void main(String[] args) throws IOException {
+        // Authenticate
+        Auth auth = new Auth();
+
+        // Try auto authentication first
+        if (auth.autoAuthenticate()) {
+            // Last used access key is valid
+            log("Automatic authentication was successful with the last used access key!");
+            return;
+        } else {
+            // Need to request a new access key
+            log("Automatic authentication failed! Need to authenticate again.");
+        }
+
         // Load the database
 
         // Launch the GUI
@@ -38,5 +52,14 @@ public class Application extends javafx.application.Application {
 
     public static void exit() {
         primaryStage.close();
+    }
+
+    private void log(String message) {
+        System.out.println(
+                ThreadColor.ANSI_CYAN +
+                        Thread.currentThread().getName() +
+                        "\tStartup: \t" +
+                        message
+        );
     }
 }
