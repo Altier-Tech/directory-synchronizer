@@ -47,7 +47,11 @@ public class Main {
     public void initialize() throws DbxException {
         repository = SetupController.repository;
 
-
+        if (autoAuthenticate()) {
+            log("Automatic authentication was successful with the last used access key!");
+        } else {
+            
+        }
 
         log("Logged in user: " + accountName);
         log("Local repository: " + repository.getPath());
@@ -73,7 +77,7 @@ public class Main {
     }
 
     private boolean autoAuthenticate() {
-        return authenticate(PropertiesLoader.get("ACCESS_TOKEN"));
+        return authenticate(PropertiesLoader.get("accessToken"));
 //        authenticate(LoginController.ACCESS_TOKEN);
     }
 
