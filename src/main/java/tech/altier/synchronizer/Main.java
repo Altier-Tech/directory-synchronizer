@@ -54,7 +54,7 @@ public class Main {
         } else {
             // Need to request a new access key
             log("Automatic authentication failed! Need to authenticate again.");
-            
+
         }
 
         log("Logged in user: " + accountName);
@@ -82,7 +82,6 @@ public class Main {
 
     private boolean autoAuthenticate() {
         return authenticate(PropertiesLoader.get("accessToken"));
-//        authenticate(LoginController.ACCESS_TOKEN);
     }
 
     private boolean authenticate(String accessToken) {
