@@ -48,8 +48,8 @@ public class Application extends javafx.application.Application {
         launch();
     }
 
-    public static void setClient(DbxClientV2 client) {
-        this.client = client;
+    public static void setClient(DbxClientV2 authenticatedClient) {
+        client = authenticatedClient;
     }
 
     public static void  changeScene(String fxml) throws IOException {
