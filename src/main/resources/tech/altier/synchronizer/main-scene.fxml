@@ -116,16 +116,20 @@
         <VBox>
             <!-- Controls -->
             <HBox alignment="CENTER">
-                <Button onAction="#sync" text="Sync">
-               <font>
-                  <Font name="Berlin Sans FB" size="18.0" />
-               </font>
-               <padding>
-                  <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
-               </padding>
-               <HBox.margin>
-                  <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
-               </HBox.margin></Button>
+                <Label text="Sync">
+                   <font>
+                      <Font name="Berlin Sans FB" size="18.0" />
+                   </font>
+                   <padding>
+                      <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
+                   </padding>
+                   <HBox.margin>
+                      <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
+                   </HBox.margin>
+                </Label>
+                <ImageView fx:id="syncIcon"
+                           fitHeight="25.0" fitWidth="25.0"
+                           pickOnBounds="true" preserveRatio="true" />
             </HBox>
 
             <!-- TODO add a status bar here -->

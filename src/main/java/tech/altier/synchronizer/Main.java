@@ -35,6 +35,8 @@ public class Main {
     public ListView<String> listViewRemote;
     @FXML
     public ImageView appLogo;
+    @FXML
+    public ImageView syncIcon;
 
     public void initialize() throws DbxException {
         repository = SetupController.repository;
@@ -55,6 +57,9 @@ public class Main {
 
         appLogo.setImage(new Image("icon.png"));
         appLogo.setCache(true);
+
+        syncIcon.setImage(new Image("synchronize.png"));
+        syncIcon.setCache(true);
 
         // Local
         populateLocalListView();
