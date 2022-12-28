@@ -54,7 +54,7 @@ public class Main {
         } else {
             // Need to request a new access key
             log("Automatic authentication failed! Need to authenticate again.");
-
+            authenticate(LoginController.ACCESS_TOKEN);
         }
 
         log("Logged in user: " + accountName);
