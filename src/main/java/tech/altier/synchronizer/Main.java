@@ -52,6 +52,8 @@ public class Main {
         log("Logged in user: " + accountName);
         log("Local repository: " + repository.getPath());
 
+        appLogo.setImage();
+
         // Local
         populateLocalListView();
         // Remote
