@@ -60,13 +60,18 @@ public class RemoteFileInfo extends HashMap<String, String> {
     }
 
     /**
-     * Returns the singleton instance of the RemoteFileInfo class
-     * @return The singleton instance of the RemoteFileInfo class
+     * Returns the singleton instance of the RemoteFileInfo class.
+     * @return the singleton instance of the RemoteFileInfo class
      */
     public static RemoteFileInfo getInstance() {
         return new RemoteFileInfo();
     }
 
+    /**
+     * Returns the number of files in the remote repository that
+     * currently written into the database.
+     * @return the number of files in the remote repository
+     */
     @Override
     public int size() {
         return remoteFiles.size();
