@@ -30,6 +30,10 @@ public class LocalRepository {
         watcher.start();
     }
 
+    public void stopListening() {
+        
+    }
+
     public String getPath() {
         return path;
     }
