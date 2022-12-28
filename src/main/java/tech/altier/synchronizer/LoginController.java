@@ -69,10 +69,9 @@ public class LoginController {
     private boolean authenticate(String accessToken) throws IOException {
         DbxRequestConfig config = DbxRequestConfig.newBuilder("Altier").build();
         client = new DbxClientV2(config, accessToken);
-        String accountName = "ERR!";
 
         try {
-            accountName = client.users().getCurrentAccount().getName().getDisplayName();
+            String accountName = client.users().getCurrentAccount().getName().getDisplayName();
             log("Authorization successful for user " + accountName + "!");
             Application.changeScene("setup-scene.fxml");
         } catch (DbxException e) {
