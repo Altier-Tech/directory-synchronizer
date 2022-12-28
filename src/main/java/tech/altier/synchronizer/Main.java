@@ -80,24 +80,24 @@ public class Main {
         listViewsRefreshService.start();
     }
 
-    private boolean autoAuthenticate() {
-        return authenticate(PropertiesLoader.get("accessToken"));
-    }
+//    private boolean autoAuthenticate() {
+//        return authenticate(PropertiesLoader.get("accessToken"));
+//    }
 
-    private boolean authenticate(String accessToken) {
-        DbxRequestConfig config = DbxRequestConfig.newBuilder("Altier").build();
-        client = new DbxClientV2(config, accessToken);
-
-        try {
-            accountName = client.users().getCurrentAccount().getName().getDisplayName();
-        } catch (DbxException e) {
-            // TODO Authentication failure handler
-            System.out.println(ThreadColor.ANSI_RED + "MainApp: \t" + "Error loading user data!");
-            return false;
-        }
-
-        return true;
-    }
+//    private boolean authenticate(String accessToken) {
+//        DbxRequestConfig config = DbxRequestConfig.newBuilder("Altier").build();
+//        client = new DbxClientV2(config, accessToken);
+//
+//        try {
+//            accountName = client.users().getCurrentAccount().getName().getDisplayName();
+//        } catch (DbxException e) {
+//            // TODO Authentication failure handler
+//            System.out.println(ThreadColor.ANSI_RED + "MainApp: \t" + "Error loading user data!");
+//            return false;
+//        }
+//
+//        return true;
+//    }
 
     @FXML
     public void sync() throws DbxException {
