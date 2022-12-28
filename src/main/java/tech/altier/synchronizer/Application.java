@@ -54,11 +54,14 @@ public class Application extends javafx.application.Application {
         // Try last used path for local repository
         if (PropertiesLoader.get("repositoryPath") != null) {
             repositoryPath = PropertiesLoader.get("repositoryPath");
-        } else {
-            // Launch the setup scene
-            launchedFlag = true;
-            launch();
+
         }
+        
+        // If last used path is not valid, ask for a new one
+        // Launch the setup scene
+        launchedFlag = true;
+        launch();
+
     }
 
     private static void authenticate() throws IOException {
