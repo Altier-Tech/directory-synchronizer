@@ -26,6 +26,7 @@ public class Application extends javafx.application.Application {
     public static LocalRepository repository;
     private static String startScene = "main-scene.fxml";
     public static boolean launchedFlag = false;
+    public static boolean repoSetupFlag = false;
 
     @Override
     public void start(Stage stage) throws IOException {
@@ -42,10 +43,11 @@ public class Application extends javafx.application.Application {
     public static void main(String[] args) throws IOException {
         // Stage 1: Authenticate
         authenticate();
-        log("Authentication process finished!");
 
         // Stage 2: Setup local repository
-        setupLocalRepository();
+        if (!repoSetupFlag) {
+            setupLocalRepository();
+        }
 
         // Stage 3: TODO Load the database
 
