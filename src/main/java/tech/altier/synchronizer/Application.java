@@ -44,7 +44,9 @@ public class Application extends javafx.application.Application {
             log("Automatic authentication failed! Need to authenticate again.");
         }
 
-        // Load the database
+        // Setup local repository
+
+        // TODO Load the database
 
         // Launch the GUI
         launch();
