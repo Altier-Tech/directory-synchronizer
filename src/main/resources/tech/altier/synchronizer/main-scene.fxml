@@ -116,7 +116,7 @@
         <VBox>
             <!-- Controls -->
             <HBox alignment="CENTER" onMouseClicked="#sync" >
-                <Label text="Sync">
+                <Label text="Sync Now">
                    <font>
                       <Font name="Berlin Sans FB" size="18.0" />
                    </font>
