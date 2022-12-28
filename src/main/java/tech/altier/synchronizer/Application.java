@@ -20,6 +20,7 @@ public class Application extends javafx.application.Application {
     public static DbxClientV2 client;
     public static LocalRepository repository;
     private static String startScene = "main-scene.fxml";
+    private boolean launchedFlag = false;
 
     @Override
     public void start(Stage stage) throws IOException {
@@ -43,7 +44,7 @@ public class Application extends javafx.application.Application {
         // Stage 3: TODO Load the database
 
         // Stage 4: Launch the GUI
-        launch();
+
 
         // Stage 5: TODO Save the database
     }
@@ -54,7 +55,9 @@ public class Application extends javafx.application.Application {
         if (PropertiesLoader.get("repositoryPath") != null) {
             repositoryPath = PropertiesLoader.get("repositoryPath");
         } else {
-            
+            // Launch the setup scene
+            launchedFlag = true;
+            launch();
         }
     }
 
