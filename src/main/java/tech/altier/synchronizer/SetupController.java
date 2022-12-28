@@ -46,6 +46,9 @@ public class SetupController {
         }
     }
 
+    private void setRepositoryOnApplication(LocalRepository repository) {
+    }
+
     private void log(String message) {
         System.out.println(
                 ThreadColor.ANSI_PURPLE +
