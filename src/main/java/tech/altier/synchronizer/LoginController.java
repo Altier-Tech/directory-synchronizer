@@ -52,7 +52,7 @@ public class LoginController {
         });
     }
 
-    private void authenticate(String accessToken) {
+    private void authenticate(String accessToken) throws IOException {
         Auth auth = new Auth();
         auth.authenticate(accessToken);
     }
