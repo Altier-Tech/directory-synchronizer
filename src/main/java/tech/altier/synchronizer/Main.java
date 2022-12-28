@@ -57,7 +57,6 @@ public class Main {
 //            authenticate(LoginController.ACCESS_TOKEN);
 //        }
 
-        log("Logged in user: " + accountName);
         log("Local repository: " + repository.getPath());
 
         appLogo.setImage(new Image("icon.png"));
