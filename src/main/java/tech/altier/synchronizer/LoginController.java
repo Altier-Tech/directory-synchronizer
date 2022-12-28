@@ -73,8 +73,7 @@ public class LoginController {
 
         try {
             accountName = client.users().getCurrentAccount().getName().getDisplayName();
-            log("Authorization successful!");
-            log("Logged in user: " + accountName);
+            log("Authorization successful for user " + accountName + "!");
             Application.changeScene("setup-scene.fxml");
         } catch (DbxException e) {
             // TODO Authentication failure handler
