@@ -13,6 +13,9 @@ import tech.altier.Thread.ThreadColor;
 import tech.altier.synchronizer.LocalHandler.LocalRepository;
 
 import java.io.IOException;
+import java.nio.file.Files;
+import java.nio.file.Path;
+import java.nio.file.Paths;
 import java.util.Objects;
 
 public class Application extends javafx.application.Application {
@@ -57,6 +60,7 @@ public class Application extends javafx.application.Application {
             log("Last used local repository path: " + repositoryPath);
 
             // Try to setup local repository
+            checkIfValidPath(repositoryPath);
         }
 
         // If last used path is not valid, ask for a new one
@@ -65,6 +69,11 @@ public class Application extends javafx.application.Application {
         launchedFlag = true;
         launch();
 
+    }
+
+    private static boolean checkIfValidPath(String repositoryPath) {
+        Path path = Paths.get(repositoryPath);
+        return Files.exists(path);
     }
 
     private static void authenticate() throws IOException {
