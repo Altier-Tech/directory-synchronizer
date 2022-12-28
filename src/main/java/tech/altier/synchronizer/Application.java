@@ -84,7 +84,6 @@ public class Application extends javafx.application.Application {
         // Launch the setup scene
         launchedFlag = true;
         launch();
-
     }
 
     private static boolean checkIfValidPath(String repositoryPath) {
