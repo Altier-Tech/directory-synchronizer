@@ -116,8 +116,6 @@ public class RemoteListener implements Runnable {
                                 }
                             });
                         });
-
-                        // If no, upload the file back to the remote repository
                     }
                 }
             }
