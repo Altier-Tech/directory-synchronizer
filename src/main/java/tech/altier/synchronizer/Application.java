@@ -62,6 +62,7 @@ public class Application extends javafx.application.Application {
             // Try to setup local repository
             if (checkIfValidPath(repositoryPath)) {
                 // A valid path was found. Need to set up the repository.
+                
             } else {
                 // Path is invalid
                 log("Last used local repository path is invalid! Need to set up a new one.");
