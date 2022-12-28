@@ -2,16 +2,19 @@
 
 <?import javafx.geometry.*?>
 <?import javafx.scene.control.*?>
+<?import javafx.scene.image.*?>
 <?import javafx.scene.layout.*?>
 <?import javafx.scene.text.*?>
 
-<?import javafx.scene.image.ImageView?>
 <BorderPane xmlns="http://javafx.com/javafx/17.0.2-ea" xmlns:fx="http://javafx.com/fxml/1" fx:controller="tech.altier.synchronizer.Main">
 
     <left>
-        <VBox>
+        <VBox alignment="CENTER">
             <!-- TODO add a title and icon here -->
-            <ImageView fx:id="appLogo" fitHeight="100" fitWidth="100" pickOnBounds="true" preserveRatio="true" />
+            <ImageView fx:id="appLogo"
+                       fitHeight="150.0" fitWidth="200.0"
+                       layoutX="61.0" layoutY="83.0" pickOnBounds="true" preserveRatio="true" />
+
 
             <!-- TODO create a navigation pane here -->
         </VBox>
