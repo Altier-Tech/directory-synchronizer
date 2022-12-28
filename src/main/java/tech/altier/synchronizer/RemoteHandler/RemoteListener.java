@@ -111,7 +111,7 @@ public class RemoteListener implements Runnable {
             System.out.println(
                     "No such file/directory exists");
         } catch (DirectoryNotEmptyException e) {
-            System.out.println("Directory is not empty.");
+            log("File delete error: Directory is not empty!");
         } catch (IOException e) {
             System.out.println("Invalid permissions.");
         }
