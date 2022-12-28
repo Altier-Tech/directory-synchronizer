@@ -99,7 +99,7 @@ public class Application extends javafx.application.Application {
             // Need to request a new access key
             log("Automatic authentication failed! Need to authenticate again.");
 
-            // Launching the login view
+            // Launching the login scene
             startScene = "login-scene.fxml";
             launchedFlag = true;
             launch();
