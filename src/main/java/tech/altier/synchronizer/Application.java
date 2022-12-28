@@ -50,6 +50,8 @@ public class Application extends javafx.application.Application {
 
         // Stage 4: Launch the GUI
         launch();
+
+        // Stage 5: TODO Save the database
     }
 
     public static void setClient(DbxClientV2 authenticatedClient) {
