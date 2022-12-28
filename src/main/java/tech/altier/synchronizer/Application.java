@@ -20,7 +20,7 @@ public class Application extends javafx.application.Application {
     public static DbxClientV2 client;
     public static LocalRepository repository;
     private static String startScene = "main-scene.fxml";
-    private boolean launchedFlag = false;
+    private static boolean launchedFlag = false;
 
     @Override
     public void start(Stage stage) throws IOException {
