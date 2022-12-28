@@ -29,7 +29,6 @@ public class LoginController {
     @FXML
     private ImageView dropboxIcon;
 
-    public static String ACCESS_TOKEN;
     public static DbxClientV2 client;
 
     public void initialize() {
@@ -65,17 +64,17 @@ public class LoginController {
 
     @FXML
     private void onLoginButtonClick() throws IOException {
-        ACCESS_TOKEN = accessTokenField.getText();
+        String accessToken = accessTokenField.getText();
 
         // Check if null or empty
-        if (ACCESS_TOKEN == null || ACCESS_TOKEN.isEmpty()) {
+        if (accessToken == null || accessToken.isEmpty()) {
             log("Access token is null or empty!");
             label.setText("Please enter a valid access token!");
             return;
         }
 
         log("Authorization requested with a given access token");
-        authenticate(ACCESS_TOKEN);
+        authenticate(accessToken);
 
 //        Application.changeScene("setup-scene.fxml");
     }
