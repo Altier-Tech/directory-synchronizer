@@ -1,14 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
-<?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
 
-<?import javafx.scene.control.ListView?>
-<?import javafx.scene.layout.HBox?>
-<?import javafx.scene.layout.VBox?>
-<?import javafx.scene.control.Label?>
-<?import javafx.scene.control.Button?>
-<BorderPane xmlns:fx="http://javafx.com/fxml"
-            fx:controller="tech.altier.synchronizer.Main">
+<BorderPane xmlns:fx="http://javafx.com/fxml/1" xmlns="http://javafx.com/javafx/17.0.2-ea" fx:controller="tech.altier.synchronizer.Main">
 
     <top>
         <VBox>
@@ -20,11 +15,11 @@
     <center>
         <HBox>
             <VBox>
-                <Label text="DropBox"/>
+                <Label text="DropBox" />
                 <ListView fx:id="listViewRemote" />
             </VBox>
             <VBox>
-                <Label text="Local"/>
+                <Label text="Local" />
                 <ListView fx:id="listViewLocal" />
             </VBox>
         </HBox>
@@ -33,8 +28,8 @@
     <bottom>
         <VBox>
             <!-- Controls -->
-            <HBox>
-                <Button text="Sync" onAction="#sync" />
+            <HBox alignment="CENTER">
+                <Button onAction="#sync" text="Sync" />
             </HBox>
 
             <!-- TODO add a status bar here -->
