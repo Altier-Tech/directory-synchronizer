@@ -104,7 +104,11 @@ public class RemoteListener implements Runnable {
                                     log("User confirmed deletion of file " + path);
 
                                     // If yes, delete the file locally
-                                    deleteFile(path);
+                                    try {
+                                        deleteFile(path);
+                                    } catch (IOException e) {
+                                        throw new RuntimeException(e);
+                                    }
                                 } else if (type.getText().equalsIgnoreCase("No")) {
                                     log("User denied deletion of file " + path);
                                     // If no, do nothing
