@@ -1,6 +1,7 @@
 package tech.altier.synchronizer;
 
 import javafx.fxml.FXML;
+import javafx.scene.input.MouseEvent;
 import javafx.stage.DirectoryChooser;
 
 import tech.altier.Thread.ThreadColor;
@@ -37,5 +38,9 @@ public class SetupController {
                 "\tSetupView: \t" +
                 message
         );
+    }
+
+    public void handleExit(MouseEvent mouseEvent) {
+        // TODO Call the exit method on the main app
     }
 }
