@@ -92,7 +92,7 @@ public class RemoteListener implements Runnable {
                             Alert alert = new Alert(Alert.AlertType.CONFIRMATION);
                             log("Prompting user for deletion confirmation of file " + path);
                             alert.setTitle("Are you sure?");
-                            alert.setContentText("File " + path + " has been deleted from the server.");
+                            alert.setContentText("File " + path + " has been deleted from the server! \nDo you wish to make this deletion permanent?");
                             ButtonType okButton = new ButtonType("Yes", ButtonBar.ButtonData.YES);
                             ButtonType noButton = new ButtonType("No", ButtonBar.ButtonData.NO);
                             ButtonType cancelButton = new ButtonType("Cancel", ButtonBar.ButtonData.CANCEL_CLOSE);
