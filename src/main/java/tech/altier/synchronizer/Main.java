@@ -11,6 +11,7 @@ import javafx.concurrent.ScheduledService;
 import javafx.concurrent.Task;
 import javafx.fxml.FXML;
 import javafx.scene.control.ListView;
+import javafx.scene.image.ImageView;
 import javafx.util.Duration;
 
 import tech.altier.Thread.ThreadColor;
@@ -31,6 +32,8 @@ public class Main {
     private ListView<String> listViewLocal;
     @FXML
     public ListView<String> listViewRemote;
+    @FXML
+    public ImageView appLogo;
 
     public void initialize() throws DbxException {
         repository = SetupController.repository;
