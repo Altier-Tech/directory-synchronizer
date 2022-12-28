@@ -34,14 +34,14 @@ public class LoginController {
     public static String ACCESS_TOKEN;
     public static DbxClientV2 client;
 
-    public void initialize() {
+    public void initialize() throws IOException {
         // Try auto authentication first
         if (autoAuthenticate()) {
             // Last used access key is valid
             log("Automatic authentication was successful with the last used access key!");
 
             // Need to load the Main scene
-            
+            Application.changeScene("setup-scene.fxml");
         } else {
             // Need to request a new access key
             log("Automatic authentication failed! Need to authenticate again.");
