@@ -49,6 +49,8 @@ public class Application extends javafx.application.Application {
         // Stage 4: Launch the GUI
         if (!launchedFlag) {
             launch();
+        } else {
+            changeScene("main-scene.fxml");
         }
 
 
