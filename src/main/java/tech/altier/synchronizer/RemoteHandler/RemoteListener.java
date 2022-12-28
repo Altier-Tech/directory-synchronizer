@@ -10,6 +10,11 @@ import tech.altier.AppProperties.RemoteFileInfo;
 import tech.altier.Thread.ThreadColor;
 import tech.altier.synchronizer.Main;
 
+import java.io.IOException;
+import java.nio.file.DirectoryNotEmptyException;
+import java.nio.file.Files;
+import java.nio.file.NoSuchFileException;
+import java.nio.file.Paths;
 import java.util.HashMap;
 
 public class RemoteListener implements Runnable {
@@ -96,6 +101,23 @@ public class RemoteListener implements Runnable {
                 throw new RuntimeException(e);
             }
         }
+    }
+
+    private void deleteFile(String path) {
+        try {
+            Files.deleteIfExists(
+                    Paths.get("C:\\Users\\Mayank\\Desktop\\
+            445.txt"));
+        } catch (NoSuchFileException e) {
+            System.out.println(
+                    "No such file/directory exists");
+        } catch (DirectoryNotEmptyException e) {
+            System.out.println("Directory is not empty.");
+        } catch (IOException e) {
+            System.out.println("Invalid permissions.");
+        }
+
+        System.out.println("Deletion successful.");
     }
 
     private void log(String message) {
