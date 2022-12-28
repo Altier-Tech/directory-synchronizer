@@ -67,6 +67,7 @@ public class Application extends javafx.application.Application {
                 log("Last used local repository path is invalid! Need to set up a new one.");
             }
         } else {
+            // Path not found in application properties
             log("Last repository path not found! Launching setup scene...");
         }
 
