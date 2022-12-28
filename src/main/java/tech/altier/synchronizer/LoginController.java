@@ -76,7 +76,7 @@ public class LoginController {
         generateTokenLink.setOnAction(e -> {
             Desktop desk = Desktop.getDesktop();
             try {
-                desk.browse(new URI(aboutURL));
+                desk.browse(new URI(ABOUT_URL));
             } catch (IOException | URISyntaxException ex) {
                 throw new RuntimeException(ex);
             }
