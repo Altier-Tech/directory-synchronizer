@@ -47,6 +47,7 @@ public class Main {
     public void initialize() throws DbxException {
         repository = SetupController.repository;
 
+        // Trying automatic authenticate to set up the client
         if (autoAuthenticate()) {
             // Last used access key is valid
             log("Automatic authentication was successful with the last used access key!");
