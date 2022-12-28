@@ -78,7 +78,7 @@ class LocalListener implements Runnable {
                 log("Local listener interrupted!");
                 return;
             }
-            
+
             for (WatchEvent<?> event : watchKey.pollEvents()) {
 
                 WatchEvent<Path> pathEvent = (WatchEvent<Path>) event;
