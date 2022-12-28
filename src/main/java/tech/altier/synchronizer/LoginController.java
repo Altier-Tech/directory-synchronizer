@@ -100,7 +100,7 @@ public class LoginController {
             label.setText("Please enter a valid access token!");
         }
 
-        log("Authorization.... successful!");
+        log("Authorization successful!");
         Application.changeScene("setup-scene.fxml");
     }
 
