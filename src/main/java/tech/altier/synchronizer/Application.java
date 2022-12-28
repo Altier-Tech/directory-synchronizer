@@ -16,7 +16,7 @@ import java.util.Objects;
 public class Application extends javafx.application.Application {
     public static Stage primaryStage;
     public static DbxClientV2 client;
-    private static String startScene = "login-scene.fxml";
+    private static String startScene = "main-scene.fxml";
 
     @Override
     public void start(Stage stage) throws IOException {
@@ -54,6 +54,7 @@ public class Application extends javafx.application.Application {
         } else {
             // Need to request a new access key
             log("Automatic authentication failed! Need to authenticate again.");
+            startScene = "login-scene.fxml";
         }
     }
 
