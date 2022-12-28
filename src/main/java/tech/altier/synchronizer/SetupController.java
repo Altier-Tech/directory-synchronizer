@@ -27,9 +27,6 @@ public class SetupController {
     public void initialize() {
         appLogo.setImage(new javafx.scene.image.Image("icon.png"));
         appLogo.setCache(true);
-
-        syncIcon.setImage(new Image("synchronize.png"));
-        syncIcon.setCache(true);
     }
 
     @FXML
