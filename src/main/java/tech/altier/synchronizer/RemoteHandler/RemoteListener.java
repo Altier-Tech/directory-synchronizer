@@ -87,7 +87,7 @@ public class RemoteListener implements Runnable {
                     }
 
                     // Step 2: Download the remote file
-                    // But this will automatically done by the Main class
+                    // But this will automatically be done by the Main class
                 }
 
                 // Add the metadata to a temporary map for test Case 3
@@ -123,7 +123,7 @@ public class RemoteListener implements Runnable {
                                 } else if (type.getText().equalsIgnoreCase("No")) {
                                     log("User denied deletion of file " + path);
                                     // If no, the file should be uploaded again
-                                    // But that will automatically done by the Main class
+                                    // But that will automatically be done by the Main class
                                 }
                             });
                         });
