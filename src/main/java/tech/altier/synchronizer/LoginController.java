@@ -25,6 +25,8 @@ public class LoginController {
     private Label label;
     @FXML
     private ImageView appLogo;
+    @FXML
+    private ImageView dropboxIcon;
 
     public static String ACCESS_TOKEN;
 
