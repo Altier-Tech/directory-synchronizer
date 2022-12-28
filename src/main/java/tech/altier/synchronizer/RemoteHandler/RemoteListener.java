@@ -78,7 +78,9 @@ public class RemoteListener implements Runnable {
                         // TODO File has been deleted, so need to delete the local file
                         // Alert the user to check if the deletion should be permanent
 
-                        // 
+                        // If yes, delete the local file
+
+                        // If no, upload the file back to the remote repository
                     }
                 }
             }
