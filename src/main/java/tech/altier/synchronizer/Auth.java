@@ -15,7 +15,7 @@ public class Auth {
         return authenticate(PropertiesLoader.get("accessToken"));
     }
 
-    private boolean authenticate(String accessToken) throws IOException {
+    boolean authenticate(String accessToken) throws IOException {
         DbxRequestConfig config = DbxRequestConfig.newBuilder("Altier").build();
         client = new DbxClientV2(config, accessToken);
 
