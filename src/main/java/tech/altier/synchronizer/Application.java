@@ -56,7 +56,7 @@ public class Application extends javafx.application.Application {
             repositoryPath = PropertiesLoader.get("repositoryPath");
 
         }
-        
+
         // If last used path is not valid, ask for a new one
         // Launch the setup scene
         launchedFlag = true;
