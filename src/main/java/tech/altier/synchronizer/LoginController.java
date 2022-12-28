@@ -26,8 +26,9 @@ public class LoginController {
 
     public void initialize() {
         generateTokenLink.setOnAction(e -> {
+            Desktop desk = Desktop.getDesktop();
             try {
-                Desktop.getDesktop().browse(new URI(PropertiesLoader.get("loginURL")));
+                desk.browse(new URI(PropertiesLoader.get("loginURL")));
             } catch (IOException | URISyntaxException ex) {
                 log(ex.getMessage());
                 throw new RuntimeException(ex);
