@@ -103,11 +103,10 @@ public class RemoteListener implements Runnable {
         }
     }
 
-    private void deleteFile(String path) {
+    private void deleteFile(String filePath) {
         try {
             Files.deleteIfExists(
-                    Paths.get("C:\\Users\\Mayank\\Desktop\\
-            445.txt"));
+                    Paths.get(filePath);
         } catch (NoSuchFileException e) {
             System.out.println(
                     "No such file/directory exists");
