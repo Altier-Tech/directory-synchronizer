@@ -35,6 +35,13 @@ public class LoginController {
 
     public void initialize() {
         // Try auto authentication first
+        if (autoAuthenticate()) {
+            // Last used access key is valid
+            log("Automatic authentication was successful with the last used access key!");
+        } else {
+            // Need to request a new access key
+            log("Automatic authentication failed! Need to authenticate again.");
+        }
 
         appLogo.setImage(new javafx.scene.image.Image("icon.png"));
         appLogo.setCache(true);
