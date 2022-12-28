@@ -32,6 +32,19 @@ public class Application extends javafx.application.Application {
 
     public static void main(String[] args) throws IOException {
         // Stage 1: Authenticate
+        authenticate();
+
+        // Stage 2: Setup local repository
+
+        // Stage 3: TODO Load the database
+
+        // Stage 4: Launch the GUI
+        launch();
+
+        // Stage 5: TODO Save the database
+    }
+
+    private static void authenticate() throws IOException {
         Auth auth = new Auth();
         // Try auto authentication first
         if (auth.autoAuthenticate()) {
@@ -43,15 +56,6 @@ public class Application extends javafx.application.Application {
             // Need to request a new access key
             log("Automatic authentication failed! Need to authenticate again.");
         }
-
-        // Stage 2: Setup local repository
-
-        // Stage 3: TODO Load the database
-
-        // Stage 4: Launch the GUI
-        launch();
-
-        // Stage 5: TODO Save the database
     }
 
     public static void setClient(DbxClientV2 authenticatedClient) {
