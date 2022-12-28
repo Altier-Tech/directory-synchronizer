@@ -28,6 +28,7 @@ public class LoginController {
     public void initialize() throws IOException {
         // TODO get about url from properties
 
+
         generateTokenLink.setOnAction(e -> {
             Desktop desk = Desktop.getDesktop();
             try {
@@ -75,7 +76,7 @@ public class LoginController {
         generateTokenLink.setOnAction(e -> {
             Desktop desk = Desktop.getDesktop();
             try {
-                desk.browse(new URI(ABOUT_URL));
+                desk.browse(new URI(PropertiesLoader.get("aboutURL")));
             } catch (IOException | URISyntaxException ex) {
                 throw new RuntimeException(ex);
             }
