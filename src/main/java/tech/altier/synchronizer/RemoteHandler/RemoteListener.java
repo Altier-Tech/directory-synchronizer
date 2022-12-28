@@ -25,8 +25,7 @@ public class RemoteListener implements Runnable {
     private final int SLEEP_TIME = 2000;
     static RemoteFiles remoteFilesInstance;
     static RemoteFileInfo remoteFileInfo;
-    private ListFolderResult remoteFileListResult;
-    private HashMap<String, String> tempRemoteFileInfo;
+    private final HashMap<String, String> tempRemoteFileInfo;
 
     DbxClientV2 client;
 
@@ -54,6 +53,7 @@ public class RemoteListener implements Runnable {
             throw new RuntimeException(e);
         }
 
+        ListFolderResult remoteFileListResult;
         try {
             remoteFileListResult = remoteFilesInstance.getDetailedRemoteFileInfo();
         } catch (DbxException e) {
