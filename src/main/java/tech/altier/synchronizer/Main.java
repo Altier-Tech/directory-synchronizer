@@ -192,6 +192,10 @@ public class Main {
         }
     }
 
+    @FXML
+    public void handleSettings(MouseEvent mouseEvent) { // TODO
+    }
+
     class ListViewRefreshService extends ScheduledService<Void> {
         @Override
         protected Task<Void> createTask(){
@@ -210,9 +214,5 @@ public class Main {
                 }
             };
         }
-    }
-
-    @FXML
-    public void handleSettings(MouseEvent mouseEvent) { // TODO
     }
 }
