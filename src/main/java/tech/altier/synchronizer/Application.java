@@ -59,7 +59,7 @@ public class Application extends javafx.application.Application {
         // Stage 5: TODO Save the database
     }
 
-    private static void setupLocalRepository() {
+    private static void setupLocalRepository() throws IOException {
         log("Local repository setup called...");
         String repositoryPath = "";
 
@@ -84,8 +84,12 @@ public class Application extends javafx.application.Application {
 
         // If last used path is not valid, ask for a new one
         // Launch the setup scene
-        launchedFlag = true;
-        launch();
+        if (!launchedFlag) {
+            launchedFlag = true;
+            launch();
+        } else {
+            changeScene("setup-scene.fxml");
+        }
     }
 
     private static void authenticate() throws IOException {
