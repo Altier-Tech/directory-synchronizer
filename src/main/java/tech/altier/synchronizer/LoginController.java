@@ -1,5 +1,8 @@
 package tech.altier.synchronizer;
 
+import com.dropbox.core.DbxException;
+import com.dropbox.core.DbxRequestConfig;
+import com.dropbox.core.v2.DbxClientV2;
 import javafx.fxml.FXML;
 import javafx.scene.control.Hyperlink;
 import javafx.scene.control.Label;
@@ -31,7 +34,7 @@ public class LoginController {
     public static String ACCESS_TOKEN;
 
     public void initialize() {
-        
+        // Try auto authentication first
 
         appLogo.setImage(new javafx.scene.image.Image("icon.png"));
         appLogo.setCache(true);
@@ -48,6 +51,21 @@ public class LoginController {
                 throw new RuntimeException(ex);
             }
         });
+    }
+
+    private boolean authenticate(String accessToken) {
+        DbxRequestConfig config = DbxRequestConfig.newBuilder("Altier").build();
+        client = new DbxClientV2(config, accessToken);
+
+        try {
+            accountName = client.users().getCurrentAccount().getName().getDisplayName();
+        } catch (DbxException e) {
+            // TODO Authentication failure handler
+            System.out.println(ThreadColor.ANSI_RED + "MainApp: \t" + "Error loading user data!");
+            return false;
+        }
+
+        return true;
     }
 
     @FXML
