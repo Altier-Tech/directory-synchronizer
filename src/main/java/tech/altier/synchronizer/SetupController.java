@@ -4,11 +4,15 @@ import javafx.fxml.FXML;
 import javafx.scene.input.MouseEvent;
 import javafx.stage.DirectoryChooser;
 
+import tech.altier.AppProperties.PropertiesLoader;
 import tech.altier.Thread.ThreadColor;
 import tech.altier.synchronizer.LocalHandler.LocalRepository;
 
+import java.awt.*;
 import java.io.File;
 import java.io.IOException;
+import java.net.URI;
+import java.net.URISyntaxException;
 
 import static tech.altier.synchronizer.LocalHandler.LocalRepository.setupRepositoryOnDir;
 
@@ -47,6 +51,11 @@ public class SetupController {
 
     @FXML
     public void handleAbout(MouseEvent mouseEvent) {
-        // TODO Call the about method on the main app
+        Desktop desk = Desktop.getDesktop();
+        try {
+            desk.browse(new URI(PropertiesLoader.get("aboutURL")));
+        } catch (IOException | URISyntaxException ex) {
+            throw new RuntimeException(ex);
+        }
     }
 }
