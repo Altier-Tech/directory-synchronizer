@@ -73,15 +73,15 @@ public class RemoteListener implements Runnable {
                     log("File " + metadata.getPathLower() + " has been modified");
                     // Not the same, so need to..
 
-                    // TODO Step 1: Delete the local file
+                    // Step 1: Delete the local file
                     try {
                         deleteFile(metadata.getPathLower());
                     } catch (IOException e) {
                         throw new RuntimeException(e);
                     }
 
-                    // TODO Step 2: Download the remote file
-
+                    // Step 2: Download the remote file
+                    // But this will automatically done by the Main class
                 }
 
                 // Add the metadata to a temporary map for test Case 3
