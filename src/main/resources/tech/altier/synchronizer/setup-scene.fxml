@@ -54,7 +54,7 @@
                     </padding>
                 </Label>
 
-                <Label text="About" >
+                <Label text="About" onMouseClicked="#handleAbout">
                     <font>
                         <Font name="Berlin Sans FB" size="18.0" />
                     </font>
