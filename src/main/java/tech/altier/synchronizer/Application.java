@@ -28,7 +28,6 @@ public class Application extends javafx.application.Application {
     public static void main(String[] args) throws IOException {
         // Authenticate
         Auth auth = new Auth();
-
         // Try auto authentication first
         if (auth.autoAuthenticate()) {
             // Last used access key is valid
