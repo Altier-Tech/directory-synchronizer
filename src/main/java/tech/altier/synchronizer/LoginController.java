@@ -5,6 +5,7 @@ import javafx.scene.control.Hyperlink;
 import javafx.scene.control.Label;
 import javafx.scene.control.PasswordField;
 
+import javafx.scene.input.MouseEvent;
 import tech.altier.AppProperties.PropertiesLoader;
 import tech.altier.Thread.ThreadColor;
 
@@ -62,5 +63,8 @@ public class LoginController {
                 "\tPreApp: \t" +
                 message
         );
+    }
+
+    public void handleExit(MouseEvent mouseEvent) {
     }
 }
