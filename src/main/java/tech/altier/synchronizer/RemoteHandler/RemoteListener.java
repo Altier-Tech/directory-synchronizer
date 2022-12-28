@@ -22,7 +22,7 @@ import java.nio.file.Paths;
 import java.util.HashMap;
 
 public class RemoteListener implements Runnable {
-    private final int SLEEP_TIME = 2000;
+    private int SLEEP_TIME = 2000;
     static RemoteFiles remoteFilesInstance;
     static RemoteFileInfo remoteFileInfo;
     private final HashMap<String, String> tempRemoteFileInfo;
