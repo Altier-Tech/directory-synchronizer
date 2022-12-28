@@ -135,7 +135,7 @@
                       <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
                    </padding>
                 </Label>
-                <ImageView fitHeight="80" fitWidth="80" fx:id="dropboxIcon"
+                <ImageView fitHeight="80" fitWidth="80" fx:id="dropboxIcon" onMouseClicked="#handleDropboxLogin"
                            pickOnBounds="true" preserveRatio="true" />
             <HBox.margin>
                <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
