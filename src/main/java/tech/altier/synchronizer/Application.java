@@ -23,7 +23,7 @@ public class Application extends javafx.application.Application {
     }
 
     public static void main(String[] args) {
-        // Need to check the remote file info database
+        // Create repository database
         launch();
     }
 
