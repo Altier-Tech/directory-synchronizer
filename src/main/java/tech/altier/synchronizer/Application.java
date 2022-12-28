@@ -8,7 +8,9 @@ import javafx.scene.Scene;
 import javafx.scene.image.Image;
 import javafx.stage.Stage;
 
+import tech.altier.AppProperties.PropertiesLoader;
 import tech.altier.Thread.ThreadColor;
+import tech.altier.synchronizer.LocalHandler.LocalRepository;
 
 import java.io.IOException;
 import java.util.Objects;
@@ -16,6 +18,7 @@ import java.util.Objects;
 public class Application extends javafx.application.Application {
     public static Stage primaryStage;
     public static DbxClientV2 client;
+    public static LocalRepository repository;
     private static String startScene = "main-scene.fxml";
 
     @Override
@@ -43,6 +46,16 @@ public class Application extends javafx.application.Application {
         launch();
 
         // Stage 5: TODO Save the database
+    }
+
+    private static void setupLocalRepository() {
+        String repositoryPath = "";
+        // Try last used path for local repository
+        if (PropertiesLoader.get("repositoryPath") != null) {
+            repositoryPath = PropertiesLoader.get("repositoryPath");
+        } else {
+            
+        }
     }
 
     private static void authenticate() throws IOException {
