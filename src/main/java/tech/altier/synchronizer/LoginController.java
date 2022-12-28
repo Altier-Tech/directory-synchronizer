@@ -89,4 +89,7 @@ public class LoginController {
             throw new RuntimeException(ex);
         }
     }
+
+    public void handleDropboxLogin(MouseEvent mouseEvent) {
+    }
 }
