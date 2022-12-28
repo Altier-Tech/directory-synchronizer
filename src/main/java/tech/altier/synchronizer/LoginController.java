@@ -22,7 +22,7 @@ public class LoginController {
     @FXML
     private Label label;
 
-    private static String ABOUT_URL = "http://about.altier.tech/";
+    private static final String ABOUT_URL = "http://about.altier.tech/";
     public static String ACCESS_TOKEN;
     public static String loginURL;
 
