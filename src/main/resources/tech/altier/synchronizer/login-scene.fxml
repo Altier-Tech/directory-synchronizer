@@ -2,14 +2,11 @@
 
 <?import javafx.geometry.*?>
 <?import javafx.scene.control.*?>
+<?import javafx.scene.image.*?>
 <?import javafx.scene.layout.*?>
 <?import javafx.scene.text.*?>
-<?import javafx.scene.image.ImageView?>
 
-<BorderPane prefHeight="400.0" prefWidth="600.0"
-            xmlns="http://javafx.com/javafx/17.0.2-ea"
-            xmlns:fx="http://javafx.com/fxml/1"
-            fx:controller="tech.altier.synchronizer.LoginController" >
+<BorderPane prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/17.0.2-ea" xmlns:fx="http://javafx.com/fxml/1" fx:controller="tech.altier.synchronizer.LoginController">
 
     <left>
         <VBox alignment="CENTER" prefWidth="170.0">
@@ -32,7 +29,7 @@
             </VBox>
 
             <VBox alignment="CENTER">
-                <Label text="Settings" >
+                <Label text="Settings">
                     <font>
                         <Font name="Berlin Sans FB" size="18.0" />
                     </font>
@@ -44,7 +41,7 @@
                     </padding>
                 </Label>
 
-                <Label text="About" onMouseClicked="#handleAbout" >
+                <Label onMouseClicked="#handleAbout" text="About">
                     <font>
                         <Font name="Berlin Sans FB" size="18.0" />
                     </font>
@@ -56,7 +53,7 @@
                     </padding>
                 </Label>
 
-                <Label text="Exit" onMouseClicked="#handleExit">
+                <Label onMouseClicked="#handleExit" text="Exit">
                     <font>
                         <Font name="Berlin Sans FB" size="18.0" />
                     </font>
@@ -114,11 +111,23 @@
                         <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
                     </VBox.margin>
                 </HBox>
+            <opaqueInsets>
+               <Insets />
+            </opaqueInsets>
+            <HBox.margin>
+               <Insets right="5.0" />
+            </HBox.margin>
 
             </VBox>
 
             <VBox>
                 <Label text="Authorize using DropBox" />
+            <HBox.margin>
+               <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
+            </HBox.margin>
+            <padding>
+               <Insets bottom="5.0" left="5.0" right="10.0" top="5.0" />
+            </padding>
 
             </VBox>
         </HBox>
