@@ -40,6 +40,7 @@ public class SetupController {
             log(selectedDirectory.getAbsolutePath());
 
             repository = setupRepositoryOnDir (selectedDirectory.getAbsolutePath());
+            setRepositoryOnMain(repository);
 
             Application.changeScene("main-scene.fxml");
         }
