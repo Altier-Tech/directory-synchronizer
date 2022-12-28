@@ -44,4 +44,9 @@ public class SetupController {
     public void handleExit(MouseEvent mouseEvent) {
         // TODO Call the exit method on the main app
     }
+
+    @FXML
+    public void handleAbout(MouseEvent mouseEvent) {
+        // TODO Call the about method on the main app
+    }
 }
