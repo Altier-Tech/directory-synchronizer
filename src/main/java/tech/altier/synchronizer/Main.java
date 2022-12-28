@@ -165,7 +165,7 @@ public class Main {
     }
 
     @FXML
-    public void handleExit(MouseEvent mouseEvent) {
+    public void handleExit() {
         repository.stopListening();
         Application.exit();
     }
