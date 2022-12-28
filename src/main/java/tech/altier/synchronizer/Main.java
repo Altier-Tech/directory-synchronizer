@@ -47,15 +47,7 @@ public class Main {
     public void initialize() throws DbxException {
         repository = SetupController.repository;
 
-        DbxRequestConfig config = DbxRequestConfig.newBuilder("Altier").build();
-        client = new DbxClientV2(config, LoginController.ACCESS_TOKEN);
 
-        try {
-            accountName = client.users().getCurrentAccount().getName().getDisplayName();
-        } catch (DbxException e) {
-            // TODO Authentication failure handler
-            System.out.println(ThreadColor.ANSI_RED + "MainApp: \t" + "Error loading user data!");
-        }
 
         log("Logged in user: " + accountName);
         log("Local repository: " + repository.getPath());
@@ -78,6 +70,21 @@ public class Main {
         ScheduledService<Void> listViewsRefreshService = new ListViewRefreshService();
         listViewsRefreshService.setPeriod(Duration.seconds(4));
         listViewsRefreshService.start();
+    }
+
+    private boolean authenticate() {
+        DbxRequestConfig config = DbxRequestConfig.newBuilder("Altier").build();
+        client = new DbxClientV2(config, LoginController.ACCESS_TOKEN);
+
+        try {
+            accountName = client.users().getCurrentAccount().getName().getDisplayName();
+        } catch (DbxException e) {
+            // TODO Authentication failure handler
+            System.out.println(ThreadColor.ANSI_RED + "MainApp: \t" + "Error loading user data!");
+            return false;
+        }
+
+        return true;
     }
 
     @FXML
