@@ -39,6 +39,8 @@ public class LoginController {
         if (autoAuthenticate()) {
             // Last used access key is valid
             log("Automatic authentication was successful with the last used access key!");
+
+            // Need to load the Main scene
             
         } else {
             // Need to request a new access key
