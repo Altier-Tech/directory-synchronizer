@@ -181,7 +181,7 @@ public class Main {
     }
 
     @FXML
-    public void handleSettings(MouseEvent mouseEvent) { // TODO
+    public void handleSettings() { // TODO
     }
 
     class ListViewRefreshService extends ScheduledService<Void> {
