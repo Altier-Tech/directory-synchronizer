@@ -1,6 +1,5 @@
 package tech.altier.AppProperties;
 
-import java.io.FileNotFoundException;
 import java.io.FileOutputStream;
 import java.io.IOException;
 import java.io.InputStream;
@@ -38,6 +37,15 @@ public class RemoteFileInfo extends HashMap<String, String> {
         assert inputStream != null;
         inputStream.close();
         return configuration;
+    }
+
+    private static void writeRemoteFiles() {
+        conf.clear();
+        Set<String> keys = remoteFiles.keySet();
+        for (String key : keys) {
+            conf.setProperty(key, remoteFiles.get(key));
+        }
+        writeProperties();
     }
 
     private static void loadRemoteFiles() {
