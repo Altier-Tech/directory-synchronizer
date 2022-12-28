@@ -62,7 +62,7 @@ public class Main {
         log("Logged in user: " + accountName);
         log("Local repository: " + repository.getPath());
 
-        appLogo.setImage(new Image("icon-col.png"));
+        appLogo.setImage(new Image("icon.png"));
         appLogo.setCache(true);
 
         syncIcon.setImage(new Image("synchronize.png"));
