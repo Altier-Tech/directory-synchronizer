@@ -65,7 +65,7 @@ public class LoginController {
         if (ACCESS_TOKEN == null || ACCESS_TOKEN.isEmpty()) {
             label.setText("Please enter a valid access token!");
         }
-        
+
         authenticate(accessTokenField.getText());
     }
 
