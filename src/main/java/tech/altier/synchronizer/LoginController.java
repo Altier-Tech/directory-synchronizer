@@ -58,6 +58,8 @@ public class LoginController {
         while (true) {
             if (!auth.authenticate(accessToken)) {
                 log("Authentication with given access token failed!");
+            } else {
+                break;
             }
         }
     }
