@@ -33,7 +33,6 @@ import java.util.List;
 public class Main {
     public static LocalRepository repository;
     public static DbxClientV2 client;
-//    private static String accountName = "ERR!";
 
     @FXML
     private ListView<String> listViewLocal;
