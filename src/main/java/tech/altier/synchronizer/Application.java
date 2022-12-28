@@ -18,6 +18,8 @@ import java.nio.file.Path;
 import java.nio.file.Paths;
 import java.util.Objects;
 
+import static tech.altier.synchronizer.LocalHandler.LocalRepository.setupRepositoryOnDir;
+
 public class Application extends javafx.application.Application {
     public static Stage primaryStage;
     public static DbxClientV2 client;
@@ -66,6 +68,7 @@ public class Application extends javafx.application.Application {
             // Try to setup local repository
             if (checkIfValidPath(repositoryPath)) {
                 // A valid path was found. Need to set up the repository.
+                repository = setupRepositoryOnDir (repositoryPath);
 
             } else {
                 // Path is invalid
