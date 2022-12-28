@@ -56,7 +56,7 @@ public class Application extends javafx.application.Application {
             repositoryPath = PropertiesLoader.get("repositoryPath");
             log("Last used local repository path: " + repositoryPath);
 
-
+            // Try to setup local repository
         }
 
         // If last used path is not valid, ask for a new one
