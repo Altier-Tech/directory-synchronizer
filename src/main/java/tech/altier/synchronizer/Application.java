@@ -51,7 +51,6 @@ public class Application extends javafx.application.Application {
             // Last used access key is valid
             log("Automatic authentication was successful with the last used access key!");
             startScene = "setup-scene.fxml";
-            return;
         } else {
             // Need to request a new access key
             log("Automatic authentication failed! Need to authenticate again.");
