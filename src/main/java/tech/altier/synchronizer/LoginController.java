@@ -28,6 +28,7 @@ public class LoginController {
 
     public void initialize() throws IOException {
         loginURL = PropertiesLoader.get("loginURL");
+        // TODO get about url from properties
 
         generateTokenLink.setOnAction(e -> {
             Desktop desk = Desktop.getDesktop();
