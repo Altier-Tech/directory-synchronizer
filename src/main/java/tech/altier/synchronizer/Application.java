@@ -60,12 +60,15 @@ public class Application extends javafx.application.Application {
             log("Last used local repository path: " + repositoryPath);
 
             // Try to setup local repository
-            checkIfValidPath(repositoryPath);
+            if (!checkIfValidPath(repositoryPath)) {
+                log("Last used local repository path is invalid! Need to set up a new one.");
+            }
+        } else {
+            log("Last repository path not found! Launching setup scene...");
         }
 
         // If last used path is not valid, ask for a new one
         // Launch the setup scene
-        log("Last repository path not found! Launching setup scene...");
         launchedFlag = true;
         launch();
 
