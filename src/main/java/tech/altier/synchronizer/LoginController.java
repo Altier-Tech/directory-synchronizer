@@ -81,7 +81,7 @@ public class LoginController {
 
         log("Authorization requested with a given access token");
         authenticate(ACCESS_TOKEN);
-        
+
         continueRepoSetup();
     }
 
