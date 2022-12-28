@@ -42,6 +42,7 @@ public class RemoteFileInfo extends HashMap<String, String> {
     private static void writeRemoteFiles() {
         // Clearing the Properties before rewriting to avoid deleted files existing in the dataset
         conf.clear();
+
         Set<String> keys = remoteFiles.keySet();
         for (String key : keys) {
             conf.setProperty(key, remoteFiles.get(key));
