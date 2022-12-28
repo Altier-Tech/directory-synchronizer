@@ -81,11 +81,12 @@ public class LoginController {
 
         log("Authorization requested with a given access token");
         authenticate(ACCESS_TOKEN);
-        showMain();
+        
+        continueRepoSetup();
     }
 
-    private void showMain() throws IOException {
-        Application.changeScene("main-scene.fxml");
+    private void continueRepoSetup() throws IOException {
+
     }
 
     private void log(String message) {
