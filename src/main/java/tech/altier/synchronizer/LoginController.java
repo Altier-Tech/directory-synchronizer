@@ -31,7 +31,7 @@ public class LoginController {
 
         syncIcon.setImage(new Image("synchronize.png"));
         syncIcon.setCache(true);
-        
+
         generateTokenLink.setOnAction(e -> {
             Desktop desk = Desktop.getDesktop();
             try {
