@@ -12,7 +12,7 @@
         <VBox alignment="CENTER">
             <!-- TODO add a title and icon here -->
             <ImageView fx:id="appLogo"
-                       fitHeight="512" fitWidth="512"
+                       fitHeight="100" fitWidth="100"
                        layoutX="61.0" layoutY="83.0" pickOnBounds="true" preserveRatio="true" />
 
             <Label text="Altier Zink" />
