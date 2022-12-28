@@ -47,15 +47,15 @@ public class Main {
     public void initialize() throws DbxException {
         repository = SetupController.repository;
 
-        // Trying automatic authenticate to set up the client
-        if (autoAuthenticate()) {
-            // Last used access key is valid
-            log("Automatic authentication was successful with the last used access key!");
-        } else {
-            // Need to request a new access key
-            log("Automatic authentication failed! Need to authenticate again.");
-            authenticate(LoginController.ACCESS_TOKEN);
-        }
+//        // Trying automatic authenticate to set up the client
+//        if (autoAuthenticate()) {
+//            // Last used access key is valid
+//            log("Automatic authentication was successful with the last used access key!");
+//        } else {
+//            // Need to request a new access key
+//            log("Automatic authentication failed! Need to authenticate again.");
+//            authenticate(LoginController.ACCESS_TOKEN);
+//        }
 
         log("Logged in user: " + accountName);
         log("Local repository: " + repository.getPath());
