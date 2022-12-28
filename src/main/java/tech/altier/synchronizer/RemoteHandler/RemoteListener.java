@@ -74,6 +74,11 @@ public class RemoteListener implements Runnable {
                     // Not the same, so need to..
 
                     // TODO Step 1: Delete the local file
+                    try {
+                        deleteFile(metadata.getPathLower());
+                    } catch (IOException e) {
+                        throw new RuntimeException(e);
+                    }
 
                     // TODO Step 2: Download the remote file
 
