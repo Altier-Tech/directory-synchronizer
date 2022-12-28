@@ -11,6 +11,7 @@ import javafx.concurrent.ScheduledService;
 import javafx.concurrent.Task;
 import javafx.fxml.FXML;
 import javafx.scene.control.ListView;
+import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
 import javafx.util.Duration;
 
@@ -52,7 +53,12 @@ public class Main {
         log("Logged in user: " + accountName);
         log("Local repository: " + repository.getPath());
 
-        appLogo.setImage();
+        appLogo.setImage(
+                new Image(
+                        new File("src/Box13.jpg")
+                                .toURI()
+                                .toString())
+        );
 
         // Local
         populateLocalListView();
