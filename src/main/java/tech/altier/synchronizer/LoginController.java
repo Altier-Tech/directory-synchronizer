@@ -6,6 +6,7 @@ import javafx.scene.control.Label;
 import javafx.scene.control.PasswordField;
 
 import javafx.scene.image.Image;
+import javafx.scene.image.ImageView;
 import javafx.scene.input.MouseEvent;
 import tech.altier.AppProperties.PropertiesLoader;
 import tech.altier.Thread.ThreadColor;
@@ -22,6 +23,8 @@ public class LoginController {
     private PasswordField accessTokenField;
     @FXML
     private Label label;
+    @FXML
+    private ImageView appLogo;
 
     public static String ACCESS_TOKEN;
 
