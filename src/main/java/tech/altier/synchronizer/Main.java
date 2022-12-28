@@ -33,7 +33,7 @@ import java.util.List;
 public class Main {
     public static LocalRepository repository;
     public static DbxClientV2 client;
-    private static String accountName = "ERR!";
+//    private static String accountName = "ERR!";
 
     @FXML
     private ListView<String> listViewLocal;
@@ -45,6 +45,7 @@ public class Main {
     public ImageView syncIcon;
 
     public void initialize() throws DbxException {
+        client = Auth.client;
         repository = SetupController.repository;
 
 //        // Trying automatic authenticate to set up the client
