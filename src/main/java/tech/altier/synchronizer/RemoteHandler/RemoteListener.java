@@ -111,7 +111,8 @@ public class RemoteListener implements Runnable {
                                     }
                                 } else if (type.getText().equalsIgnoreCase("No")) {
                                     log("User denied deletion of file " + path);
-                                    // If no, do nothing
+                                    // If no, the file should be uploaded again
+                                    // But that will automatically done by the Main class
                                 }
                             });
                         });
