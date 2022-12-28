@@ -32,6 +32,7 @@ public class LoginController {
     private ImageView dropboxIcon;
 
     public static String ACCESS_TOKEN;
+    public static DbxClientV2 client;
 
     public void initialize() {
         // Try auto authentication first
@@ -67,7 +68,8 @@ public class LoginController {
     private boolean authenticate(String accessToken) {
         DbxRequestConfig config = DbxRequestConfig.newBuilder("Altier").build();
         client = new DbxClientV2(config, accessToken);
-
+        String accountName = "ERR!";
+        
         try {
             accountName = client.users().getCurrentAccount().getName().getDisplayName();
         } catch (DbxException e) {
@@ -76,6 +78,7 @@ public class LoginController {
             return false;
         }
 
+        log("Logged in user: " + accountName);
         return true;
     }
 
