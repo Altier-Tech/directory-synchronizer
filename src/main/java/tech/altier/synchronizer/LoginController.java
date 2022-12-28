@@ -70,13 +70,11 @@ public class LoginController {
 
     @FXML
     public void handleAbout(MouseEvent mouseEvent) {
-        generateTokenLink.setOnAction(e -> {
-            Desktop desk = Desktop.getDesktop();
-            try {
-                desk.browse(new URI(PropertiesLoader.get("aboutURL")));
-            } catch (IOException | URISyntaxException ex) {
-                throw new RuntimeException(ex);
-            }
-        });
+        Desktop desk = Desktop.getDesktop();
+        try {
+            desk.browse(new URI(PropertiesLoader.get("aboutURL")));
+        } catch (IOException | URISyntaxException ex) {
+            throw new RuntimeException(ex);
+        }
     }
 }
