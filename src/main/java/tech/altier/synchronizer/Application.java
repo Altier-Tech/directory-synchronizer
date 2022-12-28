@@ -100,6 +100,9 @@ public class Application extends javafx.application.Application {
             log("Automatic authentication failed! Need to authenticate again.");
             startScene = "login-scene.fxml";
         }
+
+        launchedFlag = true;
+        launch();
     }
 
     private static boolean checkIfValidPath(String repositoryPath) {
