@@ -73,15 +73,15 @@ public class LoginController {
 
         try {
             accountName = client.users().getCurrentAccount().getName().getDisplayName();
+            log("Authorization successful!");
+            log("Logged in user: " + accountName);
+            Application.changeScene("setup-scene.fxml");
         } catch (DbxException e) {
             // TODO Authentication failure handler
             System.out.println(ThreadColor.ANSI_RED + "MainApp: \t" + "Error loading user data!");
             return false;
         }
 
-        log("Logged in user: " + accountName);
-        // Need to load the Main scene
-        Application.changeScene("setup-scene.fxml");
         return true;
     }
 
@@ -99,9 +99,6 @@ public class LoginController {
         if (ACCESS_TOKEN == null || ACCESS_TOKEN.isEmpty()) {
             label.setText("Please enter a valid access token!");
         }
-
-        log("Authorization successful!");
-        Application.changeScene("setup-scene.fxml");
     }
 
     private void log(String message) {
