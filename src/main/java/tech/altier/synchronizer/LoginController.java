@@ -76,6 +76,7 @@ public class LoginController {
         log("Authorization requested with a given access token");
         authenticate(accessToken);
 
+        Application.launchedFlag = true;
         Application.setupLocalRepository();
     }
 
