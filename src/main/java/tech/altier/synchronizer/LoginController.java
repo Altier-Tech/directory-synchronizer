@@ -64,11 +64,6 @@ public class LoginController {
     }
 
     @FXML
-    private void onResetButtonClick() {
-        accessTokenField.setText("");
-    }
-
-    @FXML
     private void onLoginButtonClick() throws IOException {
         ACCESS_TOKEN = accessTokenField.getText();
 
@@ -82,7 +77,12 @@ public class LoginController {
         log("Authorization requested with a given access token");
         authenticate(ACCESS_TOKEN);
 
-        Application.changeScene("setup-scene.fxml");
+//        Application.changeScene("setup-scene.fxml");
+    }
+
+    @FXML
+    private void onResetButtonClick() {
+        accessTokenField.setText("");
     }
 
     private void log(String message) {
