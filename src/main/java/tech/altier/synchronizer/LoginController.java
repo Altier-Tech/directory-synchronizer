@@ -29,9 +29,6 @@ public class LoginController {
         appLogo.setImage(new javafx.scene.image.Image("icon.png"));
         appLogo.setCache(true);
 
-        syncIcon.setImage(new Image("synchronize.png"));
-        syncIcon.setCache(true);
-
         generateTokenLink.setOnAction(e -> {
             Desktop desk = Desktop.getDesktop();
             try {
