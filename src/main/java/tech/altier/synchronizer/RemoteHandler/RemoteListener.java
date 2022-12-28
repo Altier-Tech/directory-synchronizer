@@ -61,6 +61,8 @@ public class RemoteListener implements Runnable {
                     log("New file detected: " + metadata.getPathLower());
                 } else if (!remoteFileInfo.get(metadata.getPathLower()).equals(fileMetadata.getContentHash())) {
                     // Case 2: File has been modified
+                    log("File " + metadata.getPathLower() + " has been modified");
+                    
                     // Not the same, so need to..
 
                     // TODO Step 1: Delete the local file
