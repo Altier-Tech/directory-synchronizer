@@ -1,6 +1,7 @@
 package tech.altier.synchronizer;
 
 import javafx.fxml.FXML;
+import javafx.scene.image.Image;
 import javafx.scene.input.MouseEvent;
 import javafx.stage.DirectoryChooser;
 
@@ -18,6 +19,14 @@ import static tech.altier.synchronizer.LocalHandler.LocalRepository.setupReposit
 
 public class SetupController {
     public static LocalRepository repository;
+
+    public void initialize() {
+        appLogo.setImage(new javafx.scene.image.Image("icon.png"));
+        appLogo.setCache(true);
+
+        syncIcon.setImage(new Image("synchronize.png"));
+        syncIcon.setCache(true);
+    }
 
     @FXML
     public void onChooseFolderButtonClick() throws IOException {
