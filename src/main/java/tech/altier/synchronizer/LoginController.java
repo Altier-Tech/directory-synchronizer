@@ -76,7 +76,7 @@ public class LoginController {
         log("Authorization requested with a given access token");
         authenticate(accessToken);
 
-//        Application.changeScene("setup-scene.fxml");
+        Application.setupLocalRepository();
     }
 
     @FXML
