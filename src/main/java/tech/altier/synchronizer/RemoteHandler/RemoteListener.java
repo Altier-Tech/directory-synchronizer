@@ -117,8 +117,6 @@ public class RemoteListener implements Runnable {
                             });
                         });
 
-                        // If yes, delete the local file
-
                         // If no, upload the file back to the remote repository
                     }
                 }
