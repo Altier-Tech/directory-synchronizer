@@ -31,7 +31,7 @@ public class LocalRepository {
     }
 
     public void stopListening() {
-
+        watcher.interrupt();
     }
 
     public String getPath() {
