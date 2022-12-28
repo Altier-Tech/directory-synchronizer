@@ -35,8 +35,6 @@ public class LoginController {
     public static DbxClientV2 client;
 
     public void initialize() throws IOException {
-
-
         appLogo.setImage(new javafx.scene.image.Image("icon.png"));
         appLogo.setCache(true);
 
@@ -62,12 +60,13 @@ public class LoginController {
     @FXML
     private void onLoginButtonClick() throws IOException {
         log("Authorization Requested with Access Token");
-        ACCESS_TOKEN = accessTokenField.getText();
 
         // Check if null or empty
         if (ACCESS_TOKEN == null || ACCESS_TOKEN.isEmpty()) {
             label.setText("Please enter a valid access token!");
         }
+        
+        authenticate(accessTokenField.getText());
     }
 
     private void log(String message) {
