@@ -171,7 +171,7 @@ public class Main {
 
     @FXML
     public void handleExit(MouseEvent mouseEvent) {
-        Main.exit();
+        Application.exit();
     }
 
     @FXML
