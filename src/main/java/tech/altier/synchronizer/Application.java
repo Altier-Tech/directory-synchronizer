@@ -1,5 +1,6 @@
 package tech.altier.synchronizer;
 
+import com.dropbox.core.v2.DbxClientV2;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
@@ -12,6 +13,7 @@ import java.util.Objects;
 
 public class Application extends javafx.application.Application {
     public static Stage primaryStage;
+    public static DbxClientV2 client;
     private static String startScene = "login-scene.fxml";
 
     @Override
@@ -44,6 +46,10 @@ public class Application extends javafx.application.Application {
 
         // Launch the GUI
         launch();
+    }
+
+    public static void setClient(DbxClientV2 client) {
+        this.client = client;
     }
 
     public static void  changeScene(String fxml) throws IOException {
