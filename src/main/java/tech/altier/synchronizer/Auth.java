@@ -23,10 +23,9 @@ public class Auth {
         try {
             String accountName = client.users().getCurrentAccount().getName().getDisplayName();
             log("Authorization successful for user " + accountName + "!");
-            Application.changeScene("setup-scene.fxml");
         } catch (DbxException e) {
             // TODO Authentication failure handler
-            System.out.println(ThreadColor.ANSI_RED + "MainApp: \t" + "Error loading user data!");
+            log("Authorization failure: " + e.getMessage());
             return false;
         }
 
