@@ -60,7 +60,7 @@ public class Application extends javafx.application.Application {
 
     private static void setupLocalRepository() {
         // Need to wait till authentication is successful
-        
+
         log("Local repository setup called...");
         String repositoryPath = "";
         // Try last used path for local repository
@@ -88,11 +88,6 @@ public class Application extends javafx.application.Application {
         launch();
     }
 
-    private static boolean checkIfValidPath(String repositoryPath) {
-        Path path = Paths.get(repositoryPath);
-        return Files.exists(path);
-    }
-
     private static void authenticate() throws IOException {
         Auth auth = new Auth();
         // Try auto authentication first
@@ -105,6 +100,11 @@ public class Application extends javafx.application.Application {
             log("Automatic authentication failed! Need to authenticate again.");
             startScene = "login-scene.fxml";
         }
+    }
+
+    private static boolean checkIfValidPath(String repositoryPath) {
+        Path path = Paths.get(repositoryPath);
+        return Files.exists(path);
     }
 
     public static void setRepository(LocalRepository configuredRepository) {
