@@ -60,7 +60,7 @@ public class RemoteFileInfo extends HashMap<String, String> {
     }
 
     /**
-     * 
+     * Returns the singleton instance of the RemoteFileInfo class
      * @return The singleton instance of the RemoteFileInfo class
      */
     public static RemoteFileInfo getInstance() {
