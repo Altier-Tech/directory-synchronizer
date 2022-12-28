@@ -71,14 +71,12 @@ public class LoginController {
     @FXML
     private void onLoginButtonClick() throws IOException {
         // Check if null or empty
-        while (true) {
-            if (ACCESS_TOKEN == null || ACCESS_TOKEN.isEmpty()) {
-                log("Access token is null or empty!");
-                label.setText("Please enter a valid access token!");
-            } else {
-                break;
-            }
+        if (ACCESS_TOKEN == null || ACCESS_TOKEN.isEmpty()) {
+            log("Access token is null or empty!");
+            label.setText("Please enter a valid access token!");
+            return;
         }
+
 
         log("Authorization requested with a given access token");
         authenticate(accessTokenField.getText());
