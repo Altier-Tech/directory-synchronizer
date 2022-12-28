@@ -58,8 +58,6 @@ public class Main {
 //            authenticate(LoginController.ACCESS_TOKEN);
 //        }
 
-        log("Local repository: " + repository.getPath());
-
         appLogo.setImage(new Image("icon.png"));
         appLogo.setCache(true);
 
