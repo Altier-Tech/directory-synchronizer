@@ -42,6 +42,7 @@ public class Application extends javafx.application.Application {
     public static void main(String[] args) throws IOException {
         // Stage 1: Authenticate
         authenticate();
+        log("Authentication process finished!");
 
         // Stage 2: Setup local repository
         setupLocalRepository();
