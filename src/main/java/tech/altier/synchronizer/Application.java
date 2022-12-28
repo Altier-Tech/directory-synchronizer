@@ -37,7 +37,6 @@ public class Application extends javafx.application.Application {
     }
 
     public static void exit() {
-        // TODO Stop jobs
         primaryStage.close();
     }
 }
