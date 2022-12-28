@@ -81,8 +81,6 @@ public class LoginController {
 
         log("Authorization requested with a given access token");
         authenticate(ACCESS_TOKEN);
-
-        Application.changeScene("main-scene.fxml");
     }
 
     private void log(String message) {
