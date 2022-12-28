@@ -25,7 +25,6 @@ public class RemoteFileInfo extends HashMap<String, String> {
         conf.store(outputStream, "Repository Properties");
 
         outputStream.close();
-        System.out.println("After saving properties: " + p);
     }
 
     private static Properties loadProperties() throws IOException {
@@ -48,10 +47,6 @@ public class RemoteFileInfo extends HashMap<String, String> {
 
     public static RemoteFileInfo getInstance() {
         return new RemoteFileInfo();
-    }
-
-    private static String get(String key) {
-        return conf.getProperty(key);
     }
 
     @Override
