@@ -10,6 +10,7 @@ import javafx.application.Platform;
 import javafx.scene.control.Alert;
 import javafx.scene.control.ButtonBar;
 import javafx.scene.control.ButtonType;
+
 import tech.altier.AppProperties.RemoteFileInfo;
 import tech.altier.Thread.ThreadColor;
 import tech.altier.synchronizer.Main;
