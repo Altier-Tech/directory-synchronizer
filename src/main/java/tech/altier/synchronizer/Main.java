@@ -48,9 +48,10 @@ public class Main {
         repository = SetupController.repository;
 
         if (autoAuthenticate()) {
+            // Last used access key is valid
             log("Automatic authentication was successful with the last used access key!");
         } else {
-            
+            // Need to request a new access key
         }
 
         log("Logged in user: " + accountName);
