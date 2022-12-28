@@ -55,7 +55,7 @@ public class Main {
 
         appLogo.setImage(
                 new Image(
-                        new File("src/Box13.jpg")
+                        new File("assets/logo.png")
                                 .toURI()
                                 .toString())
         );
