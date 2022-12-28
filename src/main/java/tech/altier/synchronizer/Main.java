@@ -171,7 +171,7 @@ public class Main {
     }
 
     @FXML
-    public void handleAboutClick(MouseEvent mouseEvent) {
+    public void handleAboutClick() {
         Desktop desk = Desktop.getDesktop();
         try {
             desk.browse(new URI(PropertiesLoader.get("aboutURL")));
