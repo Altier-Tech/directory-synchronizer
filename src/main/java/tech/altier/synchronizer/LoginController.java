@@ -22,6 +22,7 @@ public class LoginController {
     @FXML
     private Label label;
 
+    private static String ABOUT_URL;
     public static String ACCESS_TOKEN;
     public static String loginURL;
 
