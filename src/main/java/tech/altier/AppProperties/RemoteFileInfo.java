@@ -23,7 +23,7 @@ public class RemoteFileInfo extends HashMap<String, String> {
         Properties configuration = new Properties();
         InputStream inputStream = PropertiesLoader.class
                 .getClassLoader()
-                .getResourceAsStream("remote.properties");
+                .getResourceAsStream("repository.properties");
         configuration.load(inputStream);
         assert inputStream != null;
         inputStream.close();
