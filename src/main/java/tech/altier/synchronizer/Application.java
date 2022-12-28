@@ -47,6 +47,9 @@ public class Application extends javafx.application.Application {
         // Stage 3: TODO Load the database
 
         // Stage 4: Launch the GUI
+        if (!launchedFlag) {
+            launch();
+        }
 
 
         // Stage 5: TODO Save the database
@@ -62,7 +65,7 @@ public class Application extends javafx.application.Application {
             // Try to setup local repository
             if (checkIfValidPath(repositoryPath)) {
                 // A valid path was found. Need to set up the repository.
-                
+
             } else {
                 // Path is invalid
                 log("Last used local repository path is invalid! Need to set up a new one.");
