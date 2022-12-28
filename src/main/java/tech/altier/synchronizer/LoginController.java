@@ -34,7 +34,7 @@ public class LoginController {
     public static String ACCESS_TOKEN;
     public static DbxClientV2 client;
 
-    public void initialize() throws IOException {
+    public void initialize() {
         appLogo.setImage(new javafx.scene.image.Image("icon.png"));
         appLogo.setCache(true);
 
@@ -50,6 +50,11 @@ public class LoginController {
                 throw new RuntimeException(ex);
             }
         });
+    }
+
+    private void authenticate(String accessToken) {
+        Auth auth = new Auth();
+        auth.authenticate(accessToken);
     }
 
     @FXML
