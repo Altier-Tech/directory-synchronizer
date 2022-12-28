@@ -141,10 +141,12 @@ class LocalListener implements Runnable {
 
     @Override
     public void run() {
-        try {
-            watch();
-        } catch (IOException e) {
-            e.printStackTrace();
+        while (!Thread.currentThread().isInterrupted()) {
+            try {
+                watch();
+            } catch (IOException e) {
+                e.printStackTrace();
+            }
         }
     }
 }
