@@ -78,7 +78,7 @@ class LocalListener implements Runnable {
         while (true) {
             if (Thread.currentThread().isInterrupted()) {
                 log("Local listener interrupted!");
-                return;
+                break;
             }
 
             for (WatchEvent<?> event : watchKey.pollEvents()) {
