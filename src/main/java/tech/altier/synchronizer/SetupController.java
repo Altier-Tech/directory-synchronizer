@@ -2,6 +2,7 @@ package tech.altier.synchronizer;
 
 import javafx.fxml.FXML;
 import javafx.scene.image.Image;
+import javafx.scene.image.ImageView;
 import javafx.scene.input.MouseEvent;
 import javafx.stage.DirectoryChooser;
 
@@ -18,6 +19,9 @@ import java.net.URISyntaxException;
 import static tech.altier.synchronizer.LocalHandler.LocalRepository.setupRepositoryOnDir;
 
 public class SetupController {
+    @FXML
+    private ImageView appLogo;
+
     public static LocalRepository repository;
 
     public void initialize() {
