@@ -20,7 +20,9 @@ public class LocalRepository {
 
     public static LocalRepository setupRepositoryOnDir(String path) {
         log("Setting up repository on directory: " + path);
-        return new LocalRepository(path);
+        LocalRepository repo = new LocalRepository(path);
+        log("Repository setup finished!");
+        return repo;
     }
 
     public void startListening() {
