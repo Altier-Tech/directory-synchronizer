@@ -23,7 +23,9 @@ public class Application extends javafx.application.Application {
     }
 
     public static void main(String[] args) {
-        // Create repository database
+        // Load the database
+
+        // Launch the GUI
         launch();
     }
 
