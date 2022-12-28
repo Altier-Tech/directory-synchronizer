@@ -39,9 +39,7 @@ public class LoginController {
         if (autoAuthenticate()) {
             // Last used access key is valid
             log("Automatic authentication was successful with the last used access key!");
-
-            // Need to load the Main scene
-            Application.changeScene("setup-scene.fxml");
+            return;
         } else {
             // Need to request a new access key
             log("Automatic authentication failed! Need to authenticate again.");
@@ -64,11 +62,11 @@ public class LoginController {
         });
     }
 
-    private boolean autoAuthenticate() {
+    private boolean autoAuthenticate() throws IOException {
         return authenticate(PropertiesLoader.get("accessToken"));
     }
 
-    private boolean authenticate(String accessToken) {
+    private boolean authenticate(String accessToken) throws IOException {
         DbxRequestConfig config = DbxRequestConfig.newBuilder("Altier").build();
         client = new DbxClientV2(config, accessToken);
         String accountName = "ERR!";
@@ -82,6 +80,8 @@ public class LoginController {
         }
 
         log("Logged in user: " + accountName);
+        // Need to load the Main scene
+        Application.changeScene("setup-scene.fxml");
         return true;
     }
 
