@@ -76,7 +76,9 @@ public class RemoteListener implements Runnable {
                 for (String path : remoteFileInfo.keySet()) {
                     if (!tempRemoteFileInfo.containsKey(path)) {
                         // TODO File has been deleted, so need to delete the local file
+                        // Alert the user to check if the deletion should be permanent
 
+                        // 
                     }
                 }
             }
