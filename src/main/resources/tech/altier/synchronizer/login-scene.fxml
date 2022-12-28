@@ -116,7 +116,19 @@
                 </HBox>
 
             </VBox>
-            
+
+            <VBox>
+                <Label text="Welcome to Altier Zink Synchronizer" />
+                <Label text="This application will help you to synchronize your data from Altier Zink to your local machine." />
+                <Label text="Please follow the steps below to get started." />
+                <Label text="1. Generate an access token from Altier Zink." />
+                <Label text="2. Paste the access token here." />
+                <Label text="3. Click on Login." />
+                <Label text="4. Select the data you want to synchronize." />
+                <Label text="5. Click on Synchronize." />
+                <Label text="6. Wait for the process to finish." />
+                <Label text="7. Enjoy your data." />
+            </VBox>
         </HBox>
 
     </center>
