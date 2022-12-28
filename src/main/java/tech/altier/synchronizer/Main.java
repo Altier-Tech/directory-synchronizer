@@ -46,7 +46,7 @@ public class Main {
 
     public void initialize() throws DbxException {
         client = Auth.client;
-        repository = SetupController.repository;
+        repository = Application.repository;
 
 //        // Trying automatic authenticate to set up the client
 //        if (autoAuthenticate()) {
