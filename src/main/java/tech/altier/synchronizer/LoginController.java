@@ -35,8 +35,10 @@ public class LoginController {
     public static DbxClientV2 client;
 
     public void initialize() throws IOException {
+        Auth auth = new Auth();
+
         // Try auto authentication first
-        if (autoAuthenticate()) {
+        if (auth.autoAuthenticate()) {
             // Last used access key is valid
             log("Automatic authentication was successful with the last used access key!");
             return;
@@ -62,26 +64,7 @@ public class LoginController {
         });
     }
 
-    private boolean autoAuthenticate() throws IOException {
-        return authenticate(PropertiesLoader.get("accessToken"));
-    }
 
-    private boolean authenticate(String accessToken) throws IOException {
-        DbxRequestConfig config = DbxRequestConfig.newBuilder("Altier").build();
-        client = new DbxClientV2(config, accessToken);
-
-        try {
-            String accountName = client.users().getCurrentAccount().getName().getDisplayName();
-            log("Authorization successful for user " + accountName + "!");
-            Application.changeScene("setup-scene.fxml");
-        } catch (DbxException e) {
-            // TODO Authentication failure handler
-            System.out.println(ThreadColor.ANSI_RED + "MainApp: \t" + "Error loading user data!");
-            return false;
-        }
-
-        return true;
-    }
 
     @FXML
     private void onResetButtonClick() {
