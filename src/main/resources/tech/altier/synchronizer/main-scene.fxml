@@ -11,11 +11,21 @@
     <left>
         <VBox alignment="CENTER">
             <!-- TODO add a title and icon here -->
-            <ImageView fx:id="appLogo"
-                       fitHeight="100" fitWidth="100"
-                       layoutX="61.0" layoutY="83.0" pickOnBounds="true" preserveRatio="true" />
+            <ImageView fx:id="appLogo" fitHeight="125.0" fitWidth="125.0" layoutX="61.0" layoutY="83.0" pickOnBounds="true" preserveRatio="true">
+            <VBox.margin>
+               <Insets bottom="5.0" left="10.0" right="5.0" top="5.0" />
+            </VBox.margin></ImageView>
 
-            <Label text="Altier Zink" />
+            <Label text="Altier Zink">
+            <VBox.margin>
+               <Insets bottom="5.0" left="5.0" right="5.0" top="2.5" />
+            </VBox.margin>
+            <padding>
+               <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
+            </padding>
+            <font>
+               <Font name="Berlin Sans FB" size="25.0" />
+            </font></Label>
 
             <!-- TODO create a navigation pane here -->
         </VBox>
@@ -26,7 +36,7 @@
             <VBox alignment="CENTER">
                 <Label alignment="CENTER" contentDisplay="CENTER" text="DropBox">
                <font>
-                  <Font name="Berlin Sans FB" size="20.0" />
+                  <Font name="Berlin Sans FB" size="18.0" />
                </font>
                <padding>
                   <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
@@ -45,7 +55,7 @@
             <VBox alignment="CENTER">
                 <Label text="Local">
                <font>
-                  <Font name="Berlin Sans FB" size="20.0" />
+                  <Font name="Berlin Sans FB" size="18.0" />
                </font>
                <padding>
                   <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
@@ -70,7 +80,7 @@
             <HBox alignment="CENTER">
                 <Button onAction="#sync" text="Sync">
                <font>
-                  <Font name="Berlin Sans FB" size="20.0" />
+                  <Font name="Berlin Sans FB" size="18.0" />
                </font>
                <padding>
                   <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />

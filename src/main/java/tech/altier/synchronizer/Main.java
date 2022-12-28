@@ -53,12 +53,8 @@ public class Main {
         log("Logged in user: " + accountName);
         log("Local repository: " + repository.getPath());
 
-        appLogo.setImage(
-                new Image(
-                        new File("assets/logo.png")
-                                .toURI()
-                                .toString())
-        );
+        appLogo.setImage(new Image("icon.png"));
+        appLogo.setCache(true);
 
         // Local
         populateLocalListView();
