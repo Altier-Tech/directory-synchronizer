@@ -59,7 +59,7 @@ public class Application extends javafx.application.Application {
         // Stage 5: TODO Save the database
     }
 
-    private static void setupLocalRepository() throws IOException {
+    public static void setupLocalRepository() throws IOException {
         log("Local repository setup called...");
         String repositoryPath = "";
 
