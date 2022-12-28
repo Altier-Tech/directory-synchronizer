@@ -25,7 +25,7 @@ public class Application extends javafx.application.Application {
     public static DbxClientV2 client;
     public static LocalRepository repository;
     private static String startScene = "main-scene.fxml";
-    private static boolean launchedFlag = false;
+    public static boolean launchedFlag = false;
 
     @Override
     public void start(Stage stage) throws IOException {
@@ -73,6 +73,13 @@ public class Application extends javafx.application.Application {
                 // A valid path was found. Need to set up the repository.
                 repository = setupRepositoryOnDir (repositoryPath);
                 startScene = "main-scene.fxml";
+
+                if (!launchedFlag) {
+                    launch();
+                } else {
+                    changeScene("main-scene.fxml");
+                }
+
                 return;
             } else {
                 // Path is invalid
