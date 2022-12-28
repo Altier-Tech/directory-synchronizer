@@ -72,6 +72,13 @@ public class LoginController {
 
     @FXML
     public void handleAbout(MouseEvent mouseEvent) {
-        // TODO Call the about method on the main app
+        generateTokenLink.setOnAction(e -> {
+            Desktop desk = Desktop.getDesktop();
+            try {
+                desk.browse(new URI(loginURL));
+            } catch (IOException | URISyntaxException ex) {
+                throw new RuntimeException(ex);
+            }
+        });
     }
 }
