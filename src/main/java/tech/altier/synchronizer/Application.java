@@ -52,11 +52,11 @@ public class Application extends javafx.application.Application {
     private static void setupLocalRepository() {
         String repositoryPath = "";
         // Try last used path for local repository
-        if (PropertiesLoader.get("repositoryPath") != null && PropertiesLoader.get("repositoryPath") != "") {
+        if (PropertiesLoader.get("repositoryPath") != null && !PropertiesLoader.get("repositoryPath").equalsIgnoreCase("")) {
             repositoryPath = PropertiesLoader.get("repositoryPath");
             log("Last used local repository path: " + repositoryPath);
 
-            
+
         }
 
         // If last used path is not valid, ask for a new one
