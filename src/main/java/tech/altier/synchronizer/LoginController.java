@@ -84,6 +84,11 @@ public class LoginController {
         }
 
         authenticate(accessTokenField.getText());
+        showMain();
+    }
+
+    private void showMain() throws IOException {
+        Application.changeScene("main-scene.fxml");
     }
 
     private void log(String message) {
