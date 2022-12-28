@@ -31,6 +31,8 @@ public class LoginController {
     public static String ACCESS_TOKEN;
 
     public void initialize() {
+        
+
         appLogo.setImage(new javafx.scene.image.Image("icon.png"));
         appLogo.setCache(true);
 
