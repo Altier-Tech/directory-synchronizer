@@ -54,7 +54,12 @@ public class LoginController {
 
     private void authenticate(String accessToken) throws IOException {
         Auth auth = new Auth();
-        auth.authenticate(accessToken);
+
+        while (true) {
+            if (!auth.authenticate(accessToken)) {
+                log("Authentication with given access token failed!");
+            }
+        }
     }
 
     @FXML
