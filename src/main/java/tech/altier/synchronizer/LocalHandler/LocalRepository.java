@@ -12,6 +12,7 @@ import java.nio.file.*;
 
 public class LocalRepository {
     private final String path;
+    private Thread watcher;
 
     private LocalRepository(String path) {
         this.path = path;
@@ -23,7 +24,7 @@ public class LocalRepository {
     }
 
     public void startListening() {
-        Thread watcher = new Thread(
+        watcher = new Thread(
                 new LocalListener(path)
         );
         watcher.start();
