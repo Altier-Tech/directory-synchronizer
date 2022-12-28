@@ -76,7 +76,7 @@
 
                 <Label fx:id="label" text="Paste an access token">
                     <font>
-                        <Font size="14.0" />
+                        <Font name="Berlin Sans FB" size="16.0" />
                     </font></Label>
 
                 <PasswordField fx:id="accessTokenField" minWidth="-Infinity" promptText="Access Token">
@@ -126,10 +126,10 @@
 
             </VBox>
 
-            <VBox alignment="CENTER" prefHeight="390.0" prefWidth="172.0">
+            <VBox alignment="CENTER" prefHeight="390.0" prefWidth="195.0">
                 <Label text="Authorize using DropBox">
                    <font>
-                      <Font name="Berlin Sans FB" size="14.0" />
+                      <Font name="Berlin Sans FB" size="16.0" />
                    </font>
                    <padding>
                       <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
