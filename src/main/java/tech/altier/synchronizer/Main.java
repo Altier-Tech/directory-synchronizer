@@ -73,7 +73,8 @@ public class Main {
     }
 
     private boolean autoAuthenticate() {
-        authenticate(LoginController.ACCESS_TOKEN);
+        authenticate(PropertiesLoader.get("ACCESS_TOKEN"));
+//        authenticate(LoginController.ACCESS_TOKEN);
     }
 
     private boolean authenticate(String accessToken) {
