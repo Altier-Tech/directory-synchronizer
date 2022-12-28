@@ -105,7 +105,9 @@ public class Application extends javafx.application.Application {
         }
     }
 
-    public static void
+    public static void setRepository() {
+        
+    }
 
     public static void setClient(DbxClientV2 authenticatedClient) {
         client = authenticatedClient;
