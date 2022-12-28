@@ -90,9 +90,9 @@ public class RemoteListener implements Runnable {
                         Platform.runLater(() -> {
                             // Prompt if the deletion should be permanent
                             Alert alert = new Alert(Alert.AlertType.CONFIRMATION);
-                            log("Prompting user for deletion confirmation of file " + filePath);
-                            alert.setTitle("Do you wish to make the deletion permanent?");
-                            alert.setContentText("Are you sure?");
+                            log("Prompting user for deletion confirmation of file " + path);
+                            alert.setTitle("Are you sure?");
+                            alert.setContentText("File " + path + " has been deleted from the server.");
                             ButtonType okButton = new ButtonType("Yes", ButtonBar.ButtonData.YES);
                             ButtonType noButton = new ButtonType("No", ButtonBar.ButtonData.NO);
                             ButtonType cancelButton = new ButtonType("Cancel", ButtonBar.ButtonData.CANCEL_CLOSE);
@@ -111,7 +111,7 @@ public class RemoteListener implements Runnable {
                                 }
                             });
                         });
-                        
+
                         // If yes, delete the local file
 
                         // If no, upload the file back to the remote repository
