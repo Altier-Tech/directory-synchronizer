@@ -31,7 +31,7 @@ public class Application extends javafx.application.Application {
     }
 
     public static void main(String[] args) throws IOException {
-        // Authenticate
+        // Stage 1: Authenticate
         Auth auth = new Auth();
         // Try auto authentication first
         if (auth.autoAuthenticate()) {
@@ -44,11 +44,11 @@ public class Application extends javafx.application.Application {
             log("Automatic authentication failed! Need to authenticate again.");
         }
 
-        // Setup local repository
+        // Stage 2: Setup local repository
 
-        // TODO Load the database
+        // Stage 3: TODO Load the database
 
-        // Launch the GUI
+        // Stage 4: Launch the GUI
         launch();
     }
 
