@@ -54,7 +54,7 @@ public class Application extends javafx.application.Application {
         primaryStage.close();
     }
 
-    private void log(String message) {
+    private static void log(String message) {
         System.out.println(
                 ThreadColor.ANSI_CYAN +
                         Thread.currentThread().getName() +
