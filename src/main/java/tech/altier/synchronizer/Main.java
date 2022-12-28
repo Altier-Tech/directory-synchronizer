@@ -74,7 +74,7 @@ public class Main {
 
     private boolean authenticate(String accessToken) {
         DbxRequestConfig config = DbxRequestConfig.newBuilder("Altier").build();
-        client = new DbxClientV2(config, LoginController.ACCESS_TOKEN);
+        client = new DbxClientV2(config, accessToken);
 
         try {
             accountName = client.users().getCurrentAccount().getName().getDisplayName();
