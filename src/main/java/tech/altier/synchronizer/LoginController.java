@@ -90,6 +90,7 @@ public class LoginController {
         }
     }
 
-    public void handleDropboxLogin(MouseEvent mouseEvent) {
+    @FXML
+    public void handleDropboxLogin(MouseEvent mouseEvent) { // TODO
     }
 }
