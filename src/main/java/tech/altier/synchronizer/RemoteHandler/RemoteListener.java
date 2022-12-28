@@ -101,12 +101,12 @@ public class RemoteListener implements Runnable {
                             alert.showAndWait().ifPresent(type -> {
                                 log("Pressed " + type.getText());
                                 if (type.getText().equalsIgnoreCase("Yes")) {
-                                    log("User confirmed deletion of file " + filePath);
+                                    log("User confirmed deletion of file " + path);
 
-                                    // If yes, delete the file from the remote repository
-                                    fileHandler.handleLocalDelete (filePath);
+                                    // If yes, delete the file locally
+                                    deleteFile(path);
                                 } else if (type.getText().equalsIgnoreCase("No")) {
-                                    log("User denied deletion of file " + filePath);
+                                    log("User denied deletion of file " + path);
                                     // If no, do nothing
                                 }
                             });
