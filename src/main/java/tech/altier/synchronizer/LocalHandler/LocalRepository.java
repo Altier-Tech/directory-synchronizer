@@ -31,7 +31,9 @@ public class LocalRepository {
     }
 
     public void stopListening() {
+        log("Stopping local listener...");
         watcher.interrupt();
+        if (!watcher.isAlive()) log("Local listener successfully stopped!");
     }
 
     public String getPath() {
