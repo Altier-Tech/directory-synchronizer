@@ -76,8 +76,7 @@ public class LoginController {
             label.setText("Please enter a valid access token!");
             return;
         }
-
-
+        
         log("Authorization requested with a given access token");
         authenticate(accessTokenField.getText());
         showMain();
