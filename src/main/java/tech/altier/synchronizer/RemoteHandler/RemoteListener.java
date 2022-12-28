@@ -131,7 +131,7 @@ public class RemoteListener implements Runnable {
         }
     }
 
-    private void deleteFile(String filePath) throws NoSuchFileException {
+    private void deleteFile(String filePath) throws IOException {
         try {
             Files.deleteIfExists(Paths.get(filePath));
         } catch (NoSuchFileException e) {
