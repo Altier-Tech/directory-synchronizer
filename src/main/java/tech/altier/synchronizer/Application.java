@@ -60,6 +60,7 @@ public class Application extends javafx.application.Application {
 
         // If last used path is not valid, ask for a new one
         // Launch the setup scene
+        log("Last repository path not found! Launching setup scene...");
         launchedFlag = true;
         launch();
 
