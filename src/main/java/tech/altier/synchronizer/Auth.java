@@ -35,7 +35,7 @@ public class Auth {
 
     private void log(String message) {
         System.out.println(
-                ThreadColor.ANSI_PURPLE +
+                ThreadColor.ANSI_GREEN +
                         Thread.currentThread().getName() +
                         "\tAuth: \t" +
                         message
