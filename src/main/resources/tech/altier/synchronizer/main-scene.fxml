@@ -1,9 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
+<?import javafx.geometry.*?>
 <?import javafx.scene.control.*?>
 <?import javafx.scene.layout.*?>
+<?import javafx.scene.text.*?>
 
-<BorderPane xmlns:fx="http://javafx.com/fxml/1" xmlns="http://javafx.com/javafx/17.0.2-ea" fx:controller="tech.altier.synchronizer.Main">
+<BorderPane xmlns="http://javafx.com/javafx/17.0.2-ea" xmlns:fx="http://javafx.com/fxml/1" fx:controller="tech.altier.synchronizer.Main">
 
     <top>
         <VBox>
@@ -14,13 +16,43 @@
 
     <center>
         <HBox>
-            <VBox>
-                <Label text="DropBox" />
-                <ListView fx:id="listViewRemote" />
+            <VBox alignment="CENTER">
+                <Label alignment="CENTER" contentDisplay="CENTER" text="DropBox">
+               <font>
+                  <Font name="Berlin Sans FB" size="20.0" />
+               </font>
+               <padding>
+                  <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
+               </padding>
+               <VBox.margin>
+                  <Insets bottom="5.0" left="5.0" right="5.0" top="10.0" />
+               </VBox.margin></Label>
+                <ListView fx:id="listViewRemote" nodeOrientation="LEFT_TO_RIGHT">
+               <VBox.margin>
+                  <Insets bottom="5.0" left="5.0" right="2.5" top="5.0" />
+               </VBox.margin>
+               <padding>
+                  <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
+               </padding></ListView>
             </VBox>
-            <VBox>
-                <Label text="Local" />
-                <ListView fx:id="listViewLocal" />
+            <VBox alignment="CENTER">
+                <Label text="Local">
+               <font>
+                  <Font name="Berlin Sans FB" size="20.0" />
+               </font>
+               <padding>
+                  <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
+               </padding>
+               <VBox.margin>
+                  <Insets bottom="5.0" left="5.0" right="5.0" top="10.0" />
+               </VBox.margin></Label>
+                <ListView fx:id="listViewLocal" nodeOrientation="LEFT_TO_RIGHT">
+               <padding>
+                  <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
+               </padding>
+               <VBox.margin>
+                  <Insets bottom="5.0" left="2.5" right="5.0" top="5.0" />
+               </VBox.margin></ListView>
             </VBox>
         </HBox>
     </center>
@@ -29,7 +61,16 @@
         <VBox>
             <!-- Controls -->
             <HBox alignment="CENTER">
-                <Button onAction="#sync" text="Sync" />
+                <Button onAction="#sync" text="Sync">
+               <font>
+                  <Font name="Berlin Sans FB" size="20.0" />
+               </font>
+               <padding>
+                  <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
+               </padding>
+               <HBox.margin>
+                  <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
+               </HBox.margin></Button>
             </HBox>
 
             <!-- TODO add a status bar here -->
