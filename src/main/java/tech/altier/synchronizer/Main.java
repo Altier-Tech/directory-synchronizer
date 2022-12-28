@@ -16,12 +16,17 @@ import javafx.scene.image.ImageView;
 import javafx.scene.input.MouseEvent;
 import javafx.util.Duration;
 
+import tech.altier.AppProperties.PropertiesLoader;
 import tech.altier.Thread.ThreadColor;
 import tech.altier.synchronizer.API.Threads.FileDownloadThread;
 import tech.altier.synchronizer.API.Threads.FileUploadThread;
 import tech.altier.synchronizer.LocalHandler.LocalRepository;
 
+import java.awt.*;
 import java.io.File;
+import java.io.IOException;
+import java.net.URI;
+import java.net.URISyntaxException;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -177,6 +182,12 @@ public class Main {
 
     @FXML
     public void handleAboutClick(MouseEvent mouseEvent) {
+        Desktop desk = Desktop.getDesktop();
+        try {
+            desk.browse(new URI(PropertiesLoader.get("aboutURL")));
+        } catch (IOException | URISyntaxException ex) {
+            throw new RuntimeException(ex);
+        }
     }
 
     @FXML
