@@ -60,6 +60,8 @@ public class PropertiesLoader {
     }
 
     public static void clearAccessToken() {
+        log("Clearing access token property...");
+        
         Properties prop = new Properties();
         try (InputStream in = new FileInputStream("application.properties")){
             prop.load(in);
