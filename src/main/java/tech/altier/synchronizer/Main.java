@@ -62,7 +62,7 @@ public class Main {
         repository.startListening();
 
         // Start listening for remote changes
-
+        startRemoteListening();
 
         // Start service for refreshing the list view in GUI
         startListViewRefreshService();
