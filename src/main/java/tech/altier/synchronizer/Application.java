@@ -52,7 +52,7 @@ public class Application extends javafx.application.Application {
 
         // Stage 4: Launch the GUI
         if (!launchedFlag) launch();
-        else changeScene("main-scene.fxml");
+        else if (!exitFlag) changeScene("main-scene.fxml");
 
         // Stage 5: TODO Save the database
     }
