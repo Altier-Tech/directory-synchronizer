@@ -61,7 +61,7 @@ public class Application extends javafx.application.Application {
         if (repoSetupFlag) return;
 
         log("Local repository setup called...");
-        String repositoryPath = "";
+        String repositoryPath;
 
         // Try last used path for local repository
         if (PropertiesLoader.get("repositoryPath") != null && !PropertiesLoader.get("repositoryPath").equalsIgnoreCase("")) {
