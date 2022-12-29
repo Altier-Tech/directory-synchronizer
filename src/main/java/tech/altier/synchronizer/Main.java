@@ -32,7 +32,7 @@ import java.util.List;
 public class Main {
     public static LocalRepository repository;
     public static DbxClientV2 client;
-    private Thread remoteListener;
+    private static Thread remoteListener;
 
     @FXML
     private ListView<String> listViewLocal;
@@ -77,7 +77,7 @@ public class Main {
         remoteListener.start();
     }
 
-    public void stopRemoteListener() {
+    public static void stopRemoteListener() {
         remoteListener.interrupt();
     }
 
