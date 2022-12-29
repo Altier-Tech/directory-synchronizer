@@ -45,6 +45,7 @@ public class RemoteListener implements Runnable {
 
     @Override
     public void run() {
+        log("Remote listener started...");
         while (!Thread.currentThread().isInterrupted()) {
             // Adding a waiting period
             try {
@@ -66,7 +67,6 @@ public class RemoteListener implements Runnable {
         }
 
         while (true) {
-            log("Remote listener is running...");
             for (Metadata metadata : remoteFileListResult.getEntries()) {
                 FileMetadata fileMetadata = null;
                 if (metadata instanceof FileMetadata) {
@@ -102,7 +102,6 @@ public class RemoteListener implements Runnable {
                 tempRemoteFileInfo.put(remPath, fileMetadata.getContentHash());
             }
 
-            log("Checking if any file has been deleted from the remote repository...");
             // Case 3: File has been deleted
             for (String path : remoteFileInfo.keySet()) {   // TODO bug
                 if (!tempRemoteFileInfo.containsKey(path)) {
