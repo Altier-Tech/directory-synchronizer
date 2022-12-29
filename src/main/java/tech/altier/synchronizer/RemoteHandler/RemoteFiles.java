@@ -41,7 +41,7 @@ public class RemoteFiles {
      * Do not call this if the database is already populated.
      * @throws DbxException If an error occurs while communicating with Dropbox
      */
-    private void populateRemoteFilesInfo() throws DbxException {
+    public void populateRemoteFilesInfo() throws DbxException {
         ListFolderResult result = getDetailedRemoteFileInfo();
 
         while (true) {
