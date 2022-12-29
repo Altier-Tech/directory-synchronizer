@@ -78,6 +78,7 @@ public class Application extends javafx.application.Application {
                 startScene = "main-scene.fxml";
 
                 if (!launchedFlag) {
+                    Application.launchedFlag = true;
                     launch();
                 } else {
                     changeScene("main-scene.fxml");
