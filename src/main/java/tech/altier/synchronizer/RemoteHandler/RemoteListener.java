@@ -13,6 +13,7 @@ import javafx.scene.control.ButtonType;
 
 import tech.altier.AppProperties.RemoteFileInfo;
 import tech.altier.Thread.ThreadColor;
+import tech.altier.synchronizer.Application;
 import tech.altier.synchronizer.Main;
 
 import java.io.IOException;
@@ -55,7 +56,6 @@ public class RemoteListener implements Runnable {
                 break;
             }
 
-            log("Looping...");
             listen();
         }
 
@@ -70,6 +70,7 @@ public class RemoteListener implements Runnable {
             throw new RuntimeException(e);
         }
 
+        tempRemoteFileInfo.clear();
         while (true) {
             for (Metadata metadata : remoteFileListResult.getEntries()) {
                 FileMetadata fileMetadata = null;
@@ -86,8 +87,11 @@ public class RemoteListener implements Runnable {
                     // Doesn't exist, so need to download the remote file
                     // But this scenario is handled in the Main class
                     log("New file detected: " + remPath);
+
                 } else if (!remoteFileInfo.get(remPath).equals(fileMetadata.getContentHash())) {
                     // Case 2: File has been modified
+                    // TODO Bug: this hash seems to be a file hash, not a content hash
+                    //  we better store the modified date
                     log("File " + remPath + " has been modified");
                     // Not the same, so need to..
 
@@ -163,7 +167,7 @@ public class RemoteListener implements Runnable {
 
     private void deleteFile(String filePath) throws IOException {
         try {
-            Files.delete(Paths.get(filePath));
+            Files.delete(Paths.get(Application.repository.getPath() + "\\" + filePath));
         } catch (NoSuchFileException e) {
             log("File " + filePath + " delete error: No such file/directory exists!");
 //            throw new NoSuchFileException(filePath + " doesn't exist");
