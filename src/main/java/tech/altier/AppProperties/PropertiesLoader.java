@@ -33,7 +33,7 @@ public class PropertiesLoader {
     public static void storeApplicationProperties() {
         log("Saving application properties...");
         try (FileOutputStream outputStream = new FileOutputStream("application.properties")) {
-            conf.store(outputStream, "Application Properties");
+            conf.store(outputStream, null);
             log(get("accessToken"));
         } catch (IOException e) {
             throw new RuntimeException(e);
