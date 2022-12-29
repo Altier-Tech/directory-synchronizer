@@ -29,4 +29,8 @@ public class PropertiesLoader {
     public static String get(String key) {
         return conf.getProperty(key);
     }
+
+    public static void set(String key, String value) {
+        
+    }
 }
