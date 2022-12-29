@@ -136,9 +136,9 @@ class LocalListener implements Runnable {
             if (!valid) {
                 break;
             }
-
-            log("Local listener thread stopped...");
         }
+
+        log("Local listener thread stopped...");
     }
 
     private void log(String message) {
