@@ -94,14 +94,49 @@ public class RemoteListener implements Runnable {
 
                 // Add the metadata to a temporary map for test Case 3
                 tempRemoteFileInfo.put(remPath, fileMetadata.getContentHash());
+            }
 
-                // Case 3: File has been deleted
-                
+            // Case 3: File has been deleted
+            for (String path : remoteFileInfo.keySet()) {   // TODO bug
+                if (!tempRemoteFileInfo.containsKey(path)) {
+                    log("Deleted file detected! " + path);
+                    // File has been deleted, so need to delete the local file
+                    // Alert the user to check if the deletion should be permanent
+                    Platform.runLater(() -> {
+                        // Prompt if the deletion should be permanent
+                        Alert alert = new Alert(Alert.AlertType.CONFIRMATION);
+                        log("Prompting user for deletion confirmation of file " + path);
+                        alert.setTitle("Are you sure?");
+                        alert.setContentText("File " + path + " has been deleted from the server! \nDo you wish to make this deletion permanent?");
+                        ButtonType okButton = new ButtonType("Yes", ButtonBar.ButtonData.YES);
+                        ButtonType noButton = new ButtonType("No", ButtonBar.ButtonData.NO);
+                        ButtonType cancelButton = new ButtonType("Cancel", ButtonBar.ButtonData.CANCEL_CLOSE);
+                        alert.getButtonTypes().setAll(okButton, noButton, cancelButton);
+
+                        alert.showAndWait().ifPresent(type -> {
+                            log("Pressed " + type.getText());
+                            if (type.getText().equalsIgnoreCase("Yes")) {
+                                log("User confirmed deletion of file " + path);
+
+                                // If yes, delete the file locally
+                                try {
+                                    deleteFile(path);
+                                } catch (IOException e) {
+                                    throw new RuntimeException(e);
+                                }
+                            } else if (type.getText().equalsIgnoreCase("No")) {
+                                log("User denied deletion of file " + path);
+                                // If no, the file should be uploaded again
+                                // But that will automatically be done by the Main class
+                            }
+                        });
+                    });
+                }
             }
 
             if (!remoteFileListResult.getHasMore()) {
                 try {
-                    RemoteFiles.populateRemoteFilesInfo(); // TODO checking if it'll work
+                    RemoteFiles.populateRemoteFilesInfo();
                 } catch (DbxException e) {
                     throw new RuntimeException(e);
                 }
@@ -142,43 +177,3 @@ public class RemoteListener implements Runnable {
         );
     }
 }
-
-// Case 3: Check if any files have been deleted
-/*
-                    for (String path : remoteFileInfo.keySet()) {   // TODO bug
-                        if (!tempRemoteFileInfo.containsKey(path)) {
-                        log("Deleted file detected! " + path);
-                        // File has been deleted, so need to delete the local file
-                        // Alert the user to check if the deletion should be permanent
-                        Platform.runLater(() -> {
-                        // Prompt if the deletion should be permanent
-                        Alert alert = new Alert(Alert.AlertType.CONFIRMATION);
-                        log("Prompting user for deletion confirmation of file " + path);
-                        alert.setTitle("Are you sure?");
-                        alert.setContentText("File " + path + " has been deleted from the server! \nDo you wish to make this deletion permanent?");
-                        ButtonType okButton = new ButtonType("Yes", ButtonBar.ButtonData.YES);
-                        ButtonType noButton = new ButtonType("No", ButtonBar.ButtonData.NO);
-                        ButtonType cancelButton = new ButtonType("Cancel", ButtonBar.ButtonData.CANCEL_CLOSE);
-                        alert.getButtonTypes().setAll(okButton, noButton, cancelButton);
-
-                        alert.showAndWait().ifPresent(type -> {
-                        log("Pressed " + type.getText());
-                        if (type.getText().equalsIgnoreCase("Yes")) {
-                        log("User confirmed deletion of file " + path);
-
-                        // If yes, delete the file locally
-                        try {
-                        deleteFile(path);
-                        } catch (IOException e) {
-                        throw new RuntimeException(e);
-                        }
-                        } else if (type.getText().equalsIgnoreCase("No")) {
-                        log("User denied deletion of file " + path);
-                        // If no, the file should be uploaded again
-                        // But that will automatically be done by the Main class
-                        }
-                        });
-                        });
-                        }
-                        }
-*/
