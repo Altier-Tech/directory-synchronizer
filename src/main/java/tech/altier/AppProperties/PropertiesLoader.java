@@ -27,9 +27,9 @@ public class PropertiesLoader {
         return configuration;
     }
 
-    public static void storeConfig() {
+    public static void storeApplicationProperties() {
         try (FileOutputStream outputStream = new FileOutputStream("application.properties")) {
-            conf.store(outputStream, "Repository Properties");
+            conf.store(outputStream, "Application Properties");
         } catch (IOException e) {
             throw new RuntimeException(e);
         }
