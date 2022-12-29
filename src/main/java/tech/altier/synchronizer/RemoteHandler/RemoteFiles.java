@@ -25,6 +25,7 @@ public class RemoteFiles {
      * @throws DbxException If an error occurs while communicating with Dropbox
      */
     public static void populateRemoteFilesInfo() throws DbxException {
+        remoteFileInfo.clear();
         ListFolderResult result = getDetailedRemoteFileInfo();
 
         while (true) {
