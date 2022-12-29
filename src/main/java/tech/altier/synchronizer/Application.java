@@ -27,6 +27,7 @@ public class Application extends javafx.application.Application {
     private static String startScene = "main-scene.fxml";
     public static boolean launchedFlag = false;
     public static boolean repoSetupFlag = false;
+    public static boolean exitFlag = false;
 
     @Override
     public void start(Stage stage) throws IOException {
