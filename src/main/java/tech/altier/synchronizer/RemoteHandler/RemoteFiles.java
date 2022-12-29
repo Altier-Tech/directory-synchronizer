@@ -36,6 +36,7 @@ public class RemoteFiles {
 
                 assert fileMetadata != null;
                 remoteFileInfo.put(metadata.getPathLower().substring(1), fileMetadata.getContentHash());
+                // Using substring(1) to remove the leading slash
             }
 
             if (!result.getHasMore()) {
