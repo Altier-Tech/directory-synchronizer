@@ -20,6 +20,8 @@ public class Auth {
         DbxRequestConfig config = DbxRequestConfig.newBuilder("Altier").build();
         client = new DbxClientV2(config, accessToken);
 
+        log(accessToken);
+
         try {
             String accountName = client.users().getCurrentAccount().getName().getDisplayName();
             log("Authorization successful for user " + accountName + "!");
