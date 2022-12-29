@@ -52,7 +52,7 @@ public class LoginController {
     private boolean authenticate(String accessToken) throws IOException {
         Auth auth = new Auth();
 
-        if (!auth.authenticate(accessToken)) {  // TODO BUG
+        if (!auth.authenticate(accessToken)) {
             log("Authentication with given access token failed!");
             label.setText("Access token is invalid! Please try again.");
             return false;
