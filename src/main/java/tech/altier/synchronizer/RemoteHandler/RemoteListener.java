@@ -149,16 +149,16 @@ public class RemoteListener implements Runnable {
 
     private void deleteFile(String filePath) throws IOException {
         try {
-            Files.deleteIfExists(Paths.get(filePath));
+            Files.delete(Paths.get(filePath));
         } catch (NoSuchFileException e) {
             log("File " + filePath + " delete error: No such file/directory exists!");
-            throw new NoSuchFileException(filePath + " doesn't exist");
+//            throw new NoSuchFileException(filePath + " doesn't exist");
         } catch (DirectoryNotEmptyException e) {
             log("File " + filePath + " delete error: Directory is not empty!");
-            throw new DirectoryNotEmptyException(filePath + " is not empty");
+//            throw new DirectoryNotEmptyException(filePath + " is not empty");
         } catch (IOException e) {
             log("File " + filePath + " delete error: Invalid permissions!");
-            throw new IOException("Do not have valid permissions to delete " + filePath);
+//            throw new IOException("Do not have valid permissions to delete " + filePath);
         }
 
         log("Deletion successful for file " + filePath);
