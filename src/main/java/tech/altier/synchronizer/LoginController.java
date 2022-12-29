@@ -49,17 +49,15 @@ public class LoginController {
         });
     }
 
-    private void authenticate(String accessToken) throws IOException {
+    private boolean authenticate(String accessToken) throws IOException {
         Auth auth = new Auth();
 
-        while (true) {
-            if (!auth.authenticate(accessToken)) {  // TODO BUG
-                log("Authentication with given access token failed!");
-                label.setText("Access token is invalid! Please try again.");
-            } else {
-                break;
-            }
+        if (!auth.authenticate(accessToken)) {  // TODO BUG
+            log("Authentication with given access token failed!");
+            label.setText("Access token is invalid! Please try again.");
+            return false;
         }
+        return true;
     }
 
     @FXML
@@ -74,7 +72,7 @@ public class LoginController {
         }
 
         log("Authorization requested with a given access token");
-        authenticate(accessToken);
+        if (!authenticate(accessToken)) return;
 
         Application.launchedFlag = true;
         Application.setupLocalRepository();
