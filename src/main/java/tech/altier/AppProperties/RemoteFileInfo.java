@@ -21,7 +21,7 @@ public class RemoteFileInfo extends HashMap<String, String> {
     }
 
     private static void writeProperties() {
-        writeRemoteFiles();
+        writeRemoteFilesList();
 
         try (FileOutputStream outputStream = new FileOutputStream("repository.properties")) {
             conf.store(outputStream, "Repository Properties");
@@ -41,7 +41,7 @@ public class RemoteFileInfo extends HashMap<String, String> {
         return configuration;
     }
 
-    private static void writeRemoteFiles() {
+    private static void writeRemoteFilesList() {
         // Clearing the Properties before rewriting to avoid deleted files existing in the dataset
         conf.clear();
 
