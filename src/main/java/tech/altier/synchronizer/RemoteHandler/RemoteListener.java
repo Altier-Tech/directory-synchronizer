@@ -51,7 +51,8 @@ public class RemoteListener implements Runnable {
             try {
                 Thread.sleep(SLEEP_TIME);
             } catch (InterruptedException e) {
-                throw new RuntimeException(e);
+                log(e.getMessage());
+                break;
             }
 
             listen();
