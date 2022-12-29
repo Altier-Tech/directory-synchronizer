@@ -1,5 +1,7 @@
 package tech.altier.AppProperties;
 
+import tech.altier.Thread.ThreadColor;
+
 import java.io.FileOutputStream;
 import java.io.IOException;
 import java.io.InputStream;
@@ -35,6 +37,15 @@ public class PropertiesLoader {
         } catch (IOException e) {
             throw new RuntimeException(e);
         }
+    }
+
+    private static void log(String message) {
+        System.out.println(
+                ThreadColor.ANSI_CYAN +
+                        Thread.currentThread().getName() +
+                        "\tPropertiesLoader: \t" +
+                        message
+        );
     }
 
     public static String get(String key) {
