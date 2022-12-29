@@ -57,7 +57,7 @@ public class LoginController {
                 log("Authentication with given access token failed!");
                 label.setText("Access token is invalid! Please try again.");
             } else {
-                PropertiesLoader.set();
+                PropertiesLoader.set("accessToken", accessToken);
                 break;
             }
         }
