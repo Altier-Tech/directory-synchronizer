@@ -7,7 +7,7 @@ import com.dropbox.core.v2.files.ListFolderResult;
 import com.dropbox.core.v2.files.Metadata;
 
 import tech.altier.AppProperties.RemoteFileInfo;
-import tech.altier.synchronizer.Main;
+import tech.altier.synchronizer.Application;
 
 public class RemoteFiles {
     private final DbxClientV2 client;
@@ -23,7 +23,7 @@ public class RemoteFiles {
     }
 
     private RemoteFiles() throws DbxException {
-        client = Main.client;
+        client = Application.client;
         remoteFileInfo = RemoteFileInfo.getInstance();
     }
 
