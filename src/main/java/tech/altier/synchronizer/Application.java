@@ -58,7 +58,6 @@ public class Application extends javafx.application.Application {
         // Stage 5: Save the database
         // Save application.properties
         PropertiesLoader.storeApplicationProperties();
-        // TODO Save repository.properties
         RemoteFileInfo.storeRemoteProperties();
     }
 
