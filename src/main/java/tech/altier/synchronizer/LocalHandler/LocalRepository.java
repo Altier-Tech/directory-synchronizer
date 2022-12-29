@@ -136,6 +136,8 @@ class LocalListener implements Runnable {
             if (!valid) {
                 break;
             }
+
+            log("Local listener thread stopped...");
         }
     }
 
