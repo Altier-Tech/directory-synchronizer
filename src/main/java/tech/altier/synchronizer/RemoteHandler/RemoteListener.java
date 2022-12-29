@@ -40,7 +40,7 @@ public class RemoteListener implements Runnable {
 
     public RemoteListener(int sleepTime) {
         this();
-        this.SLEEP_TIME = sleepTime;
+        this.SLEEP_TIME = sleepTime*1000;
     }
 
     @Override
@@ -55,6 +55,7 @@ public class RemoteListener implements Runnable {
                 break;
             }
 
+            log("Looping...");
             listen();
         }
 
