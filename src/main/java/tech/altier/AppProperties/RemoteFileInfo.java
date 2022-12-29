@@ -10,7 +10,7 @@ import java.util.Set;
 public class RemoteFileInfo extends HashMap<String, String> {
     private static final Properties conf;
     public static HashMap<String, String> remoteFiles;
-    private static RemoteFileInfo instance;
+    private static final RemoteFileInfo instance;
 
     static {
         try {
