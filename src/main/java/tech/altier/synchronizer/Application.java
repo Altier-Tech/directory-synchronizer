@@ -45,9 +45,7 @@ public class Application extends javafx.application.Application {
         authenticate();
 
         // Stage 2: Setup local repository
-        if (!repoSetupFlag) {
-            setupLocalRepository();
-        }
+        setupLocalRepository();
 
         // Stage 3: TODO Load the database
 
