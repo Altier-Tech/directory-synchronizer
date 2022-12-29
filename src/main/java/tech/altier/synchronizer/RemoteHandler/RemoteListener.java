@@ -93,8 +93,9 @@ public class RemoteListener implements Runnable {
                 tempRemoteFileInfo.put(metadata.getPathLower(), fileMetadata.getContentHash());
 
                 // Case 3: Check if any files have been deleted
-                for (String path : remoteFileInfo.keySet()) {
+                for (String path : remoteFileInfo.keySet()) {   // TODO bug
                     if (!tempRemoteFileInfo.containsKey(path)) {
+                        log("Deleted file detected! " + path);
                         // File has been deleted, so need to delete the local file
                         // Alert the user to check if the deletion should be permanent
                         Platform.runLater(() -> {
