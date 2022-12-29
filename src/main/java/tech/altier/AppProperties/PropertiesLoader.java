@@ -1,5 +1,6 @@
 package tech.altier.AppProperties;
 
+import java.io.FileOutputStream;
 import java.io.IOException;
 import java.io.InputStream;
 import java.util.Properties;
@@ -27,7 +28,11 @@ public class PropertiesLoader {
     }
 
     public static void storeConfig() {
-
+        try (FileOutputStream outputStream = new FileOutputStream("application.properties")) {
+            conf.store(outputStream, "Repository Properties");
+        } catch (IOException e) {
+            throw new RuntimeException(e);
+        }
     }
 
     public static String get(String key) {
