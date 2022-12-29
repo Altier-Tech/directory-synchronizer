@@ -10,29 +10,12 @@ import tech.altier.AppProperties.RemoteFileInfo;
 import tech.altier.synchronizer.Application;
 
 public class RemoteFiles {
-    private final DbxClientV2 client;
+    private static final DbxClientV2 client;
     private static final RemoteFileInfo remoteFileInfo;
-    private static final RemoteFiles instance;
 
     static {
-        try {
-            instance = new RemoteFiles();
-        } catch (DbxException e) {
-            throw new RuntimeException(e);
-        }
         remoteFileInfo = RemoteFileInfo.getInstance();
-    }
-
-    private RemoteFiles() throws DbxException {
         client = Application.client;
-    }
-
-    /**
-     * Returns the singleton instance of this class.
-     * @return The singleton instance of RemoteFiles class
-     */
-    public static RemoteFiles getInstance() {
-        return instance;
     }
 
     /**
@@ -69,7 +52,7 @@ public class RemoteFiles {
      * @return ListFolderResult object that contains the detailed information
      * @throws DbxException If an error occurs while communicating with Dropbox
      */
-    public ListFolderResult getDetailedRemoteFileInfo() throws DbxException {
+    public static ListFolderResult getDetailedRemoteFileInfo() throws DbxException {
         return client.files()
                 .listFolderBuilder("")
                 .withIncludeDeleted(false)
