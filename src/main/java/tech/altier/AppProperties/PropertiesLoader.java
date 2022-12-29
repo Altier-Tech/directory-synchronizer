@@ -2,6 +2,7 @@ package tech.altier.AppProperties;
 
 import tech.altier.Thread.ThreadColor;
 
+import java.io.FileInputStream;
 import java.io.FileOutputStream;
 import java.io.IOException;
 import java.io.InputStream;
@@ -55,5 +56,22 @@ public class PropertiesLoader {
     public static void set(String key, String value) {
         log("Setting " + key + " in application properties...");
         conf.setProperty(key, value);
+    }
+
+    public static void clearAccessToken() {
+        Properties prop = new Properties();
+        try (InputStream in = new FileInputStream("src/loop.properties")){
+            prop.load(in);
+        } catch (IOException ex) {
+            log(ex.getMessage());
+        }
+
+        prop.setProperty("LOOP", "1");
+
+        try (FileOutputStream out = new FileOutputStream("src/loop.properties") {
+            prop.store(out, null);
+        } catch (IOException ex) {
+            System.out.println(ex);
+        }
     }
 }
