@@ -26,6 +26,10 @@ public class PropertiesLoader {
         return configuration;
     }
 
+    public static void storeConfig() {
+        
+    }
+
     public static String get(String key) {
         return conf.getProperty(key);
     }
