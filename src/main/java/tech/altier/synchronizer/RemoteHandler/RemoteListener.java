@@ -67,20 +67,22 @@ public class RemoteListener implements Runnable {
                 }
 
                 assert fileMetadata != null;
+                
+                String remPath = metadata.getPathLower().substring(1);
 
                 // Case 1: File is new
-                if (!remoteFileInfo.containsKey(metadata.getPathLower())) {
+                if (!remoteFileInfo.containsKey(remPath)) {
                     // Doesn't exist, so need to download the remote file
                     // But this scenario is handled in the Main class
-                    log("New file detected: " + metadata.getPathLower());
-                } else if (!remoteFileInfo.get(metadata.getPathLower()).equals(fileMetadata.getContentHash())) {
+                    log("New file detected: " + remPath);
+                } else if (!remoteFileInfo.get(remPath).equals(fileMetadata.getContentHash())) {
                     // Case 2: File has been modified
-                    log("File " + metadata.getPathLower() + " has been modified");
+                    log("File " + remPath + " has been modified");
                     // Not the same, so need to..
 
                     // Step 1: Delete the local file
                     try {
-                        deleteFile(metadata.getPathLower());
+                        deleteFile(remPath);
                     } catch (IOException e) {
                         throw new RuntimeException(e);
                     }
@@ -90,7 +92,7 @@ public class RemoteListener implements Runnable {
                 }
 
                 // Add the metadata to a temporary map for test Case 3
-                tempRemoteFileInfo.put(metadata.getPathLower(), fileMetadata.getContentHash());
+                tempRemoteFileInfo.put(remPath, fileMetadata.getContentHash());
 
                 // Case 3: Check if any files have been deleted
                 for (String path : remoteFileInfo.keySet()) {   // TODO bug
