@@ -27,7 +27,7 @@ public class PropertiesLoader {
     }
 
     public static void storeConfig() {
-        
+
     }
 
     public static String get(String key) {
