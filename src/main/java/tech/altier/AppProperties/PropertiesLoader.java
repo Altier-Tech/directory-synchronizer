@@ -53,6 +53,7 @@ public class PropertiesLoader {
     }
 
     public static void set(String key, String value) {
+        log("Setting " + key + " in application properties...");
         conf.setProperty(key, value);
     }
 }
