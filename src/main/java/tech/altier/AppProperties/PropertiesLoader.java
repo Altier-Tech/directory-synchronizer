@@ -31,6 +31,6 @@ public class PropertiesLoader {
     }
 
     public static void set(String key, String value) {
-        
+        conf.setProperty(key, value);
     }
 }
