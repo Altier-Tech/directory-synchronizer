@@ -24,14 +24,12 @@ import java.util.HashMap;
 
 public class RemoteListener implements Runnable {
     private int SLEEP_TIME = 2000;
-    static RemoteFiles remoteFilesInstance;
     static RemoteFileInfo remoteFileInfo;
     private final HashMap<String, String> tempRemoteFileInfo;
 
     DbxClientV2 client;
 
     static {
-        remoteFilesInstance = RemoteFiles.getInstance();
         remoteFileInfo = RemoteFileInfo.getInstance();
     }
 
@@ -56,7 +54,7 @@ public class RemoteListener implements Runnable {
 
         ListFolderResult remoteFileListResult;
         try {
-            remoteFileListResult = remoteFilesInstance.getDetailedRemoteFileInfo();
+            remoteFileListResult = RemoteFiles.getDetailedRemoteFileInfo();
         } catch (DbxException e) {
             throw new RuntimeException(e);
         }
