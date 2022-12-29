@@ -53,7 +53,7 @@ public class LoginController {
         Auth auth = new Auth();
 
         while (true) {
-            if (!auth.authenticate(accessToken)) {
+            if (!auth.authenticate(accessToken)) {  // TODO BUG
                 log("Authentication with given access token failed!");
                 label.setText("Access token is invalid! Please try again.");
             } else {
