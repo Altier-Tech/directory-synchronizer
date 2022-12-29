@@ -10,6 +10,7 @@ import java.util.Set;
 public class RemoteFileInfo extends HashMap<String, String> {
     private static final Properties conf;
     public static HashMap<String, String> remoteFiles;
+    private static RemoteFileInfo instance;
 
     static {
         try {
@@ -18,6 +19,7 @@ public class RemoteFileInfo extends HashMap<String, String> {
         } catch (IOException e) {
             throw new RuntimeException(e);
         }
+        instance = new RemoteFileInfo();
     }
 
     private RemoteFileInfo(){}
@@ -70,7 +72,7 @@ public class RemoteFileInfo extends HashMap<String, String> {
      * @return the singleton instance of the RemoteFileInfo class
      */
     public static RemoteFileInfo getInstance() {
-        return new RemoteFileInfo();
+        return instance;
     }
 
     /**
