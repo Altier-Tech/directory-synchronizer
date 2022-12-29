@@ -111,7 +111,7 @@ public class RemoteListener implements Runnable {
             }
 
             // Case 3: File has been deleted
-            for (String path : remoteFileInfo.keySet()) {   // TODO bug
+            for (String path : remoteFileInfo.keySet()) {
                 if (!tempRemoteFileInfo.containsKey(path)) {
                     log("Deleted file detected! " + path);
                     // File has been deleted, so need to delete the local file
@@ -169,6 +169,9 @@ public class RemoteListener implements Runnable {
         try {
             Files.delete(Paths.get(Application.repository.getPath() + "\\" + filePath));
             log("Deletion successful for file " + filePath);
+
+            // TODO Rewrite repository.properties
+            
         } catch (NoSuchFileException e) {
             log("File " + filePath + " delete error: No such file/directory exists!");
         } catch (DirectoryNotEmptyException e) {
