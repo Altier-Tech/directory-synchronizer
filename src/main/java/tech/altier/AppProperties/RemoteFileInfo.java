@@ -49,7 +49,7 @@ public class RemoteFileInfo extends HashMap<String, String> {
         for (String key : keys) {
             conf.setProperty(key, remoteFiles.get(key));
         }
-        writeProperties();
+        // writeProperties(); // Circular ????
     }
 
     private static void loadRemoteFiles() {
