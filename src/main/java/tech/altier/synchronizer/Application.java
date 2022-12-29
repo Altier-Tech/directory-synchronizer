@@ -9,6 +9,7 @@ import javafx.scene.image.Image;
 import javafx.stage.Stage;
 
 import tech.altier.AppProperties.PropertiesLoader;
+import tech.altier.AppProperties.RemoteFileInfo;
 import tech.altier.Thread.ThreadColor;
 import tech.altier.synchronizer.LocalHandler.LocalRepository;
 
@@ -58,7 +59,7 @@ public class Application extends javafx.application.Application {
         // Save application.properties
         PropertiesLoader.storeApplicationProperties();
         // TODO Save repository.properties
-
+        RemoteFileInfo.storeRemoteProperties();
     }
 
     public static void setupLocalRepository() throws IOException {
