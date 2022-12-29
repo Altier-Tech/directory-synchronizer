@@ -20,6 +20,10 @@ public class RemoteFileInfo extends HashMap<String, String> {
         }
     }
 
+    public static void storeRemoteProperties() {
+        writeProperties();
+    }
+
     private static void writeProperties() {
         writeRemoteFilesList();
 
