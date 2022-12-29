@@ -47,7 +47,7 @@ class RemoteListener implements Runnable {
 
     @Override
     public void run() {
-        // Adding a waiting period of 20 seconds
+        // Adding a waiting period 
         try {
             Thread.sleep(SLEEP_TIME);
         } catch (InterruptedException e) {
