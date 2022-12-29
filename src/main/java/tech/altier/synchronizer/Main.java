@@ -166,6 +166,7 @@ public class Main {
     @FXML
     public void handleExit() {
         log("Exit button was clicked!");
+        Application.exitFlag = true;
         repository.stopListening();
         Application.exit();
     }
