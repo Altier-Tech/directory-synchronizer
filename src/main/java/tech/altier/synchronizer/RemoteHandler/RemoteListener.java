@@ -56,6 +56,8 @@ public class RemoteListener implements Runnable {
 
             listen();
         }
+
+        log("Remote listener stopped...");
     }
 
     private void listen() {
