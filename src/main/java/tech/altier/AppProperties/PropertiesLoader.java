@@ -2,7 +2,6 @@ package tech.altier.AppProperties;
 
 import tech.altier.Thread.ThreadColor;
 
-import java.io.FileInputStream;
 import java.io.FileOutputStream;
 import java.io.IOException;
 import java.io.InputStream;
@@ -31,9 +30,9 @@ public class PropertiesLoader {
         return configuration;
     }
 
-    public static void storeApplicationProperties() {   // TODO BUG
+    public static void storeApplicationProperties() {
         log("Saving application properties...");
-        try (FileOutputStream outputStream = new FileOutputStream("application.properties")) {
+        try (FileOutputStream outputStream = new FileOutputStream("src\\main\\resources\\application.properties")) {
             conf.store(outputStream, null);
         } catch (IOException e) {
             throw new RuntimeException(e);
@@ -56,25 +55,5 @@ public class PropertiesLoader {
     public static void set(String key, String value) {
         log("Setting " + key + " in application properties...");
         conf.setProperty(key, value);
-        clearAccessToken();
-    }
-
-    public static void clearAccessToken() {
-        log("Clearing access token property...");
-        
-        Properties prop = new Properties();
-        try (InputStream in = new FileInputStream("application.properties")){
-            prop.load(in);
-        } catch (IOException ex) {
-            log(ex.getMessage());
-        }
-
-        prop.setProperty("accessToken", "");
-
-        try (FileOutputStream out = new FileOutputStream("application.properties")) {
-            prop.store(out, null);
-        } catch (IOException ex) {
-            log(ex.getMessage());
-        }
     }
 }

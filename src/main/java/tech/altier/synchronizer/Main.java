@@ -45,8 +45,6 @@ public class Main {
         client = Auth.client;
         repository = Application.repository;
 
-        PropertiesLoader.clearAccessToken();
-
         appLogo.setImage(new Image("icon.png"));
         appLogo.setCache(true);
 
