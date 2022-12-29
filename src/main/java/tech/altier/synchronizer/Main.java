@@ -19,6 +19,7 @@ import tech.altier.Thread.ThreadColor;
 import tech.altier.synchronizer.API.Threads.FileDownloadThread;
 import tech.altier.synchronizer.API.Threads.FileUploadThread;
 import tech.altier.synchronizer.LocalHandler.LocalRepository;
+import tech.altier.synchronizer.RemoteHandler.RemoteListener;
 
 import java.awt.*;
 import java.io.File;
@@ -66,6 +67,13 @@ public class Main {
 
         // Start service for refreshing the list view in GUI
         startListViewRefreshService();
+    }
+
+    private void startRemoteListening() {
+        Thread remoteListener = new Thread(
+                new RemoteListener()
+        );
+        remoteListener.start();
     }
 
     private void startListViewRefreshService() {
