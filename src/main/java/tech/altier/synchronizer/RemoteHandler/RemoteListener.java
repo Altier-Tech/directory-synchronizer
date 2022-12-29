@@ -45,8 +45,6 @@ public class RemoteListener implements Runnable {
 
     @Override
     public void run() {
-
-
         while (!Thread.currentThread().isInterrupted()) {
             // Adding a waiting period
             try {
