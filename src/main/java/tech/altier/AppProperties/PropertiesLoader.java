@@ -30,11 +30,10 @@ public class PropertiesLoader {
         return configuration;
     }
 
-    public static void storeApplicationProperties() {
+    public static void storeApplicationProperties() {   // TODO BUG
         log("Saving application properties...");
         try (FileOutputStream outputStream = new FileOutputStream("application.properties")) {
             conf.store(outputStream, null);
-            log(get("accessToken"));
         } catch (IOException e) {
             throw new RuntimeException(e);
         }
