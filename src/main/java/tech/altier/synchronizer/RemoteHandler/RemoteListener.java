@@ -131,6 +131,11 @@ public class RemoteListener implements Runnable {
             }
 
             if (!remoteFileListResult.getHasMore()) {
+                try {
+                    RemoteFiles.populateRemoteFilesInfo(); // TODO checking if it'll work
+                } catch (DbxException e) {
+                    throw new RuntimeException(e);
+                }
                 break;
             }
 
