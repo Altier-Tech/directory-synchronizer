@@ -25,8 +25,8 @@ public class Application extends javafx.application.Application {
     public static DbxClientV2 client;
     public static LocalRepository repository;
     private static String startScene = "main-scene.fxml";
-    public static boolean launchedFlag = false;
-    public static boolean repoSetupFlag = false;
+    public static boolean launchedFlag;
+    public static boolean repoSetupFlag;
 
     @Override
     public void start(Stage stage) throws IOException {
@@ -41,6 +41,9 @@ public class Application extends javafx.application.Application {
     }
 
     public static void main(String[] args) throws IOException {
+        launchedFlag = false;
+        repoSetupFlag = false;
+        
         // Stage 1: Authenticate
         authenticate();
 
