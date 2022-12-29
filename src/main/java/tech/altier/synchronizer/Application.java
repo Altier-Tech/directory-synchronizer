@@ -62,6 +62,8 @@ public class Application extends javafx.application.Application {
     }
 
     public static void setupLocalRepository() throws IOException {
+        if (repoSetupFlag) return;
+
         log("Local repository setup called...");
         String repositoryPath = "";
 
