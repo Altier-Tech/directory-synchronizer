@@ -35,7 +35,7 @@ public class RemoteFiles {
                 }
 
                 assert fileMetadata != null;
-                remoteFileInfo.put(metadata.getPathLower(), fileMetadata.getContentHash());
+                remoteFileInfo.put(metadata.getPathLower().substring(1), fileMetadata.getContentHash());
             }
 
             if (!result.getHasMore()) {
