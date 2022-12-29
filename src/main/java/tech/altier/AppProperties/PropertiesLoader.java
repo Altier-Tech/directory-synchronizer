@@ -17,6 +17,7 @@ public class PropertiesLoader {
     }
 
     private static Properties loadProperties() throws IOException {
+        log("Loading application properties...");
         Properties configuration = new Properties();
         InputStream inputStream = PropertiesLoader.class
                 .getClassLoader()
@@ -30,6 +31,7 @@ public class PropertiesLoader {
     public static void storeApplicationProperties() {
         try (FileOutputStream outputStream = new FileOutputStream("application.properties")) {
             conf.store(outputStream, "Application Properties");
+            log("Saving application properties...");
         } catch (IOException e) {
             throw new RuntimeException(e);
         }
