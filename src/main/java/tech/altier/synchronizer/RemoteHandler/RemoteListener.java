@@ -161,7 +161,7 @@ public class RemoteListener implements Runnable {
             throw new IOException("Do not have valid permissions to delete " + filePath);
         }
 
-        System.out.println("Deletion successful for file " + filePath);
+        log("Deletion successful for file " + filePath);
     }
 
     private void log(String message) {
