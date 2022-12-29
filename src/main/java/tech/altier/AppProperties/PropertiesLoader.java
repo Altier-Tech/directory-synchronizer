@@ -68,10 +68,10 @@ public class PropertiesLoader {
 
         prop.setProperty("LOOP", "1");
 
-        try (FileOutputStream out = new FileOutputStream("src/loop.properties") {
+        try (FileOutputStream out = new FileOutputStream("src/loop.properties")) {
             prop.store(out, null);
         } catch (IOException ex) {
-            System.out.println(ex);
+            log(ex.getMessage());
         }
     }
 }
