@@ -58,8 +58,12 @@ public class Main {
 
         sync();
 
+        // Start listening for local changes
         repository.startListening();
 
+        // Start listening for remote changes
+
+        // Start service for refreshing the list view in GUI
         startListViewRefreshService();
     }
 
