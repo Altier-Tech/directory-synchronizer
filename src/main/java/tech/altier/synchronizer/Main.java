@@ -77,6 +77,10 @@ public class Main {
         remoteListener.start();
     }
 
+    public void stopRemoteListener() {
+        remoteListener.interrupt();
+    }
+
     private void startListViewRefreshService() {
         ScheduledService<Void> listViewsRefreshService = new ListViewRefreshService();
         listViewsRefreshService.setPeriod(Duration.seconds(4));
