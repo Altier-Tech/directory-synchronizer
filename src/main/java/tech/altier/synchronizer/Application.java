@@ -48,7 +48,7 @@ public class Application extends javafx.application.Application {
         // Stage 2: Setup local repository
         setupLocalRepository();
 
-        // Stage 3: TODO Load the database
+        // Stage 3: TODO Load repository.properties
 
         // Stage 4: Launch the GUI
         if (!launchedFlag) launch();
@@ -58,7 +58,7 @@ public class Application extends javafx.application.Application {
         // Save application.properties
         PropertiesLoader.storeApplicationProperties();
         // TODO Save repository.properties
-        
+
     }
 
     public static void setupLocalRepository() throws IOException {
