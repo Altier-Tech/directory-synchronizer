@@ -11,7 +11,7 @@ import tech.altier.synchronizer.Application;
 
 public class RemoteFiles {
     private final DbxClientV2 client;
-    private final RemoteFileInfo remoteFileInfo;
+    private static final RemoteFileInfo remoteFileInfo;
     private static final RemoteFiles instance;
 
     static {
@@ -20,11 +20,11 @@ public class RemoteFiles {
         } catch (DbxException e) {
             throw new RuntimeException(e);
         }
+        remoteFileInfo = RemoteFileInfo.getInstance();
     }
 
     private RemoteFiles() throws DbxException {
         client = Application.client;
-        remoteFileInfo = RemoteFileInfo.getInstance();
     }
 
     /**
