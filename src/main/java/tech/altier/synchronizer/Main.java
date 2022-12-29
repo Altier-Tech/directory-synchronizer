@@ -72,7 +72,7 @@ public class Main {
 
     private void startRemoteListening() {
         remoteListener = new Thread(
-                new RemoteListener()
+                new RemoteListener(10)
         );
         remoteListener.start();
     }
