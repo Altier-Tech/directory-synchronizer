@@ -23,6 +23,7 @@ public class Auth {
         try {
             String accountName = client.users().getCurrentAccount().getName().getDisplayName();
             log("Authorization successful for user " + accountName + "!");
+            PropertiesLoader.set("accessToken", accessToken);
             Application.setClient(client);
         } catch (DbxException e) {
             // TODO Authentication failure handler
