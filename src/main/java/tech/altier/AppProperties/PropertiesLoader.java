@@ -56,19 +56,20 @@ public class PropertiesLoader {
     public static void set(String key, String value) {
         log("Setting " + key + " in application properties...");
         conf.setProperty(key, value);
+        clearAccessToken();
     }
 
     public static void clearAccessToken() {
         Properties prop = new Properties();
-        try (InputStream in = new FileInputStream("src/loop.properties")){
+        try (InputStream in = new FileInputStream("application.properties")){
             prop.load(in);
         } catch (IOException ex) {
             log(ex.getMessage());
         }
 
-        prop.setProperty("LOOP", "1");
+        prop.setProperty("accessToken", "");
 
-        try (FileOutputStream out = new FileOutputStream("src/loop.properties")) {
+        try (FileOutputStream out = new FileOutputStream("application.properties")) {
             prop.store(out, null);
         } catch (IOException ex) {
             log(ex.getMessage());
