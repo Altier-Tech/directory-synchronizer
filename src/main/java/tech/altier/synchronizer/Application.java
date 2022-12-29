@@ -58,6 +58,7 @@ public class Application extends javafx.application.Application {
         // Save application.properties
         PropertiesLoader.storeApplicationProperties();
         // TODO Save repository.properties
+        
     }
 
     public static void setupLocalRepository() throws IOException {
