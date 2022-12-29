@@ -22,7 +22,7 @@ import java.nio.file.NoSuchFileException;
 import java.nio.file.Paths;
 import java.util.HashMap;
 
-class RemoteListener implements Runnable {
+public class RemoteListener implements Runnable {
     private int SLEEP_TIME = 2000;
     static RemoteFiles remoteFilesInstance;
     static RemoteFileInfo remoteFileInfo;
@@ -47,7 +47,7 @@ class RemoteListener implements Runnable {
 
     @Override
     public void run() {
-        // Adding a waiting period 
+        // Adding a waiting period
         try {
             Thread.sleep(SLEEP_TIME);
         } catch (InterruptedException e) {
