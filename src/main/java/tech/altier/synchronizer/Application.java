@@ -74,6 +74,7 @@ public class Application extends javafx.application.Application {
             if (checkIfValidPath(repositoryPath)) {
                 // A valid path was found. Need to set up the repository.
                 repository = setupRepositoryOnDir (repositoryPath);
+                Application.repoSetupFlag = true;
                 startScene = "main-scene.fxml";
 
                 if (!launchedFlag) {
