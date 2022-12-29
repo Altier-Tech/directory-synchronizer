@@ -67,8 +67,7 @@ public class RemoteListener implements Runnable {
                 }
 
                 assert fileMetadata != null;
-
-
+                
                 String remPath = metadata.getPathLower().substring(1);
 
                 // Case 1: File is new
