@@ -55,10 +55,9 @@ public class Application extends javafx.application.Application {
         else if (!exitFlag) changeScene("main-scene.fxml");
 
         // Stage 5: Save the database
-        // TODO Save repository.properties
-
         // Save application.properties
-        PropertiesLoader.storeApplicationProperties()
+        PropertiesLoader.storeApplicationProperties();
+        // TODO Save repository.properties
     }
 
     public static void setupLocalRepository() throws IOException {
