@@ -64,7 +64,7 @@ public class Main {
         repository.startListening();
 
         // Start listening for remote changes
-        startRemoteListening();
+        // startRemoteListening();
 
         // Start service for refreshing the list view in GUI
         startListViewRefreshService();
@@ -78,7 +78,9 @@ public class Main {
     }
 
     public static void stopRemoteListener() {
-        remoteListener.interrupt();
+        if (remoteListener != null) {
+            remoteListener.interrupt();
+        }
     }
 
     private void startListViewRefreshService() {
